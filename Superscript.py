@@ -1,0 +1,192 @@
+# #!/usr/bin/env python
+
+# # -*- coding: utf-8 -*-
+
+
+
+
+
+# 1. IMPORTS
+
+from collections import Counter 
+from itertools import islice
+import networkx as nx
+import matplotlib.pyplot as plt
+import re
+import nltk
+import pandas as pd
+import os
+import glob
+import sys
+import errno
+import csv
+from characternetworks import Book, Character, Network
+
+
+
+
+
+
+# 2. INPUT
+
+path = {}
+path['1'] = '/Users/roelsmeets/desktop/corpus_1stpers_clean'
+path['2'] = '/Users/roelsmeets/desktop/corpus_3rdpers_clean'
+path['3'] = '/Users/roelsmeets/desktop/corpus_multi_clean_annotated' 
+path['4'] = '/Users/roelsmeets/desktop/corpus_other_clean'
+
+
+# print (path[1])
+
+#NOVELS_1stpers = glob.glob(path1)
+#NOVELS_3rdpers = glob.glob(path2)
+#NOVELS_multi = glob.glob(path3)
+#NOVELS_other = glob.glob(path4)
+
+with open('/Users/roelsmeets/desktop/Libris_networks/BOOKS_complete/BOOKS_complete.csv', 'rt') as csvfile1, \
+     open('/Users/roelsmeets/desktop/Libris_networks/NODES_complete/NODES_complete.csv', 'rt') as csvfile2, \
+     open('/Users/roelsmeets/desktop/Libris_networks/EDGES_complete/EDGES_complete.csv', 'rt') as csvfile3, \
+     open('/Users/roelsmeets/desktop/Libris_networks/NAMES_complete/NAMES_complete.csv', 'rt') as csvfile4:
+    # Csv-file with information on each novel, columns: Book_ID, Title, Author, Publisher, Perspective (1stpers, 3rdpers, multi, other)
+    BOOKS_complete = csv.reader(csvfile1, delimiter=',')
+    # Csv-file with information on characters, columns: Book-ID, Character-ID, Name, Gender, Descent_country, Descent_city, Living_country, Living_city, Age, Education, Profession
+    NODES_complete = csv.reader(csvfile2, delimiter=',')
+    # Csv-file with information on character relations, columns: Book-ID, Source, Target, Relation-type
+    EDGES_complete = csv.reader(csvfile3, delimiter=',')
+    # Csv-file with information on name variances, columns: Book-ID, Character-ID, Name-ID, Name-variances
+    NAMES_complete = csv.reader(csvfile4, delimiter=',')
+
+
+
+
+
+    # print (BOOKS_complete)
+    # for line in BOOKS_complete:
+    #     print (line)
+
+
+
+
+
+
+# 3. CREATE BOOK OBJECTS, CHARACTER OBJECTS, ADD NAME VARIANTS TO CHARACTER OBJECTS IN BOOKS OBJECTS, ADD EDGES TO NETWORK OBJECTS IN BOOK OBJECTS
+
+
+    allbooks = {}
+
+
+    for line in BOOKS_complete: 
+        """ Creates instances of Book for every novel in the corpus
+
+        """
+        book_id = line[0]
+
+        if book_id.isdigit(): # Check if book_id a digit
+
+            title = line[1]
+            name_author = line[2]
+            gender_author = line[3]
+            age_author = line[4]
+            publisher = line[5]
+            perspective = line[6]
+            filename = line[7]
+    
+        
+            allbooks[book_id] = Book(book_id, title, name_author, gender_author, age_author, publisher, perspective, filename)
+
+
+
+    for line in NODES_complete:
+        """ Creates instances of Character for every character in the corpus and adds them to instances of Book
+
+        """
+        book_id = line[0]
+
+
+        if book_id.isdigit(): # Check if book_id is a digit
+
+            character_id = line[1]
+            name = line[2]
+            gender = line[3]
+            descent_country = line[4]
+            descent_city = line[5]
+            living_country = line[6]
+            living_city = line[7]
+            age = line[8]
+            education = line[9]
+            profession = line[10]
+
+            allbooks[book_id].addcharacter(book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession)
+
+
+
+    for line in NAMES_complete:
+        """ Adds name variants to instances of Character in instances of Book 
+
+        """
+        book_id = line[0]
+
+        if book_id.isdigit(): # Check if book_id is a digit
+
+            character_id = line[1]
+            name = line[2]
+            name_variant = line[3]
+
+            if allbooks[book_id].allcharacters[character_id].name != name:
+                print ('NAMES_COMPLETE DOES NOT CORRESPOND WELL WITH NODES_COMPLETE!!!') # Raise error if there are mistakes or typo's in the two corresponding csv-files
+                print (allbooks[book_id].allcharacters[character_id].name, name) # Print instance to which the error is due
+                exit(1)
+            
+
+            allbooks[book_id].allcharacters[character_id].addnamevariant(name_variant)
+
+
+
+    for line in EDGES_complete:
+        """ Add edges to instances of Network in instances of Book 
+
+        """
+        book_id = line[0]
+
+        if book_id.isdigit(): # Check if book_id is a digit
+          
+            source = line[1]
+            target = line[2]
+            relation_type = line[3]
+
+
+            allbooks[book_id].network.add_edge(source, target, relation_type)
+
+
+
+
+# 4. OUTPUT
+
+
+
+
+    for book_id in allbooks: 
+        """ Eventually otputs the weight of character relations to column 'weight' in EDGES_complete
+
+
+        """
+    
+
+        allbooks[book_id].readfile(path[allbooks[book_id].perspective]) # Call method readfile on Book objects with perspective (1, 2, 3)
+           
+        allbooks[book_id].novel_word_count() # Call method novel_word_count on each Book object
+
+            #allbooks[book_id].replace_namevariants() # Replace names with character identity markers in the text-files of the Book objects
+            #print (allbooks[book_id].markedtext)
+
+        allbooks[book_id].compute_network() # Computes weight of relations between Characters objects in Book objects
+
+            
+
+
+ 
+
+
+      
+     
+
