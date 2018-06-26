@@ -1,0 +1,2138 @@
+book_id,character_id,name,gender,descent_country ,descent_city ,living_country ,living_city ,age ,education ,profession
+1,1,Louise,2,2,4,2,4,1,2,prostituee/bedelaar
+1,2,Vake,1,2,4,2,4,99,2,bedelaar
+1,3,Gertrude,2,2,4,2,4,1,2,prostituee
+1,4,Amelia,2,2,4,2,4,1,2,prostituee
+1,5,Alexander,1,2,4,2,4,99,1,hertog
+1,6,Sebastiaan,1,2,4,2,4,1,2,tekenaar
+1,7,Hannah,2,6,99,2,4,1,2,dienstmeisje
+1,8,Lizzie,2,2,4,2,4,1,2,dienstmeisje
+1,9,Anna Maria,2,2,4,2,4,1,2,vroedvrouw/bedelaar
+1,10,Lucie,2,2,4,2,4,1,99,99
+1,11,Contarini,1,3,6,3,6,99,2,kunstenaar
+1,12,Lilianne,2,2,4,2,4,99,2,huisvrouw
+2,1,Eus,1,5,99,1,3,1,1,scholier/student/kok/crimineel
+2,2,Turis,1,5,99,1,3,99,2,werkloos
+2,3,Kosta,1,5,99,1,3,1,99,scholier/kok/crimineel
+2,4,Mahir,1,5,99,1,3,1,99,scholier
+2,5,Selma,2,5,99,1,3,1,1,student
+2,6,Inez,2,1,99,1,3,1,1,student
+2,7,Osman,1,99,99,1,99,99,99,werkloos
+2,8,Theo,1,1,99,1,3,99,99,99
+2,9,Meltem,1,5,99,1,3,1,99,student
+2,10,Metin,1,5,99,1,3,1,99,99
+2,11,Ömer,1,5,99,1,3,1,99,99
+2,12,Ata,1,5,99,1,3,1,99,scholier
+2,13,moeder Eus,2,5,99,1,3,99,2,huisvrouw
+2,14,Daphne,2,1,99,1,3,1,1,barkeeper
+2,15,Haakneus,2,5,99,1,3,1,99,ober
+2,16,Kareltje,1,1,99,1,3,1,2,kok/crimineel
+2,17,Angelo,1,1,99,1,3,99,99,crimineel
+2,18,Vinny,1,1,99,1,3,99,99,crimineel
+2,19,Nathan,1,1,99,1,3,99,99,99
+2,20,Eef,2,1,99,1,3,1,99,scholier
+2,21,Levine,2,1,99,1,3,1,99,scholier
+3,1,Arthur,1,1,99,6,12,4,1,schrijver/docent
+3,2,Carmen,2,3,6,6,12,2,1,ondernemer
+3,3,Louise,2,3,6,3,6,5,1,makelaar
+3,4,Doron,1,5,10,6,12,4,1,fotograaf
+3,5,Jorge,1,3,99,6,12,4,2,clown
+3,6,Oscar,1,6,99,6,12,4,1,radio-presentator
+3,7,Lala,2,6,12,6,12,6,1,zangeres/socialite
+3,8,Felizia,2,5,99,6,12,99,1,lerares
+3,9,Rocky,1,4,10,6,12,99,1,bioloog
+4,1,Elgin,1,3,7,5,99,3,1,adel/ambassadeur
+4,2,Mary,2,3,7,4,99,1,1,socialite
+4,3,Lusieri,1,3,99,3,7,99,1,kunstenaar
+4,4,Hunt,1,3,7,5,7,99,1,predikant
+4,5,William Bruce,1,3,7,3,7,1,1,adel
+4,6,Nisbet,1,3,7,3,7,4,1,adel
+4,7,Hamilton,1,99,99,99,6,99,1,kunstverzamelaar/ambassadeur
+4,8,Ferguson,1,3,7,3,99,99,1,adel
+4,9,Elizabeth,2,3,7,3,99,1,1,adel
+4,10,Harington,1,3,7,3,6,99,1,secretaris
+4,11,George,1,3,7,3,7,1,1,adel
+4,12,Emma,2,3,99,3,6,99,2,adel
+4,13,Sebastiani,2,3,8,5,8,99,1,adel
+5,1,Tello,1,5,99,6,99,1,1,soldaat
+5,2,Laurens,1,3,6,3,7,99,99,99
+5,3,Otto,1,99,99,3,7,2,2,veehouder
+5,4,Hendrik,1,99,99,3,6,4,1,vioolbouwer
+5,5,Sefer,1,5,99,5,8,99,1,soldaat
+5,6,De Schele,1,99,99,5,8,1,2,muzikant 
+5,7,Opa,1,99,99,5,8,6,1,soldaat
+5,8,Esther,2,99,99,3,7,99,99,99
+5,9,Destina,2,99,99,3,6,99,2,bedelaar
+5,10,Sophie,2,3,6,3,6,2,2,prostituee
+5,11,Theo,1,1,99,99,99,99,99,99
+5,12,Hilda,2,99,99,3,6,4,99,99
+6,1,Ik,1,99,99,2,4,99,1,beeldhouwer/interim-manager
+6,2,Joy,2,1,99,2,4,1,99,danser/kunstenaar
+6,3,Hoeka,1,2,99,2,4,99,99,eigenaar herberg
+6,4,Peter,2,2,99,2,4,3,99,99
+6,5,Rick,1,2,99,2,4,3,99,99
+6,6,Bia,2,2,99,2,4,3,99,99
+6,7,Opa,1,2,99,2,4,6,99,gepensioneerd
+6,8,Oma,2,2,99,2,4,6,99,verkoopmedewerker
+6,9,Karel,1,2,99,2,4,6,99,handel
+6,10,Thea,2,2,99,2,4,6,99,receptioniste
+7,1,Adriaan,1,1,99,1,3,99,1,wijnhandelaar
+7,2,Adriaan-Eric,1,99,99,1,99,99,1,wijnhandelaar
+7,3,Anne,2,3,7,1,3,99,1,uitgever
+7,4,Celeste-Claudia,2,3,7,1,99,99,99,kunsthistoricus
+7,5,Ron,1,1,99,1,99,99,1,werkloos
+7,6,Maurizio,1,3,99,3,99,3,2,hulp slagerij
+8,1,Kees,1,1,99,3,6,2,1,ondernemer
+8,2,Tony,1,3,6,3,6,6,1,eigenaar autobedrijf
+8,3,Konstanze,2,3,6,99,99,2,99,99
+8,4,De Rus,1,3,99,3,99,99,1,investeerder
+8,5,Vadim,1,3,99,99,99,99,1,investeerder
+9,1,Lino,1,3,1,3,6,3,1,muzikant
+9,2,Hein,1,1,99,99,99,99,1,rechercheur
+9,3,Ik,1,1,99,1,1,99,1,schrijver/docent
+9,4,Inés,2,3,99,1,1,3,1,arts
+9,5,Stella,2,1,1,1,1,2,1,eigenaar ijssalon
+9,6,Rico,1,3,7,1,1,2,1,eigenaar ijssalon
+9,7,Yasmín,2,3,99,3,6,1,1,student/model
+9,8,Nicolas,1,3,99,3,6,6,2,winkeleigenaar
+9,9,Laurent,1,3,7,3,6,3,1,muzikant
+10,1,Tienkamelen,2,99,99,99,99,99,99,verzorgende
+10,2,Oscar,1,2,99,2,5,6,2,tuinman
+10,3,Bero,1,99,99,2,5,6,1,directeur
+10,4,Moeder-overste,2,6,99,2,5,99,1,non
+10,5,Sobrana,2,3,99,3,6,99,99,verzorgende
+10,6,Omar,1,6,13,3,6,99,2,soldaat/scheepsbouwer
+10,7,Khongi,1,6,13,3,6,99,2,99
+10,8,Luis,1,99,99,3,6,99,1,statisticus/werkloos
+11,1,Moemie,2,6,6,4,10,6,2,medium
+11,2,Beila,2,1,99,1,1,99,1,filmmaker
+11,3,Daisy,2,1,99,1,99,5,1,directeur
+11,4,Charlotte,2,6,6,1,99,6,99,99
+11,5,Fons,1,1,99,1,99,5,1,epidemioloog
+11,6,Patrick,1,1,99,1,99,4,1,bioloog
+11,7,Alex,1,6,99,99,99,2,1,promovendus/bioloog
+11,8,Lisa,2,99,99,1,1,2,99,99
+11,9,Ferry,1,6,99,1,99,6,1,soldaat
+11,10,Broos,1,6,99,1,99,2,1,soldaat
+11,11,Lestari,2,6,99,6,99,3,2,prostituee
+11,12,Yatim,1,6,99,6,99,1,99,99
+11,13,Paul,1,6,99,6,99,1,99,99
+11,14,Toean,1,6,99,6,99,99,1,arts
+11,15,Mamelie,2,6,99,6,99,3,2,bloemist
+11,16,Rebecca,2,3,99,6,99,1,99,99
+11,17,Marie,2,6,99,6,99,6,99,99
+12,1,Koos,2,1,99,1,99,6,99,99
+12,2,Anne,2,1,99,1,99,3,99,99
+12,3,Lotte,2,1,99,1,99,3,99,advocaat
+12,4,Chris,1,1,99,1,99,3,99,99
+12,5,Puck,2,1,99,1,99,3,99,muzikant
+12,6,Frits,1,1,99,1,99,6,1,apotheker
+12,7,Daan,1,1,99,1,99,3,99,99
+13,1,Tom,1,1,99,6,13,1,1,arts 
+13,2,Roberto,1,3,99,6,99,4,1,pater
+13,3,Papa,1,99,99,6,99,6,1,tandarts
+13,4,Nick,1,99,99,6,99,99,1,handelaar
+13,5,Henk Gerards,1,99,99,6,99,3,1,arts 
+13,6,Kofi,1,6,99,6,13,5,2,chauffeur
+13,7,Michael,1,99,99,6,13,99,1,verpleegkundige
+13,8,Justice,1,6,99,6,13,1,1,tolk
+13,9,Emilio,1,3,99,6,13,4,1,pater
+13,10,Martha,2,6,99,6,13,99,1,verpleegkundige
+13,11,Anna,2,6,99,6,13,1,1,verpleegkundige
+14,1,Posthumus,1,1,3,1,1,4,1,ambtenaar
+14,2,Alex,2,1,99,1,1,1,2,administratief medewerker
+14,3,Merel,2,1,3,1,1,1,1,journalist
+14,4,Onno,1,1,99,1,1,4,1,directeur
+14,5,Maya,2,1,99,1,1,5,1,afdelingshoofd gemeente
+14,6,Rachid,1,5,99,1,1,2,1,veiligheidsdienst medewerker
+14,7,Ben,1,1,99,1,1,2,1,veiligheidsdienst medewerker
+14,8,Najib,1,5,99,1,1,99,1,eigenaar meubelzaak
+14,9,Karima,2,5,99,1,1,5,1,docent
+14,10,Alami,1,5,99,1,1,99,99,99
+14,11,Lisette,2,1,99,1,1,99,1,teamleider
+14,12,Mohammed,1,5,99,1,1,5,2,eigenaar meubelzaak
+14,13,Anna,2,1,1,1,1,99,2,kroegeigenaar
+14,14,Bart,1,1,99,1,1,4,1,dichter
+14,15,Aissa,2,5,99,1,1,1,99,student
+14,16,Cornelius,1,1,99,1,1,99,1,dichter
+14,17,Willem,1,1,99,1,1,2,1,99
+14,18,Sulung,2,6,99,1,1,99,1,ambtenaar
+14,19,Haddad,1,5,99,1,1,99,99,99
+15,1,Arthur,1,1,99,1,2,3,1,journalist
+15,2,Remy,1,1,99,1,2,2,1,docent/filosoof/socioloog
+15,3,Paul,1,1,99,1,2,2,1,politiechef
+15,4,Josefien,1,1,99,1,99,6,99,99
+15,5,Zoë,2,1,99,1,2,1,99,99
+15,6,Estee,2,1,99,99,99,1,99,99
+15,7,Taij,1,1,2,1,2,1,99,scholier
+15,8,Bleeker,1,1,99,1,99,6,1,hoofdredacteur
+15,9,Stephanie,2,1,99,1,2,1,1,kunstenaar
+15,10,Fee,2,1,2,1,2,1,99,99
+15,11,Hailie,2,1,2,1,2,1,99,99
+15,12,Mirjam,2,1,99,1,2,2,1,ICT'er
+15,13,Manny,1,1,99,1,2,2,1,eigenaar platenzaak
+15,14,Chandir,1,99,99,99,99,99,1,arts
+15,15,Debby,2,1,99,1,99,99,99,99
+15,16,Edward,1,1,99,1,99,6,99,99
+15,17,Paula,2,1,99,1,99,3,2,zangeres
+15,18,Claire,2,1,99,1,99,3,99,99
+15,19,Serge,1,1,99,1,99,4,99,99
+15,20,Richard,1,1,99,1,99,6,99,99
+15,21,Ellen,2,1,99,1,99,3,99,schrijver
+16,1,ik,1,1,3,1,2,3,99,postbode/fondsenwerver/drugsdealer
+16,2,Ernst,1,1,2,1,2,1,2,werkloos
+16,3,vader,1,1,99,1,2,4,99,eigenaar café
+16,4,moeder,2,1,99,1,2,4,99,student
+16,5,Bente,2,99,99,1,2,3,99,conducteur
+16,6,Kaiser,1,1,2,1,2,1,99,drugsdealer
+16,7,Kemal,1,5,99,1,1,1,2,fondsenwerver/krantenbezorger/afwasser/drugsdealer
+16,8,Boy,1,1,3,1,1,1,1,student
+16,9,Nigel,1,6,99,1,1,99,2,uitsmijter
+16,10,Lizzy,2,1,99,1,1,2,99,99
+17,1,Bram,1,1,1,1,1,3,1,docent
+17,2,Leslie,2,4,99,4,10,3,99,99
+17,3,Harry,1,1,99,1,1,1,1,schooldirecteur
+17,4,Marianne,2,99,1,1,1,3,99,99
+17,5,Lisa,2,1,1,1,1,1,99,scholier
+17,6,Jolien,2,1,1,1,1,1,99,scholier
+17,7,Alex,1,1,1,1,1,2,1,electricien
+17,8,Wim,1,1,1,1,1,3,99,ambtenaar/'dienst migratie preventie'
+17,9,Benno,1,1,1,1,1,1,99,scholier
+18,1,Ik,1,1,3,1,3,5,99,99
+18,2,David,1,99,99,99,99,99,99,wetenschapper
+18,3,Bellini,1,3,6,3,6,6,1,muzikant
+18,4,Rossini,1,3,7,3,7,6,1,muzikant
+18,5,Romani,1,3,6,3,7,6,1,schrijver
+18,6,Florimo,1,3,7,3,6,6,1,bibliothecaris/docent/muzikant
+18,7,Puccini,1,3,7,3,6,6,1,muzikant
+18,8,Verdi,1,3,7,3,7,6,1,muzikant
+18,9,Elvira,2,3,99,3,99,6,99,99
+18,10,Toscanini,1,3,7,3,99,6,1,dirigent
+18,11,Callas,1,3,10,3,3,6,1,muzikant
+19,1,Pontus,1,1,99,1,1,99,1,acteur/marketeer
+19,2,Job,1,1,99,99,99,99,1,acteur
+19,3,Harm,1,1,99,1,1,4,1,modeontwerper
+19,4,Jenny,2,1,99,1,99,1,1,student
+19,5,Raaf,1,99,99,99,99,99,1,marketeer
+19,6,Sterre,2,99,99,99,99,99,99,99
+20,1,Geeske,2,1,3,1,3,4,2,huisvrouw
+20,2,Johannes,1,1,3,1,3,5,2,visser
+20,3,Trijntje,2,1,3,1,3,1,99,99
+20,4,Geesje,2,1,3,1,3,1,99,99
+20,5,Gezientje,2,1,3,1,3,3,2,hulp bakker
+20,6,Fenne,2,1,3,1,3,4,2,huisvrouw
+20,7,Jochem,1,1,3,1,3,1,99,visser
+20,8,Aleid,2,1,3,1,3,2,2,huisvrouw
+20,9,Jakob de Oude,1,1,3,1,3,6,2,vuurtorenwachter
+20,10,Ada,2,1,3,1,3,3,99,99
+20,11,Hattie,2,1,3,1,3,4,2,huisvrouw
+20,12,Jorrit,1,1,3,1,3,4,2,99
+20,13,Dirk,1,1,3,1,3,1,2,visser
+20,14,Fennetje,2,1,99,1,3,1,99,99
+21,1,Wolf,1,1,1,1,1,2,1,journalist
+21,2,Broer,1,1,1,1,1,2,99,99
+21,3,Omar,1,5,99,1,1,99,2,shoarmabakker/chauffeur
+21,4,Donkerblauw,1,3,99,3,6,99,1,bankier
+21,5,Arnau,1,3,99,3,6,99,99,99
+21,6,Wood,1,5,99,5,8,99,1,kunstenaar
+21,7,Cupcake,1,4,99,4,10,99,99,99
+21,8,Bowie,1,1,99,1,1,99,99,barman
+21,9,Cleopatra,1,99,99,99,10,99,1,werkloos
+21,10,Sue,2,3,99,3,99,99,99,99
+22,1,Herman,1,2,5,2,4,4,1,schrijver
+22,2,Phoebe,2,2,99,2,4,4,1,modeontwerper
+22,3,Ökki,1,5,8,2,4,99,1,eigenaar café
+22,4,Gerry,1,99,99,2,4,99,1,schrijver
+22,5,Jasmien,2,99,99,2,4,1,2,ober
+22,6,Layla,2,2,99,2,4,1,2,werkloos
+22,7,Clara,2,99,99,2,4,99,1,presentator
+22,8,Elien,2,99,99,2,4,1,99,99
+22,9,Erika,2,2,99,2,4,99,99,99
+22,10,Femke,2,2,99,2,99,99,99,99
+22,11,Helga,2,2,99,2,4,3,2,kamermeisje
+22,12,Tammy,2,2,99,2,99,99,1,notarisklerk
+22,13,Julie,2,2,99,2,4,1,1,student
+22,14,Brigitta,2,2,99,2,99,5,99,miss België
+22,15,Tina,2,2,99,2,99,2,1,adviseur
+23,1,Guggenheimer,1,2,99,2,4,4,1,ondernemer
+23,2,Ellen,2,2,99,2,4,4,99,99
+23,3,Debbie,2,2,99,2,4,2,2,huishoudhulp
+23,4,Jules,1,2,99,2,4,99,2,chauffeur
+23,5,Emmeke,2,2,99,2,4,2,2,administratief medewerker
+23,6,Ulrich,1,2,99,2,4,6,1,makelaar
+23,7,Madeleine,2,2,99,2,4,5,2,keukenhulp
+23,8,Bernard,1,2,99,2,99,99,1,chemicus
+23,9,Wils,1,2,99,3,4,4,99,politieinspecteur
+23,10,Saloped,1,5,99,2,4,99,99,bouwvakker
+23,11,Gelaude,1,2,99,2,4,99,99,kleermaker
+23,12,Mufti,2,5,99,2,4,1,99,modeontwerper
+24,1,Gerrit,1,2,5,3,6,6,2,keisnijder
+24,2,Lis,2,2,5,3,6,6,2,keisnijder
+24,3,Susan,2,2,5,3,6,6,2,keisnijder
+24,4,Robbert,1,2,5,3,6,6,2,keisnijder
+24,5,Jules,1,2,4,2,4,1,99,scholier
+24,6,Peter,1,2,4,2,4,1,99,scholier
+24,7,Marthe,2,2,4,2,4,1,99,scholier
+24,8,Anouk,2,2,4,2,4,1,99,scholier
+24,9,Hans,1,99,99,3,6,99,1,uitvinder
+24,10,Carlito,1,6,99,3,6,1,2,drugsdealer
+24,11,Monika,2,99,99,3,6,6,2,bakker
+24,12,Jean-Jacques,1,99,99,3,6,6,2,bloemist
+24,13,Kang Sungmoo,1,6,99,6,12,6,1,architect
+24,14,Delphine,2,99,99,99,99,1,1,journalist
+24,15,Mustafa,1,5,99,3,6,6,1,hoogleraar
+24,16,Daan,1,2,99,3,6,99,99,99
+24,17,Frederik,1,99,99,99,99,1,1,student
+24,18,Karel,1,99,99,2,4,99,1,ondernemer
+24,19,Veerle,2,99,99,2,4,99,99,99
+24,20,Frank,1,99,99,99,99,4,2,chauffeur
+24,21,Ruth,2,2,4,99,99,1,1,student
+24,22,Emile,1,99,99,99,99,99,1,dichter
+25,1,Pjotr,1,99,99,1,99,99,99,99
+25,2,Henkie,1,6,3,1,99,99,99,pooier
+25,3,Marie,2,99,99,1,99,99,99,verpleger
+25,4,Julia,2,4,99,1,99,99,1,ingenieur/prostituee
+25,5,Valeria,2,4,99,1,99,99,1,ingenieur/prostituee
+25,6,Mientje,2,99,99,1,99,1,99,scholier
+26,1,Hilda,2,1,2,1,2,1,2,steward/secretaresse
+26,2,Trix,2,1,3,1,2,1,2,steward
+26,3,John,1,1,99,1,3,3,1,piloot
+26,4,Viruly,1,1,99,1,99,2,1,piloot
+26,5,Plesman,1,1,99,1,99,99,1,directeur
+26,6,Jannet,2,1,3,6,99,2,1,kleermaker
+26,7,Victor,1,1,99,6,99,2,99,plantage-eigenaar
+26,8,Sonja,2,1,99,1,99,1,99,verzetsstrijder
+26,9,Johann,1,3,99,1,3,99,99,ondernemer
+27,1,Willem,1,1,3,1,3,2,99,99
+27,2,Marleen,2,99,99,1,3,99,99,99
+27,3,Moeder,2,99,99,1,3,99,99,99
+27,4,Vader,1,99,99,1,3,5,99,99
+27,5,Tim,1,1,3,6,99,99,1,reisleider/ondernemer
+27,6,Michiel,1,99,99,1,3,99,99,99
+27,7,Emine,2,99,99,1,3,1,99,administratief medewerker
+27,8,Tanja,2,1,99,1,3,1,99,99
+27,9,Luc,1,99,99,1,3,99,99,99
+27,10,Suiker,2,6,99,6,99,99,99,reisleider/ondernemer
+28,1,Ik,2,2,5,2,5,2,1,journalist
+28,2,Seingever,1,2,5,2,5,6,1,machinetechnicus
+28,3,Vader van de Seingever,1,2,5,2,5,5,2,stratenlegger
+28,4,Vrouw van de Seingever,2,2,5,2,5,99,2,naaier 
+28,5,Dokter,1,2,99,2,99,99,1,arts
+28,6,Politieagente,2,2,99,2,99,99,1,agent
+29,1,Balsam,1,5,9,1,8,2,1,ingenieur
+29,2,Barna,2,5,8,1,8,2,99,verpleegkundige
+29,3,Mariana,2,5,99,1,8,2,2,kok
+29,4,Edison,1,5,99,1,8,99,1,tandarts
+29,5,Nawal,2,5,99,5,8,1,99,99
+29,6,Joesef,1,5,99,5,8,3,1,docent
+29,7,Atto,2,5,99,5,8,3,1,arts
+29,8,Meré,1,5,99,5,8,99,99,99
+29,9,Doglas,1,5,99,3,6,1,99,winkelier
+29,10,Riem,2,5,99,5,8,1,99,scholier
+29,11,Adnan,1,5,99,5,8,3,2,concierge
+29,12,Soeraia,2,5,99,5,8,2,99,99
+29,13,Roza,2,5,99,5,8,1,99,huisvrouw
+30,1,Fernand,1,3,99,2,5,6,1,docent
+30,2,Albert,1,2,99,2,5,6,1,docent
+30,3,Madeleine,2,2,99,2,99,3,1,verpleger
+30,4,Céleste,2,2,99,2,99,4,99,99
+30,5,Anaïs,2,2,99,2,99,1,99,99
+30,6,Richard,1,2,99,2,99,6,1,beursmakelaar
+30,7,Charles,1,2,99,2,99,1,99,scholier
+31,1,Marcel,1,1,3,1,3,3,1,econoom
+31,2,Gustaaf,1,1,3,1,3,6,2,fabrieksmedewerker
+31,3,Werner,1,1,3,1,99,99,1,fysiotherapeut
+31,4,moeder,2,1,3,1,3,99,2,typist
+31,5,Hedwig,2,1,3,1,3,6,2,huisvrouw
+31,6,Rick,1,1,99,1,99,99,1,dokter
+32,1,Isis,2,1,99,1,2,1,99,scholier
+32,2,Galya,2,1,99,1,2,1,99,scholier
+32,3,Boma,2,1,99,1,2,6,99,99
+32,4,Martijn,1,1,99,1,2,1,99,scholier
+32,5,Marjon,2,1,99,1,2,99,99,werkloos
+32,6,Chokri,1,5,99,1,99,4,99,eigenaar manege
+32,7,Blok,1,1,99,1,99,99,1,psychiater
+32,8,Uncle Poe,1,99,99,99,99,4,99,99
+33,1,Martin,1,1,99,1,1,3,1,rechercheur
+33,2,Esther,2,1,99,1,2,99,1,rechercheur
+33,3,Gaby,2,1,99,1,99,99,1,verpleger
+33,4,Van Veenstra,2,1,99,1,2,99,2,crimineel
+33,5,moeder,2,1,99,1,99,6,99,99
+33,6,Kirstin,2,1,99,1,99,1,99,wielrenner
+33,7,Bakels,1,1,99,1,99,99,99,rechercheur
+33,8,Mats,1,3,99,1,99,1,99,99
+34,1,Hanel,2,3,7,3,7,6,1,kunstenaar
+34,2,Olga,2,99,99,3,7,2,2,dierenpornomedewerker
+34,3,Harald,1,3,99,3,7,6,1,kunstenaar
+34,4,Marcel,1,99,99,2,5,3,1,eigenaar café
+34,5,Anthony,1,2,99,2,99,4,1,notaris
+34,6,Gisele,2,99,99,2,99,99,1,modeontwerper
+34,7,Hugo,1,99,99,2,99,5,1,pastoor/directeur
+34,8,Otto,1,99,99,99,99,99,99,kunstenaar
+35,1,Johannes,1,1,99,99,1,3,1,pater
+35,2,Clemens,1,1,3,1,1,3,1,pater
+35,3,Ella,2,1,3,1,1,3,1,arts
+35,4,Vincent,1,1,3,1,1,3,2,99
+35,5,Pim,1,99,99,1,1,3,99,priesterstudent
+35,6,Angelena,2,1,3,1,1,3,99,99
+35,7,Van Summeren,1,99,99,1,1,3,1,pastoor
+35,8,Van der Zee,2,99,99,1,1,99,1,pastoor
+36,1,Nico,1,1,99,1,1,5,1,dichter/student
+36,2,Klaas,1,1,99,1,1,6,2,automonteur/antiekhandelaar/plantensorteerder
+36,3,Nel,2,1,99,1,1,6,2,hulp stomerij
+36,4,Orlanda,2,1,99,1,2,99,1,verpleger
+36,5,Stefan,1,1,99,1,1,4,99,99
+36,6,Bas,1,1,99,1,1,4,99,99
+36,7,Ger,1,1,99,1,99,6,99,bassist
+36,8,Elly,2,1,99,1,99,99,99,99
+36,9,Wim,1,1,99,1,1,6,99,eigenaar verhuisbedrijf
+36,10,Marlon,2,1,99,1,1,1,99,99
+36,11,Cor,1,1,99,3,6,6,99,99
+37,1,God,1,99,99,99,99,99,1,schepper
+37,2,Jozef,1,99,99,5,12,99,2,timmerman
+37,3,Jezus,1,5,12,99,99,2,1,messias
+37,4,Bartje,2,99,99,99,99,99,2,huishoudhulp
+37,5,Mozes,1,5,99,99,99,99,1,leider van het volk
+37,6,Jozua,1,5,99,99,99,99,1,leider van het volk
+37,7,Ahab,1,99,99,99,99,99,1,hulp leider van het volk
+37,8,Mirjam,2,99,99,99,99,99,99,99
+37,9,Rachab,2,99,99,99,99,99,2,prostituee
+37,10,Maria,2,99,99,99,99,99,2,huisvrouw
+37,11,Gabriël,1,99,99,99,99,99,99,engel
+37,12,Johannes,1,5,99,99,99,2,99,profeet
+37,13,Jogli,1,99,99,99,99,99,99,reus/sneeuwmoordenaar
+37,14,Michaël,1,99,99,99,99,99,99,engel
+38,1,Adriaan,1,1,3,1,2,1,1,arts
+38,2,Merel,2,1,3,1,3,1,1,student
+38,3,Mila,2,1,3,1,3,1,1,verpleger
+38,4,Evelien,2,1,3,1,3,99,2,boer
+38,5,Jo,1,1,3,1,3,99,2,boer
+38,6,Oosterling,1,6,99,1,3,6,1,arts
+38,7,Sieme,1,1,99,1,3,99,2,klusser
+38,8,Reijer,1,1,3,1,3,99,2,boer
+38,9,Jaap,1,1,3,1,3,2,2,boer/verzetsstrijder
+38,10,Frank,1,1,99,1,99,99,99,arts
+38,11,Kuyper,1,1,99,1,99,99,99,verzetsstrijder
+38,12,Berthe,2,1,99,1,3,6,99,99
+38,13,Piechler,1,3,99,1,3,99,1,arts
+39,1,Rick,1,1,99,1,2,4,1,99
+39,2,Suzanna,2,1,99,1,2,1,99,scholier
+39,3,Luuk,1,1,99,1,2,1,1,student
+39,4,Deborah,2,1,3,1,2,4,2,administratief medewerker
+39,5,Egbert,1,1,99,1,99,3,1,wiskundige/natuurkundige
+39,6,Steven,1,1,99,1,99,4,99,99
+39,7,Leon ,1,1,99,1,99,4,1,kunstenaar
+39,8,Ingrid,2,1,99,1,99,99,99,scholier
+39,9,Marie-Marie,2,1,99,1,99,99,99,99
+39,10,Andrea,2,1,99,1,99,1,99,scholier
+39,11,Emmy,2,1,99,1,99,99,99,99
+40,1,Sjoerd,1,1,3,1,3,1,99,scholier
+40,2,Ruurd,1,1,3,1,3,3,2,fabrieksmedewerker
+40,3,Mengsje,2,1,3,1,3,3,99,huisvrouw
+40,4,Loulou,2,1,99,1,3,3,99,99
+40,5,Geurt,1,1,99,1,99,99,99,99
+40,6,Judith,2,1,3,1,3,1,99,99
+40,7,Van Moorselaar,1,1,99,1,3,6,99,winkelier
+40,8,Netta,2,1,99,1,3,3,99,99
+40,9,Luttink,1,1,99,1,3,99,1,dokter
+40,10,Trijntjemeut,2,1,99,1,3,3,99,99
+40,11,Steven-om,1,1,3,1,3,3,99,99
+40,12,Arie,1,1,3,1,3,1,99,99
+40,13,Marius,1,1,3,1,3,1,99,99
+41,1,Holly,2,2,99,99,99,99,2,99
+41,2,Heather,2,2,99,99,99,99,2,99
+41,3,Todi,2,99,99,99,99,4,99,99
+41,4,vader,1,99,99,99,99,4,99,99
+42,1,Nick,2,4,99,4,6,1,2,kraker/decorateur
+42,2,Verena,2,3,99,4,99,1,1,dichter
+42,3,Harm,1,99,99,4,6,2,99,kunstenaar
+42,4,Parker,1,99,99,4,6,99,2,tuinman/crimineel
+42,5,Tommy,1,99,99,4,6,99,1,student
+42,6,Muriel,2,99,99,4,99,1,1,kunstenaar
+42,7,Zadok,1,99,99,4,99,1,1,student
+42,8,Bronx,1,99,99,4,99,2,1,verzamelaar
+42,9,Peter,1,99,99,4,99,1,99,99
+42,10,Bestman,1,99,99,99,99,99,1,rechter
+42,11,Henry,1,99,99,4,99,99,99,drugdealer
+42,12,Natasha,2,99,99,4,99,1,99,99
+42,13,Hugo,1,99,99,4,99,99,1,filosoof
+42,14,Adam,1,99,99,4,99,1,1,filosoof
+42,15,Tilly,2,99,99,4,99,99,99,99
+43,1,Laura,1,1,3,1,3,4,1,columnist
+43,2,Rudolf,1,1,3,1,3,4,1,manager
+43,3,Eileen,2,1,99,1,99,2,2,administratief medewerker
+43,4,Klara,2,1,99,1,99,3,1,psycholoog
+43,5,Paul,1,1,99,1,99,4,1,directeur
+43,6,Tijmen,1,1,99,1,3,5,1,docent/hoofdredacteur
+43,7,Siem,1,1,99,1,99,4,1,verzekeringsagent
+43,8,Valerie,2,1,99,1,3,1,99,99
+43,9,Walter,1,1,99,1,99,4,99,internaat begeleider
+43,10,Ezechiël,1,1,99,1,99,99,99,99
+43,11,Daniëlle,2,1,99,1,3,2,99,galerie medewerker
+43,12,Christien,2,1,99,1,3,4,99,99
+43,13,Kato,1,6,99,1,1,5,99,docent
+44,1,ik,1,1,3,1,3,4,1,schrijver
+44,2,Het-Meisje-met-de-mooiste-heupen,2,99,99,1,3,2,1,kunstenaar
+44,3,Oppergod David,1,1,3,99,99,99,99,99
+44,4,M'n oude vriend 't dode dichtertje,1,99,99,99,99,99,1,dichter
+44,5,moeder,2,1,99,1,3,99,99,99
+44,6,Het Rooibosvrouwtje,2,99,99,99,99,99,99,99
+45,1,Johan,1,6,3,1,1,3,1,student/kunstenaar/caberatier/president
+45,2,Arno,1,1,99,1,1,1,1,student/campagnemedewerker
+45,3,Virginia,2,6,12,1,2,6,99,model/psychiatrieverpleegkundige
+45,4,Jan,1,1,2,1,2,99,99,99
+45,5,Willem,1,1,99,1,1,99,1,filmmaker
+45,6,Elin,2,1,99,1,1,1,1,student
+45,7,Mila,2,1,99,1,1,99,99,99
+45,8,Jack,1,1,99,99,99,5,1,burgemeester
+45,9,Sophie,2,1,99,1,1,3,1,campagnemedewerker
+45,10,Elsbeth,2,1,99,99,99,5,1,campagneleider
+45,11,Lena,2,3,99,99,99,2,99,99
+45,12,Rijnders,1,1,99,1,99,5,99,politicus
+45,13,Iliana,2,5,99,1,99,6,99,toneeldocent
+46,1,Walter,1,3,7,1,1,2,1,fabrieksmanager/medewerker de Joodsche Raad/verzetsstrijder/zakenman
+46,2,Hanna,2,3,99,1,1,2,99,99
+46,3,Yvonne,2,3,99,1,1,1,99,99
+46,4,Aus der Fünten,1,3,99,1,1,99,1,commandant
+46,5,Fanny,2,99,99,1,1,1,2,crèchemedewerker
+46,6,Roos,2,99,99,1,1,1,99,99
+46,7,Simon,1,99,99,1,1,1,99,99
+46,8,Helmut,1,3,99,3,99,99,99,soldaat
+46,9,Sylvie,2,1,99,1,1,1,2,prostituee
+46,10,Lages,2,2,99,2,99,99,99,Sturmbannführer
+46,11,Piet,1,1,99,1,1,1,1,student/verzetsstrijder
+46,12,Sluzker,1,3,6,1,1,99,99,advocaat/medewerker de Joodsche Raad/verzetsstrijder
+46,13,Felix,1,1,99,1,1,1,99,medewerker de Joosche Raad/verzetsstrijder/kunstenaar
+46,14,Pimentel,2,1,99,1,1,1,99,eigenaar crèche
+46,15,Gemmeker,1,3,99,1,1,99,1,commandant
+46,16,Henneicke,1,1,1,1,1,99,99,collaborateur
+47,1,ik,1,2,4,2,4,2,1,architect
+47,2,jij,2,2,4,2,4,2,1,architect
+47,3,Muisje,99,99,99,99,99,99,99,99
+48,1,Elisabeth,2,1,99,1,1,5,2,lijstenmaker
+48,2,Coco,2,1,1,1,1,1,1,student
+48,3,Hans,1,1,99,1,1,2,1,therapeut/eigenaar praktijk
+48,4,Wilbert,1,1,99,1,1,5,99,eigenaar kookwinkel
+48,5,Miriam,2,1,99,1,1,99,99,winkelmedewerker/eigenaar praktijk
+48,6,Martin,1,1,99,1,1,99,99,eigenaar lijstenmakerij
+48,7,Laura,2,1,99,1,1,3,99,99
+48,8,John,1,1,99,1,1,4,99,99
+48,9,barman,1,1,99,1,1,4,99,barman
+49,1,Mos,1,1,1,1,1,1,99,99
+49,2,Beer,1,1,1,1,1,1,99,99
+49,3,Lind,2,1,99,1,1,4,99,99
+49,4,Alexander,1,1,1,1,1,4,1,journalist
+49,5,Moesie,2,1,99,1,2,6,99,99
+49,6,Tata,1,1,99,1,2,6,1,filosoof
+49,7,opa,1,99,99,99,99,6,2,bakker
+49,8,oma,2,99,99,99,99,6,2,bakker
+49,9,Jens,1,3,99,6,99,1,2,werkloos
+49,10,Bernd,1,1,99,1,99,5,2,wietteler/werkloos
+49,11,Rommel,1,6,99,6,99,1,99,horecatechnicus
+49,12,Dick,1,1,99,1,99,4,99,winkeleigenaar
+49,13,Hans de Zeeman,1,1,99,1,99,99,99,zeeman
+49,14,Ronnie,1,1,99,4,10,4,1,bankdirecteur
+49,15,Job,1,1,99,1,1,1,99,scholier
+50,1,Motke,1,1,99,1,99,6,1,ondernemer
+50,2,Mizie,2,1,99,1,99,99,2,mantelzorger
+50,3,Ezra,1,1,99,1,99,99,1,ondernemer
+50,4,Rivka,2,1,99,3,6,99,2,huisvrouw/directeur
+50,5,Aron,1,1,99,1,99,6,1,ondernemer
+50,6,Levine,2,3,99,1,99,4,1,hoogleraar
+50,7,Sari,2,99,99,1,99,99,99,99
+50,8,Agnes,2,1,99,1,99,99,2,administratief medewerker 
+50,9,Roosje,2,1,99,1,99,1,2,fabrieksmedewerker
+50,10,Hanna,2,1,1,4,10,1,2,barkeeper
+50,11,Bertha,2,1,99,1,99,99,2,fabrieksmedewerker
+50,12,Diane,2,4,10,4,99,6,1,chemicus
+51,1,Adam,1,1,99,1,99,4,1,bibliothecaris
+51,2,Eva,2,1,99,1,99,3,99,99
+51,3,Ronnie,1,1,99,1,99,4,1,arts
+51,4,Sandra,2,1,99,1,99,3,99,99
+51,5,Anita,2,3,99,99,99,2,99,pornoactrice
+52,1,Maas,1,1,2,1,2,6,1,journalist/redacteur
+52,2,Bertha,2,1,3,1,2,6,2,huisvrouw
+52,3,Abe,1,1,2,1,99,6,99,99
+52,4,Rinus,1,1,2,1,2,6,2,hulp drukkerij
+52,5,Godfried,1,1,2,1,2,3,1,eigenaar groothandel
+52,6,Meneer Regtop,1,1,3,1,3,6,99,99
+52,7,Commerina,2,99,99,1,2,99,2,huisvrouw
+52,8,Joris,1,1,99,1,2,4,1,notaris
+52,9,Beer,1,1,99,1,2,2,1,administratief medewerker
+52,10,Klaaske,1,1,99,1,2,2,99,99
+52,11,Ijspeert,1,1,99,1,2,99,1,algemeen directeur
+52,12,Streefkerk,1,1,99,1,2,99,1,onderdirecteur
+52,13,Shrimp,1,1,99,1,2,99,1,psycholoog
+52,14,Te Velde,1,1,99,1,2,99,1,hulp dienstweigering
+52,15,John Jack,1,1,2,1,2,1,99,scholier
+52,16,Pip,2,1,2,1,2,1,99,scholier
+52,17,De Vries,1,1,99,1,2,99,1,algemeen directeur
+52,18,Maurits,1,1,99,1,2,99,1,notaris
+52,19,Griet,2,1,2,1,2,6,1,naaister
+52,20,Dijk,2,1,2,1,2,6,2,verpleger
+52,21,Violet,2,1,99,1,2,6,99,99
+52,22,Jan,1,1,99,1,2,99,1,hoofd afdeling berekeningen
+53,1,Sam,1,3,99,3,6,2,1,architect
+53,2,Nina,2,3,99,3,6,2,1,student
+53,3,Dave,1,4,99,3,6,2,1,architect
+53,4,Hamid Shakir Mahmoud,1,5,99,3,6,4,1,directeur
+53,5,Aida,2,3,99,3,6,2,2,werkloos
+53,6,meneer Ambani,1,6,99,3,6,4,1,uitvinder
+53,7,mevrouw Ambani,2,3,7,3,6,99,2,apothekersassistent
+53,8,Bill,1,99,99,5,99,99,99,chauffeur
+53,9,Hassan,1,99,99,5,99,99,99,beveiliger
+53,10,Fehmer,1,99,99,99,99,99,1,architect
+53,11,Heavy,1,99,99,99,99,99,99,beveiliger
+53,12,Honey,1,99,99,99,99,99,99,beveiliger
+53,13,Böckli,1,99,99,99,99,99,1,ambassadeur
+53,14,Martina,2,99,99,3,6,2,1,student
+53,15,Liliane,2,99,99,3,6,99,1,secretaresse
+53,16,Lankford,1,4,99,4,99,99,1,architect
+53,17,Brady,1,3,99,3,99,99,1,spion
+53,18,Rose,2,6,99,6,12,99,1,medewerker Dubai Engineering Authority
+53,19,Mahmoud al-Mabhouh,1,5,99,5,99,99,1,militair/wapenhandelaar
+53,20,Khalil,1,99,99,5,5,99,1,advocaat
+53,21,Ursina,2,3,99,5,8,99,1,ambassadeur
+54,1,Paul,1,1,99,1,3,4,1,schrijver
+54,2,Teresa,2,1,99,1,3,3,1,verpleger
+54,3,Maanke,2,1,99,1,3,99,1,ziekenhuisassistent
+54,4,Kees,1,99,99,1,3,6,2,zeevaarder
+54,5,Frank,1,99,99,1,2,4,99,99
+54,6,Lars,1,99,99,1,2,99,1,eigenaar café
+54,7,Mike,1,1,99,1,3,1,99,scholier
+54,8,Miranda,2,1,99,1,3,1,99,scholier
+55,1,Ron van Dijk,1,1,99,1,99,99,1,organisator
+55,2,Angelique Hazewinkel,2,99,99,99,99,99,1,personal assistant
+55,3,Irene van Dijk,2,99,99,99,99,99,99,99
+55,4,Mwambo Otoyo Okomo,1,6,13,1,99,99,2,atleet
+55,5,Jolanda,2,1,99,1,99,1,99,99
+55,6,Patricia,2,1,99,1,99,1,99,99
+56,1,Vincent,1,1,3,4,10,6,1,architect 
+56,2,Lee,2,4,10,4,10,1,99,scholier
+56,3,Stephen,1,4,10,4,10,99,1,docent/violist/hulpverlener verslavingskliniek
+56,4,Joanna,2,4,10,4,10,6,99,99
+56,5,Jean,2,4,99,4,99,5,99,99
+56,6,Cole,1,4,99,4,10,99,99,cameraman/director of photography
+56,7,Rietje,2,6,99,1,99,99,1,student
+56,8,mevrouw Dettrich,2,4,99,4,10,5,99,hulpverlener verslavingskliniek
+56,9,Cy,1,4,99,4,10,99,99,lichttechnicus
+56,10,Ralph,1,4,99,4,10,99,99,cameraman
+56,11,Bobby,1,4,99,4,10,1,99,zanger/acteur
+56,12,Giotta,1,3,99,4,10,6,99,restauranteigenaar
+56,13,Derek,1,4,10,4,10,2,2,receptionist
+56,14,David,1,4,99,4,10,99,99,Hitchcock verzamelaar
+56,15,meneer Dettrich,1,4,99,4,10,5,99,leider verslavingskliniek
+57,1,Loina,2,1,3,1,2,1,1,student
+57,2,grootvader,1,1,3,1,2,6,1,advocaat
+57,3,Samson,1,1,3,1,2,99,1,advocaat
+57,4,Fluit,1,99,99,1,3,99,2,boer
+57,5,Konstant,1,99,99,1,2,99,99,99
+57,6,Dawud,1,5,99,1,2,1,1,student 
+57,7,Frits,2,1,99,1,2,1,1,student 
+57,8,Jet,2,1,99,1,3,6,99,99
+57,9,Faber,1,99,99,1,99,99,99,goeroe
+57,10,Coco,2,1,99,1,99,99,1,barones
+57,11,Melchior,1,1,99,1,99,99,1,baron
+57,12,Fenerik,1,1,99,1,99,99,1,secretaris
+57,13,Sonja,2,1,99,1,99,6,99,99
+57,14,Sita,2,5,99,5,99,6,99,99
+57,15,Krishnamurti,1,5,99,99,99,6,99,spiritueel leraar
+58,1,Daniël,1,1,1,1,1,1,1,student
+58,2,Xander,1,1,1,1,1,1,1,student
+58,3,Sophie,2,3,7,6,12,1,1,gepensioneerd
+58,4,Felix,1,99,99,1,1,6,1,gepensioneerd
+58,5,Gioia,2,1,1,1,1,99,1,literatuurcriticus
+58,6,Ole,1,3,99,3,7,99,2,werkloos
+58,7,Kasper,1,1,99,3,7,1,2,propper
+58,8,Elsje,2,1,1,1,1,1,99,99
+58,9,Hervé,1,1,99,1,99,99,1,kunstenaar
+59,1,Titus,1,2,5,2,4,1,1,student
+59,2,Pieter,1,2,5,2,4,1,1,student
+59,3,Roos,2,2,99,2,4,1,1,student
+59,4,Mona,2,2,99,2,5,99,1,vertaler
+59,5,Yvan,1,2,99,99,99,99,1,makelaar
+59,6,Nicole,2,2,99,2,5,99,2,huisvrouw
+59,7,Edith,2,2,99,2,5,99,99,99
+59,8,Patricia,2,2,99,2,4,1,1,student
+59,9,Frans,1,2,99,2,4,1,1,student
+59,10,Sven,1,2,99,2,5,1,99,99
+59,11,vader Donckers,1,2,99,2,5,4,99,99
+59,12,Jasmien Donckers,2,2,99,2,99,1,99,99
+59,13,moeder Donckers,2,2,99,2,99,4,99,99
+59,14,Harry,1,2,99,2,99,4,99,99
+59,15,Gonda,2,2,99,2,99,4,99,yoga-instructeur
+60,1,Boris,1,1,3,1,3,1,99,scholier
+60,2,Lies,2,1,3,1,3,1,99,scholier
+60,3,Marie,2,1,3,1,3,4,99,99
+60,4,Sjef,1,1,3,1,3,99,99,99
+60,5,Wilma,2,1,3,1,3,99,2,hulp bakkerij
+60,6,De barman,1,1,3,1,3,99,2,barkeeper
+60,7,De bakkersvrouw,2,1,3,1,3,99,2,bakker
+60,8,Maurice,1,1,3,1,3,1,99,scholier
+60,9,Jeroen,1,1,3,1,3,1,99,scholier
+60,10,Jonas,1,1,3,1,3,1,99,99
+60,11,Chantal,2,1,2,1,3,1,2,thuishulp
+60,12,Verstappen,1,1,3,1,3,5,1,docent
+60,13,Van de Venne,2,1,3,1,3,99,1,docent
+61,1,Bas,1,1,3,1,1,4,1,docent
+61,2,Iris,2,1,2,99,99,4,1,kunsthistoricus
+61,3,Johan,1,1,3,1,1,4,1,arts
+61,4,Reindert,1,1,2,1,1,4,1,kunstenaar
+61,5,Ella,2,1,2,1,3,4,1,kunsthistoricus
+61,6,Det,2,1,1,1,1,4,1,docent
+61,7,Anna,2,3,99,99,99,4,1,muzikant
+61,8,Wout,1,1,1,1,1,1,99,scholier
+61,9,Sven,1,1,1,1,1,1,99,scholier
+61,10,Eline,2,1,99,99,99,1,1,student
+61,11,Medy,2,1,99,99,99,4,99,99
+61,12,Rosa,2,1,99,99,99,1,99,99
+61,13,Tamar,2,1,99,99,99,1,99,99
+61,14,Bernt,1,1,99,1,1,4,99,99
+61,15,Tobias,1,1,99,1,1,1,99,99
+61,16,Ankie,2,1,99,1,1,4,1,marketingmedewerker
+61,17,Hannah,2,1,99,6,99,99,99,99
+61,18,Thomas,1,1,99,6,99,99,99,99
+61,19,Linus,1,1,99,1,99,1,99,99
+61,20,Mariska,2,1,99,1,99,99,99,acteercoach
+61,21,Eva,2,1,99,1,99,1,99,model
+61,22,Sabine,2,1,99,1,99,1,1,student
+62,1,Isolde,2,1,3,1,99,6,99,kunstenaar
+62,2,Hanneloor,2,1,3,1,1,6,99,99
+62,3,Katja,2,1,3,1,3,6,99,99
+62,4,Wolf,1,3,99,99,99,6,1,luitenant
+62,5,Max,1,1,3,1,1,6,1,arts
+62,6,Noud,1,1,3,1,3,6,99,99
+62,7,Cas,1,1,3,1,3,99,2,smid
+62,8,Puck,2,1,99,1,99,1,99,99
+62,9,Cees,1,1,3,1,3,6,2,boer
+62,10,Liesbeth,2,3,99,1,3,6,2,boer
+62,11,Theo,1,1,3,1,3,1,2,99
+62,12,Kee,2,1,3,1,3,1,2,meid
+62,13,Manus,1,1,3,1,3,1,2,knecht
+63,1,Philip,1,1,3,1,1,1,1,student/croupier
+63,2,Elisabeth,2,1,3,1,3,1,1,student
+63,3,Jacob,1,1,99,1,1,1,1,student
+63,4,Karen,2,1,99,1,99,99,99,99
+63,5,Matt,1,1,99,1,1,1,1,student
+63,6,Paulus,1,1,99,1,1,1,1,student
+63,7,Bart,1,1,99,1,1,1,1,student
+63,8,Sasha,2,1,99,1,1,1,1,student/croupier
+63,9,Daphne,2,99,99,99,99,3,1,99
+63,10,Hannes,1,1,99,1,1,1,1,student
+63,11,Eva ,2,99,99,3,6,99,99,prostituee
+63,12,Job,1,1,99,1,99,3,1,99
+63,13,Tom,1,1,99,1,1,1,1,student
+63,14,Rosanne ,2,1,99,1,1,1,1,student
+63,15,Tessa,2,1,99,1,99,1,1,student
+63,16,Simon,1,1,99,1,1,1,1,student
+63,17,Peter,1,1,99,1,99,99,99,99
+63,18,Henk,1,1,99,1,1,6,99,croupier
+63,19,Carel,1,1,99,1,99,5,1,99
+63,20,Kirsten,2,1,99,1,1,1,1,student
+63,21,Mark,1,1,99,1,99,3,1,99
+63,22,Justin,1,1,99,1,1,1,1,student
+64,1,Bas,1,1,2,6,12,99,1,universitair docent filosofie
+64,2,Hyo-son,2,6,12,6,12,3,1,medewerker politie
+64,3,Ji-Su,2,6,12,6,12,2,2,prostituee
+64,4,Kim Hye-jin,2,6,13,6,12,1,1,student
+64,5,Emilie,2,2,99,2,5,99,99,consultant
+64,6,Mara,2,2,99,2,99,99,99,99
+64,7,Ruusbroec,1,2,99,2,99,6,99,filosoof
+64,8,Andy,1,4,99,6,12,99,1,bankmanager
+65,1,Luukas,1,1,99,1,99,3,1,opkoper
+65,2,René,1,1,99,1,99,5,1,ondernemer
+65,3,Robin,2,1,99,1,99,1,99,99
+65,4,Geoffrey,1,1,99,1,99,5,2,klusser
+65,5,meneer Dons,1,1,99,1,99,5,99,99
+65,6,Alfred,1,1,99,1,99,99,99,99
+66,1,Mehmet,1,5,9,5,9,1,99,scholier/herder/groenteman
+66,2,Selim,1,5,12,5,12,5,2,herder
+66,3,Asme,2,5,12,5,12,3,2,huisvrouw
+66,4,Yusuf,1,5,12,5,12,1,2,ober
+66,5,Hemo,1,5,12,5,12,6,2,herder
+66,6,Elida,2,5,9,5,9,1,99,99
+66,7,Zilda,2,5,9,5,9,1,2,99
+66,8,Ali,1,5,9,5,9,1,99,99
+66,9,Atilla,1,5,9,5,9,99,2,slager
+66,10,Wusar,1,5,9,5,9,99,2,boer
+66,11,de muhtar,1,5,9,5,9,99,99,burgemeester
+66,12,Hakan,1,5,9,5,9,1,99,scholier
+66,13,Nandar,1,5,12,5,12,1,2,99
+66,14,Musey,1,5,99,5,99,6,1,verteller
+66,15,Bilal,1,5,12,5,9,1,2,scholier
+67,1,Weijntje,2,99,99,99,99,1,1,scholier/muzikant/actrice
+67,2,Sijmen,1,99,99,99,99,99,1,fotograaf
+67,3,moeder,2,99,99,99,99,99,2,huisvrouw
+67,4,Laura,2,99,99,99,99,1,99,scholier
+67,5,Isa,2,99,99,99,99,1,99,scholier
+67,6,juffrouw Verbeet,2,99,99,99,99,99,1,muzikant/docent
+67,7,Sander,1,99,99,99,99,99,99,99
+67,8,Lotte,2,99,99,99,99,1,99,scholier
+68,1,Vincent,1,1,2,1,2,6,2,bakker/bokser
+68,2,Mia,2,1,2,1,2,2,1,student
+68,3,Chris,1,1,2,1,2,99,99,99
+68,4,Eva,2,3,99,99,99,99,99,99
+68,5,Dirk,1,99,99,99,99,99,99,99
+68,6,Emile,1,1,99,1,99,4,1,hoogleraar
+68,7,Herman,1,1,2,1,2,2,2,99
+68,8,Sanne,2,1,99,1,2,2,99,99
+68,9,Mei-Lin,2,1,99,1,2,2,99,99
+68,10,Cor,1,1,99,1,2,4,1,hotelmanager
+68,11,Rinus,1,1,99,1,2,4,2,bakker
+68,12,Anke,2,1,99,1,2,4,99,99
+69,1,Eliza,2,1,99,1,3,3,1,muzikant
+69,2,Twan,1,1,1,1,3,2,1,directeur
+69,3,Nathalie,2,1,99,1,3,3,1,teamleider ziekenhuis
+69,4,Jim,1,1,99,1,3,2,1,journalist
+69,5,Niels,1,1,99,1,3,99,1,dokter
+69,6,Ellen,2,1,99,1,3,99,1,verpleger
+69,7,Levi,1,1,99,1,3,99,1,teamleider ziekenhuis
+69,8,Erik,1,1,99,1,3,99,99,manager inkoop
+69,9,Meg,2,1,3,1,3,99,99,huismoeder/coach
+69,10,Jan,1,1,99,1,3,99,99,99
+69,11,Froukje,2,1,99,1,3,6,99,99
+69,12,Arnout,1,1,99,1,3,99,99,99
+69,13,Juanita,2,1,99,1,3,3,1,bestuurder ziekenhuis
+69,14,Ruby,1,1,3,1,3,1,1,scholier
+69,15,Robin,2,1,3,1,3,1,1,scholier
+69,16,Robert,1,1,99,1,3,99,1,bestuurder ziekenhuis
+69,17,Betty,2,1,99,1,3,3,99,99
+69,18,Bobby,1,1,99,1,3,6,99,99
+69,19,Gabi,2,1,99,1,3,1,99,99
+69,20,Jozias,1,1,99,1,99,99,1,headhunter
+69,21,Bern,1,1,99,1,99,3,99,99
+69,22,Bennie,1,1,99,1,99,1,99,99
+69,23,Jan,1,1,99,1,3,3,99,99
+69,24,Martin,1,1,99,1,99,4,1,professor
+69,25,Vlaskamp,2,1,99,1,99,5,1,hoofd verloskunde/gynaecoloog
+69,26,Katja,2,1,99,1,3,2,1,medisch secretaresse
+70,1,Abel,1,1,3,1,3,1,1,student
+70,2,Dina,2,1,1,1,3,2,2,hulp kindertehuis/huisvrouw
+70,3,Lieuwe,1,1,3,1,3,99,1,docent
+70,4,opa,1,1,3,1,3,99,99,99
+70,5,oma,2,1,3,1,3,99,99,99
+70,6,Elena,2,99,99,1,3,3,1,directeur
+70,7,Digna,2,1,3,1,1,1,1,tekenaar/student
+70,8,Gregoor,1,1,1,1,1,2,1,fotograaf
+70,9,Marinus,1,5,99,1,3,1,2,scholier
+70,10,Irma,2,5,99,1,3,1,99,scholier
+70,11,Toni,1,1,3,1,3,1,99,scholier
+70,12,Job,1,1,3,1,3,1,99,scholier
+70,13,Padmos,1,1,99,1,99,6,1,bankdirecteur
+70,14,Dave,1,1,3,1,3,1,2,muziekant
+70,15,Antona,2,1,3,1,3,1,99,scholier
+70,16,Otto,1,1,3,5,9,2,1,zendeling
+70,17,Danker,1,1,3,1,3,1,2,muziekant
+70,18,Aleid,2,1,3,1,3,99,2,pottenbakker
+70,19,Denise,2,1,3,1,3,1,99,scholier
+70,20,Watse,1,1,3,1,3,1,99,scholier
+71,1,Hella,2,1,2,1,1,5,1,kunstenaar
+71,2,Freek,1,1,3,1,1,6,1,cabaratier
+71,3,Eva,2,1,99,1,1,6,1,kunstenaar
+71,4,Eli,1,1,99,1,1,6,99,99
+71,5,Ro,2,1,99,1,1,6,99,99
+71,6,Roos,2,1,3,1,99,3,1,bioloog
+71,7,Maggie,2,1,99,1,99,1,99,99
+71,8,Fred,1,1,99,3,99,5,1,kunstenaar/matroos
+71,9,Vera,2,1,3,1,99,99,99,99
+71,10,Jet,2,1,3,4,10,99,1,vroedvrouw/psycholoog
+71,11,Marie,2,1,3,1,3,6,99,99
+71,12,Wim,1,1,3,1,3,6,1,theoloog
+71,13,Otis,1,1,3,1,3,1,99,99
+71,14,Lia,2,1,99,1,99,2,99,99
+71,15,Hetty,2,1,99,1,99,99,99,99
+71,16,Jopie,1,1,3,1,3,99,99,voddenboer/kunstschilder
+71,17,Jork,1,1,3,1,3,6,99,99
+71,18,Elly,2,1,3,1,99,1,1,student
+72,1,Herman,1,1,1,1,1,5,1,journalist
+72,2,Laila,2,5,99,1,1,2,2,prostituee
+72,3,Mohammed,1,5,99,1,1,2,99,penningmeester moskee
+72,4,El Hamn,1,5,99,1,1,99,2,slager
+72,5,Aisha,2,5,99,1,1,1,99,99
+72,6,Olga,2,1,99,1,1,99,1,sociaal medewerker
+72,7,Hélène,2,1,99,1,1,99,1,redacteur
+72,8,Paultje,1,1,99,1,1,5,1,journalist
+72,9,Koos,1,1,99,1,1,99,99,politieagent
+73,1,ik,1,1,3,1,3,1,99,scholier
+73,2,oma,2,99,99,99,99,99,99,99
+73,3,vader,1,99,99,1,3,99,1,bankier
+73,4,moeder,2,99,99,1,3,99,99,kleuterdocent
+73,5,Charlotte,2,1,3,1,3,1,99,scholier
+73,6,Anna,2,1,3,1,3,1,99,scholier
+73,7,Esther,2,1,99,1,3,1,99,scholier
+73,8,Richard,1,1,99,1,3,1,99,scholier
+73,9,Van Stipriaan,1,99,99,99,3,99,1,docent
+73,10,Pieter,1,1,99,99,99,1,99,scholier
+73,11,Fausto,1,1,3,3,7,1,2,herder
+73,12,Tom,1,1,99,1,3,1,99,scholier
+73,13,Cindy,2,1,99,1,3,1,99,scholier
+73,14,Oscar,1,1,99,1,3,1,99,scholier
+73,15,Johnnie,1,1,99,1,3,1,99,scholier
+73,16,Claudia,2,1,99,1,3,1,99,scholier
+74,1,Oscar,1,1,99,3,6,5,1,diplomaat
+74,2,Kate,2,99,99,3,6,5,1,verpleger
+74,3,Emma,2,1,99,3,6,2,2,huisvrouw
+74,4,Carl,1,3,99,3,6,2,1,diplomaat
+74,5,Matteous,1,6,12,3,6,1,2,soldaat
+74,6,Morton,1,3,6,3,6,99,1,majoor/intelligence advisor
+74,7,Roy,1,1,99,3,99,6,1,archeoloog
+74,8,Lara,2,1,99,3,6,3,99,99
+74,9,Smith,1,4,99,3,6,99,1,journalist
+75,1,Leah,2,1,99,1,99,3,1,kunstenaar
+75,2,Frances,2,1,99,1,99,99,1,eigenaar galerie
+75,3,opa,1,1,99,1,99,6,99,99
+75,4,oma,2,1,99,1,99,6,99,99
+75,5,Jacob,1,1,99,1,99,5,99,99
+75,6,moeder,2,1,99,1,99,5,99,99
+75,7,Markus,1,1,99,1,99,2,1,docent
+75,8,Deborah,2,1,99,1,99,1,1,scholier
+75,9,Marjolein,2,1,99,1,99,99,1,docent
+76,1,Ilse,2,99,99,99,99,5,2,werkloos
+76,2,Edgar,1,99,99,99,99,6,1,rechter
+76,3,Elisabeth,2,99,99,99,99,6,99,99
+76,4,Karin,2,99,99,99,99,3,99,99
+76,5,Anna,2,99,99,99,99,4,1,tentoonstellingsmaker
+76,6,Dave,1,3,7,99,99,5,99,99
+76,7,Jean,1,99,99,99,99,5,99,99
+77,1,Romy,2,1,99,1,2,5,2,hulp uitvaartcentrum
+77,2,Harro,1,1,99,1,2,3,2,huisbaas
+77,3,Irma,2,1,99,1,2,6,1,danser/docent
+77,4,moeder,2,1,99,1,2,6,99,99
+77,5,Louis,1,3,99,99,99,99,99,99
+77,6,Christian,1,1,99,1,2,2,1,kunstenaar
+77,7,Blanca,2,1,99,1,2,2,99,99
+77,8,Otto,1,1,3,1,3,99,99,danser
+77,9,Hedwig,2,1,99,1,99,99,99,99
+78,1,Durand,1,3,7,3,7,5,1,grootindustrieel
+78,2,Nora,2,1,99,1,1,99,1,antiquair
+78,3,Malinobre,1,3,7,3,7,6,1,baron/historicus
+78,4,André,1,3,99,3,7,1,1,student
+78,5,Evy,2,1,99,1,1,1,1,student
+78,6,Pelleport,1,99,99,99,99,4,1,hoogleraar
+78,7,Louis,1,3,99,3,7,1,99,99
+78,8,Sam,1,4,99,4,99,4,1,kunsthistoricus
+78,9,Andrea,2,3,99,99,99,99,1,hoogleraar
+78,10,Ernst,1,3,99,99,99,99,1,hoogleraar
+78,11,Victor,1,1,99,1,99,99,1,antiquair
+78,12,Louise,2,3,99,3,7,3,99,99
+78,13,Goupil,1,3,7,3,7,1,1,student
+78,14,Lamotte,1,3,99,3,7,99,1,inspecteur
+78,15,Moufle,1,3,7,3,7,99,1,burgemeester
+79,1,Schepper,1,99,99,99,99,99,1,schepper
+79,2,Helena,2,1,99,1,3,99,2,bibliothecaris
+79,3,Victor,1,1,99,1,3,99,1,schilder
+79,4,Lydia,2,1,99,1,3,99,1,bibliothecaris
+79,5,Ralf,1,1,99,1,3,99,1,onderzoeker
+79,6,Maarten,1,1,99,1,3,99,99,dichter
+79,7,Ronald,1,1,99,1,3,99,1,conservator
+79,8,Dorothea,2,1,99,1,3,99,99,hulp drukkerij
+79,9,Marion,2,1,99,1,3,99,1,antropoloog
+79,10,Anton,1,1,99,1,3,99,1,bibliothecaris
+79,11,Bernhard,1,1,99,1,3,99,1,manager bibliotheek
+80,1,Nodieu,1,6,13,4,10,1,2,verkoper
+80,2,Malcolm,1,4,99,4,10,4,1,advocaat
+80,3,Orèste,1,6,13,6,99,1,2,klusser
+80,4,Hoeksma,2,1,99,6,13,4,1,directeur
+80,5,Jesulá,2,6,13,6,13,2,2,prostituee
+80,6,Hubèrt,1,3,99,6,99,3,2,automonteur
+80,7,Felicidád,2,6,13,6,13,99,1,arts
+80,8,Lucsón,1,6,13,6,13,1,2,drugsdealer
+80,9,Morís,1,6,13,6,13,1,2,gangster
+80,10,Fracásse,1,6,13,6,13,99,1,advocaat
+80,11,Tibídín,1,6,13,6,13,99,2,drugsdealer
+80,12,Vilná,2,6,13,6,13,1,2,prostituee
+80,13,Maksáens,1,6,13,6,13,1,2,visser
+80,14,Ivèns,1,6,13,6,13,1,2,scholier
+80,15,Julebèrt,1,6,13,6,13,1,2,boer
+80,16,Lowènski,1,6,13,6,13,1,2,magiër
+80,17,Larieu,1,6,13,6,13,1,2,99
+81,1,Arend,1,1,3,1,2,1,1,scholier/student
+81,2,moeder,2,1,3,1,99,99,1,dominee
+81,3,Erik,1,1,3,1,1,1,1,student
+81,4,Kurt,1,1,99,99,99,1,99,scholier
+81,5,Samuel,1,1,99,99,99,1,1,student
+81,6,Bob,1,1,99,5,99,99,99,politiek activist/spion
+82,1,Gerard,1,1,2,1,2,4,1,universitair docent/directeur
+82,2,Raave,1,1,99,1,2,3,1,dominee
+82,3,Jan,1,1,2,1,2,6,1,advocaat/kantonrechter
+82,4,Jettie,2,1,2,1,2,6,1,stenograaf
+82,5,Astrid,2,1,2,1,2,4,2,huisvrouw
+82,6,Lamberink,1,1,99,1,2,6,1,docent
+82,7,Steeltjes,1,3,99,3,99,99,2,waard
+82,8,Frits,1,1,2,1,1,3,1,docent
+82,9,Michael,1,4,99,3,99,99,99,99
+82,10,Koen,1,1,2,1,2,1,99,scholier
+82,11,David,1,1,2,1,2,1,99,scholier
+82,12,Eric,1,1,2,1,99,99,99,99
+82,13,Paul,1,1,2,1,2,1,99,scholier
+82,14,Vreugdevolk,1,3,7,3,7,3,2,herder
+83,1,Laura,2,1,99,1,1,2,1,belangrijke functie in bedrijf
+83,2,Boudewijn,1,1,3,1,2,3,2,magazijnmedewerker
+83,3,Esther ,2,1,99,1,2,2,1,rechercheur
+83,4,Antonie,1,1,99,1,2,2,1,beurshandelaar
+83,5,Alex,1,1,99,1,99,99,1,99
+83,6,Roger,1,1,99,1,99,99,1,rechercheur
+83,7,Bettie,2,1,3,1,3,99,2,99
+83,8,Paul,1,1,99,1,99,99,1,hulp rechercheur
+83,9,Ad,1,1,99,1,3,2,2,boer
+83,10,Willemijn,2,1,99,1,3,2,2,boer
+83,11,Janneke,2,1,99,1,3,99,2,schoonmaker
+83,12,Clara,2,1,99,1,99,6,99,99
+83,13,Nathalie,2,1,99,1,99,1,99,99
+83,14,Marie,2,1,99,1,99,1,99,99
+83,15,Geertruida,2,1,3,1,99,6,1,antropoloog
+83,16,Steef,1,1,99,1,99,99,99,maatschappelijk werker
+83,17,Benny,1,1,99,1,99,1,99,scholier
+83,18,Klaas,1,1,99,1,99,3,99,99
+83,19,Maaike,2,1,3,1,3,1,99,scholier
+84,1,ik,1,4,99,4,10,3,2,eigenaar vechtclub/kok/liftbediende/barkeeper/hulp slachthuis
+84,2,Lauretta,2,3,12,4,10,99,99,99
+84,3,Mayer,1,4,99,4,10,5,1,makelaar
+84,4,Paaluk,1,6,99,4,10,99,99,crimineel
+84,5,Frances,2,4,99,4,10,2,1,activist
+84,6,Neumann,1,4,99,4,10,99,1,psycholoog
+84,7,Luigi,1,3,99,4,10,99,2,restaurant eigenaar
+84,8,Pierre,1,3,99,4,10,99,99,dichter
+85,1,Ton,1,1,3,1,3,5,2,hovenier
+85,2,Piet,1,1,3,1,3,6,99,gepensioneerd
+85,3,Annie,2,1,3,1,3,6,99,gepensioneerd
+85,4,Jan,1,1,3,1,3,6,99,bakker/magazijnmedewerker
+85,5,Trees,2,1,3,1,3,6,99,ober
+85,6,Maria,2,1,3,1,3,6,2,bibliothecaresse
+85,7,Wout,1,1,3,1,3,99,2,huisbaas
+85,8,Ahmed,1,5,99,5,99,99,99,gids
+85,9,Pen,1,1,3,1,3,99,99,afdelingshoofd Wonen Landelijk
+85,10,Vos,1,1,3,1,3,2,1,wijkagent
+85,11,Cota,1,1,99,1,99,99,1,directeur woningcorporatie
+85,12, A ,1,1,3,1,3,99,1,typist/vertaler
+85,13,Kees,1,1,3,1,3,6,99,99
+85,14,Hero,1,1,3,1,3,3,1,supermarkteigenaar
+85,15,Rik,1,1,3,1,3,3,1,maatschappelijk werker
+85,16,Harriët,2,1,3,1,3,3,1,wiskundeleraar
+85,17,Kristl,2,3,7,1,3,99,1,verpleegkundige
+85,18,De Vries,2,1,3,1,3,99,99,99
+85,19,Lis,2,1,1,1,99,3,99,99
+86,1,Catho,2,99,99,3,6,1,2,verkoper
+86,2,Berthe,2,3,6,3,6,2,1,non
+86,3,Tobias,1,99,99,3,6,2,1,muzikant
+86,4,Gustaphe,1,3,6,3,6,2,1,kunstenaar
+86,5,Het meisje met de vlek in haar bovenlip,2,99,99,3,6,1,2,oppas
+86,6,Gisèle,2,3,99,3,6,3,2,verkoper
+86,7,Charles,1,3,99,3,6,3,2,beul
+86,8,Léon,1,3,6,3,6,1,2,bediende
+86,9,Marie-Anne,2,3,99,3,6,3,99,99
+86,10,Jean,1,3,99,3,6,99,99,99
+87,1,Tula,1,6,13,6,13,99,2,slaaf
+87,2,Speransa,2,6,13,6,13,99,2,slaaf
+87,3,Louis,1,6,13,6,13,99,2,slaaf
+87,4,Quaku,1,6,13,6,13,99,2,slaaf
+87,5,Jorboe,1,6,13,6,13,99,2,slaaf/dorpoudste
+87,6,Rosita,2,6,13,6,13,99,2,slaaf
+87,7,Willem van Uytrecht,1,1,99,6,13,99,99,slavendrijver
+87,8,De Veer,1,1,99,99,99,99,1,gouverneur
+87,9,Bastiaan,1,6,13,6,13,1,2,slaaf
+87,10,Pedro,1,6,13,6,13,1,2,slaaf
+87,11,Lesire,2,3,99,6,13,4,99,99
+87,12,Wouter,1,1,99,6,13,99,99,99
+87,13,Pieter,1,1,99,6,13,99,99,99
+87,14,Jantji,1,6,13,6,13,99,2,slaaf
+87,15,Cornelius,1,1,99,6,13,99,99,burgerwacht
+87,16,Schinck,1,1,99,6,13,99,1,pater
+87,17,Van Westerholt,1,1,99,6,13,99,1,baron/kapitein leger
+87,18,Codjo,1,6,13,6,13,1,2,slaaf
+87,19,Paolo,1,6,13,6,13,4,2,slaaf/bomba
+88,1,Robbie,1,1,99,1,99,2,1,acteur
+88,2,Willy,1,1,99,1,99,5,2,ijzerhandelaar
+88,3,Ilona,2,1,99,1,99,5,2,ijzerhandelaar
+88,4,Mireille,2,1,99,1,99,99,99,99
+88,5,Sylvester,1,1,99,1,99,99,1,kunstenaar
+88,6,Germaine,2,1,99,1,99,6,99,koerier
+88,7,Gudrun,2,6,99,1,99,99,1,jurist
+88,8,Isidoor,1,1,99,1,99,6,1,schipper/militair/verzetsstrijder
+88,9,Pierre,1,1,99,1,99,6,1,boekhouder
+88,10,Liza Le Roux,2,1,99,1,99,3,99,koerier
+88,11,Ninette,2,1,99,1,99,99,99,naaister
+88,12,Fanny,2,1,99,1,99,1,99,99
+88,13,Regina Hellegeest,2,1,99,1,99,3,1,schooljuffrouw
+88,14,Mariette Vanturenhout,2,1,3,1,99,3,99,99
+88,15,Jeanne Grauwels,2,1,99,1,99,3,99,verzetsstrijder
+88,16,Eugénie Verstappen,2,1,99,1,99,1,99,verzetsstrijder/typist
+88,17,Lucrèce,2,3,99,1,99,99,99,non
+88,18,Anna Sas,2,1,99,1,99,99,1,bestuurslid politieke partij/verslaggever
+88,19,Frau Nimsch,2,3,99,1,99,99,99,wachtmeester
+88,20,Irma Grese,2,99,99,1,99,99,99,opzichter
+88,21,Arthur Vedrin,1,1,99,1,99,99,99,verzetsstrijder
+88,22,Isabelle,2,1,99,1,99,1,99,scholier
+89,1,Lotte,2,1,2,1,2,6,99,99
+89,2,Jurriaan,1,1,2,6,12,6,1,muzikant
+89,3,Jettie,2,1,2,1,99,6,99,99
+89,4,Srey,2,6,12,6,12,6,2,huishoudhulp
+89,5,Gustav,1,3,99,3,99,99,1,hoogleraar
+89,6,Kiang,1,6,99,6,12,99,2,eigenaar herberg
+89,7,Samai,1,6,12,6,12,1,2,kunstschilder/gids
+89,8,Nitha,2,6,12,6,12,1,2,serveerster
+89,9,Hajo,1,1,3,6,12,5,99,edelman
+89,10,Chris,1,1,99,6,12,4,99,99
+89,11,Sok,1,1,12,6,12,99,2,tuk-tuk chauffeur
+90,1,Ted,1,1,3,1,3,1,99,scholier
+90,2,meneer Timmermans,1,1,3,1,3,6,1,reclametekenaar
+90,3,moeder,2,1,3,1,3,3,99,huisvrouw
+90,4,Kasper,1,1,3,1,3,2,2,hulp bakker 
+90,5,Melcher,1,1,3,1,3,2,1,fabrieksengineer
+90,6,Ronnie,1,1,3,1,3,1,99,scholier
+90,7,Gerard,1,1,3,1,3,1,99,scholier
+90,8,Van Oss,1,1,3,1,3,6,99,99
+90,9,Herman,1,1,3,1,3,3,99,99
+91,1,ik,1,1,3,1,3,4,99,99
+91,2,Albèrt,1,2,5,1,3,6,1,mijnwerker/wielrenner
+91,3,Ana María Quintero,2,3,7,1,3,6,2,huishoudster
+91,4,Frans,1,2,5,1,3,6,99,99
+91,5,Ton van Schijndel,1,1,99,1,99,99,2,mechanieker rennersteam
+91,6,Quim,1,3,7,3,7,1,99,scholier/landarbeider
+91,7,Berden,1,2,5,1,99,99,99,wielrenner
+91,8,Pilar,2,3,7,3,7,6,2,non
+91,9,Benedicta,2,3,6,3,7,3,99,non
+91,10,Sofía,2,3,99,3,99,99,99,99
+92,1,Pek,1,1,3,1,3,1,2,eigenaar sloopbedrijf
+92,2,Broer,1,1,3,1,3,1,2,eigenaar sloopbedrijf
+92,3,Tinus,1,1,3,1,3,1,2,sloper
+92,4,Vollemondt,1,1,3,1,3,1,2,sloper
+92,5,Volcker,1,1,3,1,3,1,2,sloper
+92,6,Perrer,1,1,3,1,3,5,2,aannemer
+92,7,Van Montfoort,1,1,3,1,3,99,2,boer
+92,8,Joana,2,3,99,99,99,99,2,circusartiest
+92,9,moeder,2,1,3,1,3,6,2,huisvrouw
+92,10,Van Poppel,1,1,3,1,3,99,2,boer
+92,11,Beer,1,1,3,1,3,1,2,sloper
+92,12,Theo,1,1,3,1,3,1,99,scholier
+93,1,Ignatz,1,3,99,3,6,99,1,geheim agent/psychiater
+93,2,Franz,1,3,99,3,6,1,99,jezuïet/crimineel
+93,3,Jelena,2,3,99,3,6,2,2,prostituee
+93,4,Paul,1,3,99,3,6,6,1,crimineel/fotograaf
+93,5,Schani,1,3,99,3,6,4,99,crimineel/religieus leider
+93,6,Wolf,1,3,99,3,6,99,1,agent/overste
+93,7,Max Winter ,1,99,99,3,6,99,1,onderzoeksjournalist
+93,8,Elisabeth,2,99,99,3,6,99,1,anarchist
+93,9,Emma Goldman,2,99,99,99,99,99,2,anarchist
+93,10,Felix,1,99,99,99,6,99,1,arts
+93,11,Leo,1,99,99,3,6,99,99,anarchist
+93,12,Amanda,2,99,99,3,6,99,99,anarchist
+93,13,Saphir,1,99,99,3,6,99,1,dokter
+93,14,Dragan,1,3,99,3,6,99,99,crimineel
+94,1,Maan,2,1,99,1,3,2,1,talentenwerver
+94,2,Ian,1,1,99,1,3,4,1,docent
+94,3,Wonder Woman,2,1,99,1,99,99,99,99
+94,4,Gomor,1,1,99,1,3,99,99,99
+94,5,Eva,2,1,99,1,99,99,1,student
+94,6,Susan,2,3,7,1,7,1,99,99
+94,7,Ulrike,2,3,99,1,3,1,1,coördinator Blijf van Mijn Lijf huis
+94,8,Christine,2,1,99,1,3,1,1,medewerker coffeeshop
+94,9,Dirk,1,1,99,1,3,99,1,psycholoog
+95,1,Laura,2,1,99,99,99,2,1,kunstenaar/fotograaf
+95,2,An,2,99,99,99,99,2,1,acteur/zanger
+95,3,Dirk,1,99,99,99,99,2,1,student
+95,4,Irene,2,99,99,99,99,99,1,eigenaar galerie
+95,5,de apotheker,1,99,99,99,99,99,1,apotheker
+95,6,Kevin,1,99,99,99,99,1,2,student
+96,1,Nico,1,1,3,1,3,99,2,veerbootchauffeur
+96,2,Geesje,2,1,3,1,3,1,99,scholier
+96,3,Clara,2,1,3,1,3,1,1,student
+96,4,Lieke,2,1,3,1,3,99,99,99
+96,5,Van der Wal,1,1,3,1,3,3,1,docent
+96,6,Kassandra,2,1,3,1,3,1,99,scholier
+96,7,Sheila,2,1,3,1,3,1,99,scholier
+97,1,Paulus,1,1,99,1,99,6,99,gepensioneerd
+97,2,Eva,2,1,99,1,99,3,1,99
+97,3,Anna,2,1,99,1,99,6,99,99
+97,4,Brik,1,1,99,1,99,99,1,99
+97,5,Edmond,1,1,99,1,99,6,99,werknemer biersector
+97,6,Geraldine,2,1,99,1,99,6,99,99
+97,7,Fien,2,1,99,1,99,6,99,non
+98,1,ik,1,1,99,6,12,99,1,universitair docent
+98,2,Yong,1,6,12,6,12,1,1,student
+98,3,Ling,2,6,12,6,12,2,1,afdelingshoofd wasmachinefabriek
+98,4,Yao,1,6,99,6,12,6,1,boedhistisch leermeester
+98,5,Sheng,1,6,99,6,12,2,1,universitair docent
+98,6,Mu,2,6,99,6,12,1,1,student
+98,7,Ella,2,6,99,6,12,1,1,student
+98,8,Tang,1,6,99,6,12,99,1,ingenieur
+98,9,Tsayong,1,6,99,6,12,99,1,makelaar
+98,10,Namyang,1,6,99,6,99,99,99,monnik
+98,11,Amy,2,6,99,6,12,2,99,99
+98,12,Kalden,1,6,99,6,12,1,99,99
+98,13,Peng,1,6,99,6,12,99,1,directeur
+98,14,Jin,1,6,99,6,12,1,1,student
+98,15,ik,2,1,99,4,10,99,99,99
+99,1,Vonne,2,1,99,1,99,5,1,schrijver
+99,2,Justus,1,1,99,1,99,5,1,muzikant
+99,3,Jetta,2,1,99,1,99,5,99,99
+99,4,Batista,1,6,99,1,99,5,1,muzikant
+99,5,Koen,1,1,99,1,99,5,1,filmmaker
+99,6,Stemvork,1,1,99,1,99,99,1,frater
+99,7,Stijn,1,1,99,1,99,99,99,99
+100,1,Daniël,1,1,99,1,1,1,1,student
+100,2,Carola,2,99,99,1,1,1,1,student
+100,3,Alle Waterink,1,1,1,3,7,5,1,schrijver/kunstenaar
+100,4,Andrea,1,3,99,3,7,4,1,eigenaar boekhandel
+100,5,Federico,1,3,99,3,7,4,1,architect
+100,6,moeder,2,1,99,1,2,99,1,imagoloog
+100,7,Stijn,1,1,99,99,99,2,1,hoogleraar
+100,8,Maddalena,2,3,99,3,7,99,1,universitair docent literatuur/zaakwaarnemer
+100,9,Nout,1,99,99,1,1,1,1,student
+100,10,Nanni,1,3,99,3,7,99,99,wijnboer
+100,11,Theresa,2,1,99,1,1,4,2,kassière
+100,12,Titus,1,99,99,1,1,1,1,student
+100,13,Bret Holland,1,99,99,3,7,5,1,schrijver
+101,1,Hugo,1,1,99,3,99,4,1,diplomaat
+101,2,Ruben,1,1,99,1,99,2,1,docent natuurkunde
+101,3,Gabi,2,3,99,99,99,99,99,99
+101,4,Mark,1,1,99,99,99,6,99,99
+101,5,Dorien,2,1,99,99,99,4,1,arts
+101,6,Suze,2,6,99,3,99,2,1,communicatiemedewerker
+101,7,Monique,2,1,99,1,99,2,1,verpleegkundige
+101,8,moeder,2,1,99,1,99,6,99,99
+101,9,Brigitte,2,1,99,1,99,99,1,diplomaat
+101,10,Bernadette,2,1,99,1,99,4,99,99
+102,1,Sam,1,5,8,1,3,1,99,scholier
+102,2,Beruz,1,5,8,1,3,99,1,eigenaar fabriek
+102,3,moeder,2,5,8,1,3,99,1,docent
+102,4,Ruz,1,5,8,1,3,99,99,99
+102,5,Nini,2,5,8,1,3,1,99,scholier
+102,6,Kian,1,5,8,1,3,1,99,scholier
+102,7,Sadek,1,5,8,1,3,99,99,zwerver
+102,8,Sali,2,3,6,3,6,1,99,scholier
+102,9,tante,2,5,8,1,3,99,99,99
+102,10,Wise,1,5,99,1,3,1,2,scholier
+102,11,Malaika,2,5,99,1,3,1,99,99
+103,1,Zelda,2,1,99,1,99,1,1,student
+103,2,Omar,1,1,99,1,99,1,99,scholier
+103,3,Matussek,1,3,99,1,3,3,1,docent
+103,4,Cassandra,2,1,99,1,3,1,1,student
+103,5,Jacky,2,1,99,1,3,1,1,student
+103,6,Bob,1,1,99,1,3,1,1,student
+103,7,Ada,2,1,99,3,7,1,1,student
+103,8,Naomi,2,99,99,3,7,99,99,danser
+103,9,Federico,1,3,7,3,7,3,99,99
+103,10,Erik,1,1,99,1,99,99,1,schooldirecteur
+104,1,Maria,2,1,3,1,3,2,1,eigenaar boekhandel
+104,2,Welmoed,2,1,99,1,3,2,1,acteur
+104,3,Wiggel,1,1,99,99,99,99,1,schrijver
+104,4,Jason,1,1,1,1,1,99,1,operaregisseur
+104,5,Felix,1,1,99,99,99,2,1,psycholoog
+104,6,Alberta,2,1,3,1,3,5,99,99
+104,7,Lisa,2,1,3,1,3,1,99,99
+104,8,vader,1,1,3,1,3,5,99,docent
+104,9,Fjodor,1,1,3,1,3,2,99,muzikant
+104,10,Lizette,2,1,3,1,3,6,99,medewerker boekhandel
+104,11,Roos,2,1,99,2,1,2,1,99
+104,12,Claartje,2,1,99,2,1,2,1,99
+104,13,Johan,1,1,3,1,99,5,99,99
+104,14,Sientje,2,1,3,1,99,99,99,99
+104,15,Jaap,1,1,3,1,3,1,1,scholier/barman/politicus
+105,1,Michael,1,1,99,1,99,4,2,chauffeur
+105,2,Clara,2,1,99,1,99,99,99,luchthaven medewerker
+105,3,Ljoeba,2,6,99,6,99,2,2,steward
+105,4,Rijneveld,1,99,99,1,99,99,2,verhuizer
+105,5,Jamal,2,5,99,1,99,99,99,voorman logistiek
+105,6,Benssen,1,1,99,1,99,99,99,schrijver
+105,7,Nina,2,1,99,1,99,99,99,99
+105,8,Jamie,1,1,99,1,99,1,99,scholier
+105,9,Dennis,1,99,99,1,99,99,99,crimineel
+105,10,Igor,1,3,99,1,99,1,99,99
+105,11,Betty,2,1,99,1,99,2,99,schrijver
+105,12,Mo,1,5,99,1,99,99,1,99
+105,13,Yuki,2,6,13,1,99,99,99,mindfullness coach
+106,1,Ífisa,2,6,12,6,12,1,99,99
+106,2,Frederik,1,1,1,6,12,2,1,verkoper
+106,3,David,1,1,2,6,12,3,1,arts
+106,4,Hannes,1,3,7,6,12,1,2,schipper
+106,5,Rósila,2,6,13,6,13,1,99,99
+106,6,Saimono,1,6,12,6,12,5,1,burgemeester
+106,7,Iusto,1,6,12,6,12,4,1,hoogleraar
+106,8,Crélo,1,6,13,6,13,4,2,boer
+106,9,Sélidia,2,6,99,6,12,2,2,99
+106,10,Zacharia,1,1,99,6,99,3,1,hulp drukkerij/catechiseermeester
+106,11,Pieter,1,1,99,6,99,99,1,gezagvoerder/schipper
+107,1,ik,2,1,2,4,10,6,1,schrijver
+107,2,Adriaan,1,1,2,1,2,1,1,arts
+107,3,Henry,1,3,99,1,2,4,1,lakenreder
+107,4,Elisabeth,2,3,99,1,2,4,99,
+107,5,Catharina,2,1,2,1,2,5,99,
+107,6,Louise,2,1,2,1,2,1,99,
+107,7,Lieuwe,1,1,99,1,2,99,1,diplomaat/spion
+107,8,Cornelis,1,1,99,1,99,99,1,arts
+107,9,Margje,2,1,99,4,99,99,99,
+107,10,James,1,3,99,99,99,99,1,handelaar
+107,11,Christiaan,1,1,99,4,99,99,99,
+107,12,Menno,1,1,2,1,2,3,1,arts/jurist
+107,13,Johannes,1,1,99,1,2,2,1,theoloog
+107,14,Bento,1,3,99,1,2,2,99,99
+107,15,Harm,1,1,99,1,99,1,99,zager
+107,16,Gijs,1,1,99,1,99,1,99,boer
+107,17,Katelijne,2,1,99,1,99,2,99,99
+107,18,Pieter,1,1,99,1,99,2,99,99
+107,19,Trijn,2,1,99,1,99,6,99,99
+107,20,Franciscus van den Enden,1,1,99,1,99,99,1,docent
+107,21,Lodewijk Meyer,1,1,99,1,99,2,1,arts/schrijver
+107,22,Welmoet,2,1,3,1,99,2,99,99
+107,23,Karl,1,3,99,1,99,2,99,timmerman
+108,1,Donald,1,2,99,2,99,3,1,kunsthandelaar
+108,2,Amanda,2,3,6,3,6,3,1,schrijver/kunstenaar
+108,3,Angelo,1,2,99,2,99,1,99,scholier
+108,4,Pluim,1,2,99,2,99,99,1,diamanthandelaar
+108,5,Dennis,1,2,99,2,99,99,99,kunstenaar/verpleger
+108,6,Zlogonje,1,2,99,2,99,99,2,kunstenaar
+108,7,moedertje,2,2,99,2,99,6,99,99
+108,8,Oma,2,2,99,2,99,6,99,99
+108,9,Nathalie,2,2,99,2,99,99,99,kunstenaar
+108,10,Willem,1,2,99,2,99,99,99,galeriehouder
+108,11,Elaine,2,2,99,2,99,99,2,secretaresse
+108,12,Toon,1,2,99,2,99,99,99,deurwaarder
+108,13,Hilde,2,2,99,2,99,99,99,kunstenaar
+108,14,Jean,1,1,99,1,99,99,2,ober
+109,1,Milan,1,1,99,1,99,99,1,schrijver
+109,2,Bertrand,1,1,99,3,6,99,1,schrijver
+109,3,Kees-Jan,1,1,99,1,99,99,1,schrijver
+109,4,Janine,2,99,99,3,6,99,99,model/spion
+109,5,Monique,2,99,99,1,3,99,1,diplomaat/spion
+109,6,Claudia,2,6,99,99,99,99,99,activist/spion
+109,7,Ramon,1,99,99,3,7,99,99,99
+109,8,Jean-Luc,1,99,99,1,2,99,1,officier van justitie
+109,9,Pascal,1,99,99,,99,99,1,journalist
+109,10,Alain,1,99,99,99,99,99,1,journalist
+109,11,Rens,2,6,99,1,99,1,99,scholier
+109,12,Milou,2,99,99,99,99,99,1,journalist
+109,13,Nicolette,2,99,99,99,99,99,99,spion
+109,14,Suzan,2,99,99,1,2,99,99,99
+109,15,Denise,2,3,99,6,99,1,99,99
+109,16,Izdihar,2,6,99,99,99,1,99,99
+109,17,Dyani,2,3,99,1,99,99,99,99
+109,18,Jeroen,1,1,3,1,99,99,1,pharmaceut
+109,19,Baahir,1,6,12,6,12,1,2,99
+109,20,Dasan,1,6,12,6,12,1,2,chauffeur
+109,21,Milton,1,4,99,4,99,99,1,pharmaceut
+109,22,Anna,,,,,,,,
+109,23,Lemmers,1,1,99,1,99,99,1,psycholoog
+109,24,Rens,1,1,99,1,99,1,99,99
+109,25,Maria,2,1,99,1,2,99,1,palementariër
+110,1,ik,1,2,5,2,99,99,99,99
+110,2,Clara,2,2,5,2,5,6,99,99
+110,3,Trien Labie,2,2,5,2,5,6,1,eigenaar snoepwinkel
+110,4,Philomena,2,2,5,2,5,6,99,99
+110,5,Yvonne,2,2,5,2,5,6,99,99
+110,6,Cecile,2,2,5,2,5,6,99,99
+110,7,Pierre,1,2,5,2,99,6,99,werknemer spoorwegen
+111,1,ik,1,2,99,2,4,6,2,chauffeur/vliegenier/soldaat
+111,2,Simone,2,99,99,99,99,99,99,99
+111,3,Erna,2,99,99,2,4,99,2,prostituee
+111,4,Martha,2,99,99,99,99,99,99,99
+111,5,meisje van de sociale dienst,2,99,99,99,99,99,1,maatschappelijk werker
+111,6,zus,2,2,99,6,13,99,99,plantagehouder
+111,7,Pierre Mulele,1,6,13,6,13,99,99,rebellenleider
+111,8,Tsjombe,1,6,13,6,13,99,99,president
+111,9,Mommens,1,99,99,6,13,99,99,directeur drukkerij
+112,1,Louis,1,2,4,2,4,2,1,etnoloog
+112,2,Alexis,1,6,99,6,99,6,1,historicus/priester/linguist
+112,3,Samuel,1,6,13,2,4,2,99,99
+112,4,moeder,2,2,4,2,4,99,99,99
+112,5,Jean-Baptiste,1,6,99,2,4,99,99,kunstenaar/chauffeur
+112,6,Tomas,1,6,13,6,13,2,99,tekenaar
+112,7,Janvier,1,6,13,6,13,2,99,organisator aankoopsessies/moordenaar
+112,8,Smith,1,3,99,99,99,99,1,antropoloog
+112,9,Sebashyitsi,1,6,13,6,13,4,2,boer
+112,10,Vansina,1,2,4,4,10,99,1,antropoloog
+112,11,Coupez,1,3,99,99,99,6,1,linguïst
+112,12,Perraudin,1,3,99,6,13,99,1,aartsbisschop
+112,13,Rugamba,1,99,99,6,13,99,1,museumdirecteur
+112,14,Hulstaert,,,,,,,1,pater/hoofdredacteur
+113,1,Werner,1,99,99,99,99,1,99,boer/controleer strontvoerder
+113,2,Botje,2,99,99,99,99,1,99,99
+113,3,Orzas,99,99,99,99,99,99,99,99
+113,4,Magdalena,2,99,99,99,99,4,99,non
+113,5,Jacqueline,2,99,99,99,99,99,99,non
+113,6,Monica,2,99,99,99,99,99,,non
+113,7,Ernest-Fritz,1,99,99,99,99,99,2,cowboy
+113,8,Andy,1,99,99,99,99,1,99,99
+113,9,Luypaarts,1,99,99,99,99,6,2,strontvoerder
+113,10,Maya,2,99,99,99,99,99,99,99
+113,11,Li,1,99,99,99,99,99,99,99
+113,12,Martha,2,99,99,99,99,99,99,non
+113,13,Vedt,1,99,99,99,99,99,1,directeur weeshuis
+113,14,Detanck,2,99,99,99,99,99,2,huishoudster
+113,15,Duizendts,1,99,99,99,99,99,99,99
+113,16,F. Schuins,1,99,99,99,99,99,99,ijzerhandelaar
+113,17,Anna,1,99,99,99,99,99,99,kok
+114,1,Nona,2,1,3,1,3,2,99,scholier
+114,2,Marcus,1,6,13,1,3,6,1,docent/sergeant
+114,3,Sam de Jong,1,1,3,6,13,3,1,majoor
+114,4,Yaya,2,6,13,1,3,6,99,99
+114,5,Anna,2,1,3,1,3,1,1,student
+114,6,Ben,1,6,13,1,3,2,2,stuurman
+114,7,Mima,2,6,13,1,3,2,1,docent basisschool
+114,8,Sara,2,6,13,1,3,2,2,verpleger
+114,9,Boya,2,6,13,1,3,2,2,verpleger
+114,10,Tarotji,2,6,13,1,3,2,2,secretaresse
+114,11,Sarmolle,1,1,3,1,3,1,99,99
+114,12,Gustav,1,6,99,6,13,2,1,majoor
+114,13,Charles,1,6,13,6,13,1,99,soldaat
+114,14,Otjep,1,6,13,6,13,1,99,soldaat/sergeant
+114,15,Bunga,1,6,13,6,13,1,99,soldaat
+114,16,Minggus,1,6,13,6,13,1,99,soldaat/corporaal
+114,17,Schut,1,6,13,6,13,2,99,kapitein
+114,18,Molenaar,1,6,13,6,13,2,99,onderluitenant
+114,19,Talapessy,1,6,13,6,13,2,99,sergeant
+114,20,Pattiasina,1,6,13,6,13,99,99,politicus/minister
+114,21,Sukarno,1,6,13,6,13,99,99,politicus
+115,1,Joris,1,2,5,2,4,2,1,copywriter
+115,2,Wes,1,2,5,2,5,2,2,fabrieksmedwerker
+115,3,Jef,1,2,5,2,5,2,1,ambtenaar
+115,4,Demi,1,2,5,2,5,2,2,hulp boerderij
+115,5,Klaas,1,2,5,2,5,2,99,99
+115,6,Arnout,1,2,5,2,5,2,99,99
+115,7,Tigra,2,2,5,2,4,1,1,student
+115,8,Freya,2,2,99,2,5,2,1,student
+115,9,Brenda,2,2,99,2,99,1,99,99
+115,10,Jos,1,2,99,2,5,6,2,arbeider
+115,11,Katrien,2,2,99,2,5,2,99,99
+115,12,Steve,1,2,99,2,5,2,1,zakenman
+115,13,Lorelien,2,2,99,2,99,1,99,99
+115,14,Kimberly,2,2,4,2,5,1,2,kapper
+115,15,Karolien,2,2,99,2,99,1,99,99
+115,16,Charel,1,2,99,2,5,99,99,pastoor
+115,17,Miguel,1,3,99,2,99,99,99,muzikant
+115,18,Nicole,2,2,99,2,99,4,99,huisvrouw
+115,19,Fons,1,2,99,2,5,5,99,politieagent
+116,1,Vero,2,1,1,5,8,2,1,acteur/model
+116,2,Alon,1,5,99,5,8,1,1,student/muzikant
+116,3,Brak,1,1,99,1,1,1,1,student
+116,4,David,1,1,99,1,1,1,1,student
+116,5,Yvonne,2,1,99,1,1,1,2,model
+116,6,Regina,2,1,3,1,1,2,1,acteur
+116,7,Ruby,2,4,99,1,1,99,1,regisseur
+116,8,Leah,2,4,99,5,8,1,1,student/kantoormedewerker (van het leger)
+116,9,Ava,1,5,99,5,8,2,99,99
+116,10,Galit,2,5,99,5,8,1,1,student
+116,11,Uri,1,5,99,5,8,1,1,architect
+116,12,Annette,2,1,99,1,1,1,1,student
+116,13,Eddie,1,1,99,1,1,1,1,student
+116,14,Fred,1,1,99,1,1,99,1,studieleider/docent
+116,15,Geertje,2,1,99,5,8,99,1,docent
+116,16,Moshe,1,5,99,5,8,99,99,99
+117,1,Raaf,1,1,99,1,1,2,1,journalist
+117,2,Anna,2,99,99,1,1,99,1,culinair recensent/kok
+117,3,Carina,2,1,99,1,1,99,1,journalist/presentator
+117,4,Simon,1,1,99,1,1,99,1,cabaretier
+117,5,Sally,2,1,1,1,2,1,1,student/kassière
+117,6,Charlie,2,1,1,1,1,1,99,scholier
+117,7,Ties,1,1,99,1,1,99,2,eigenaar café
+117,8,Rode Regenjas,1,1,99,1,1,99,1,psychiater
+117,9,Boaz,1,1,99,1,1,99,99,hoofd horeca/barman
+117,10,Driest,1,1,99,1,1,99,1,redacteur
+117,11,Hannelore,2,1,99,1,1,99,1,journalist
+117,12,Roelof,1,1,99,1,99,99,99,cabaretier
+117,13,Verbrugge,1,1,99,1,2,99,1,minister
+117,14,Weijts,1,1,99,1,2,99,1,voorlichter
+117,15,Chu,,4,99,4,10,99,1,culinair recensent/kok
+118,1,Jimmy,1,3,99,4,10,2,2,zanger
+118,2,Bregtje,2,1,99,1,1,99,1,communicatiemedewerker
+118,3,Dirk,1,6,99,1,99,99,99,vertegenwoordiger reis/onderduik bureau
+118,4,Phaedra,2,99,99,99,99,99,1,presentatrice
+118,5,Carl,1,99,99,6,99,99,1,manager
+118,6,Bertina,2,1,1,1,1,99,1,docent/non
+118,7,Cecilia,2,3,99,1,1,2,99,manager restaurant
+119,1,Kronkjaar,1,99,99,1,99,3,1,ambtenaar
+119,2,Anneriek,2,1,99,1,99,99,99,
+119,3,Jeanne,2,1,99,1,99,99,99,
+119,4,Delfos,1,99,99,1,99,99,1,ambtenaar
+119,5,Van Velde,1,1,99,1,99,99,1,ambtenaar
+119,6,Koperhorn,1,99,99,1,99,99,1,ambtenaar
+119,7,Wim,1,1,99,1,99,99,99,
+119,8,Steven,1,1,99,1,99,1,99,
+119,9,Fien,2,1,99,1,99,1,99,
+119,10,Denko,1,3,99,3,7,99,99,smokkelaar
+119,11,Cana,1,3,99,3,7,99,99,vertaler
+119,12,Walser,1,1,99,1,1,99,1,rechercheur
+120,1,Arturo,1,6,99,2,99,3,2,crimineel/veiligheidsagent
+120,2,Claire,2,2,99,2,4,1,1,promotie medewerker/student
+120,3,Lenka,2,2,99,2,99,1,2,prostituee/crimineel
+120,4,André,1,3,99,2,99,99,99,hoteleigenaar
+120,5,Tony,1,2,99,2,99,99,2,crimineel
+120,6,Mossel,1,2,2,4,99,99,2,crimineel
+120,7,Samuel,1,3,99,3,99,4,1,zakenman
+120,8,Simon,1,3,99,3,99,4,1,CEO
+120,9,Sébastien,1,3,99,3,99,99,1,ambtenaar
+120,10,Aimé,1,2,99,2,5,99,1,directeur
+120,11,Gisèle,2,2,99,2,5,2,2,secretaresse
+120,12,Nico,1,2,5,2,5,99,1,journalist 
+120,13,Jean,1,2,99,2,5,99,1,commisaris 
+120,14,Théo,1,2,99,2,5,99,99,medewerker kasteel
+120,15,Guy,1,2,5,2,5,6,1,baron
+120,16,Hermans,1,2,99,2,5,3,1,kunst detective
+120,17,René,1,2,99,2,5,4,99,boer/gemeenteraadslid/eigenaar fietsmuseum
+120,18,Antoine,1,2,99,2,5,99,99,beveiliger
+120,19,Chevalier,1,3,99,3,7,6,99,veilingmeester
+120,20,Gizzy,1,2,99,2,5,1,99,crimineel
+120,21,Romain,1,2,99,2,5,4,99,crimineel
+120,22,Nathan,1,2,99,2,5,2,99,crimineel
+120,23,Norbert,1,2,5,2,5,4,99,werfleider
+120,24,Bek,1,2,99,2,5,99,99,crimineel
+120,25,Peter,1,3,99,3,7,99,99,medewerker veiling
+120,26,Petit,1,2,5,2,5,99,1,agent
+120,27,Abdul,1,5,99,2,99,99,99,crimineel
+120,28,Lemaire,1,3,99,3,99,99,1,hoofdinspecteur
+120,29,Legrand,1,2,5,2,5,99,1,agent
+121,1,Erik,1,1,99,1,99,99,1,jounalist
+121,2,Christof,1,2,5,2,5,1,99,scholier
+121,3,Steven,1,2,5,2,5,1,99,scholier
+121,4,Luuk,1,2,5,2,5,1,99,scholier
+121,5,Maaike,2,2,5,2,5,1,99,scholier
+121,6,Lucy,2,2,5,2,5,1,99,scholier
+121,7,Ann,2,2,5,2,5,1,99,scholier
+121,8,Lien,2,99,99,99,99,99,1,grafisch ontwerper
+121,9,Brenda,2,2,5,2,5,3,2,barista
+121,10,Freek,1,2,5,2,5,1,99,99
+122,1,Lou,1,1,3,1,3,1,2,roadie/fotograaf/eigenaar bioscoop
+122,2,Eddie,1,1,3,1,3,1,1,journalist
+122,3,Lena,2,1,3,1,3,2,1,kantoormedewerker
+122,4,Riet,2,1,99,1,3,5,1,wijkverpleegkundige
+122,5,Geurts,1,1,99,1,3,2,1,manager band
+122,6,Anjo,1,1,3,1,3,1,2,zanger/muzikant
+122,7,Ronnie,1,1,3,1,3,1,2,muzikant
+122,8,Walter,1,1,3,1,3,1,2,muzikant
+122,9,Vonk,1,1,3,1,3,1,1,wethouder
+122,10,Hans,1,1,99,1,2,99,99,studio-eigenaar
+123,1,Lotus,2,1,3,1,1,3,1,fotograaf
+123,2,Jeroen,1,1,99,1,1,3,1,zakenman
+123,3,Maarten,1,1,99,1,1,3,1,jurist
+123,4,Hagar,2,1,3,1,99,3,1,arts
+123,5,Tommie,1,1,99,1,1,1,99,99
+123,6,Nina,2,1,99,1,2,1,2,oppas
+123,7,Thijs,1,1,99,1,2,3,99,99
+123,8,Caroline,1,1,99,4,10,3,1,99
+123,9,Penelope,1,1,99,1,99,3,99,99
+123,10,Iris,1,1,99,1,99,5,99,99
+123,11,Hidde,1,1,99,1,3,99,99,spirituele coach
+123,12,Felice,1,1,1,1,1,1,99,scholier
+124,1,Felix,1,1,2,1,2,1,99,muzikant/student
+124,2,David,1,1,1,1,2,1,99,muzikant
+124,3,Ivo ,1,1,2,1,2,1,99,muzikant
+124,4,Charlotte,2,1,2,1,2,1,99,scholier
+124,5,vader,1,1,2,1,1,3,1,fotograaf
+124,6,moeder,2,1,2,1,2,3,99,
+124,7,Benno,1,1,2,1,2,99,1,bankier
+124,8,Peter,1,1,2,1,2,1,99,muzikant/barman
+124,9,Marco,1,1,2,1,2,1,99,scholier
+124,10,Bas,1,1,2,1,2,1,99,99
+124,11,Claire,2,1,99,1,2,99,99,99
+125,1,Marijn,2,1,99,1,99,2,2,vrijwilliger bejaardentehuis
+125,2,David,1,99,99,1,1,2,1,diplomaat
+125,3,de makelaar,1,99,99,1,99,5,1,makelaar
+125,4,Jan Dijkgraaf,1,1,99,1,1,99,1,kunstenaar
+125,5,Van Beek,2,99,99,1,1,6,99,gepensioneerd
+125,6,Harry,1,99,99,1,1,99,99,99
+125,7,De Geul,1,99,99,1,1,6,99,gepensioneerd
+125,8,Huib,1,1,99,1,1,5,99,winkelmedewerker
+125,9,Fanny,2,1,99,1,1,5,99,99
+125,10,Mariëlle,2,1,99,1,1,99,1,bankmanager
+125,11,Van Dijk,1,1,99,1,1,6,99,gepensioneerd
+126,1,Abbie,2,1,99,1,99,3,1,psycholoog
+126,2,Yvette,2,1,99,1,99,1,1,student
+126,3,Jan,1,1,99,1,99,99,1,arts
+126,4,Rob,1,1,99,1,99,1,1,student
+126,5,Alain,1,99,99,99,99,4,1,fotograaf
+126,6,John,1,3,99,3,99,99,1,assistent contemporary art veilinghuis
+126,7,Femke,2,1,99,1,99,99,1,docent basisschool
+126,8,Paul,1,1,99,1,99,99,1,deskundige museum
+126,9,Mark,1,1,99,1,99,99,1,manager veilinghuis
+126,10,Twisk,1,3,99,3,6,99,1,deskundige veilinghuis
+126,11,Donat,1,99,99,3,6,99,1,onderdirecteur veilinghuis
+126,12,Margriet,2,1,99,1,99,1,99,scholier
+126,13,Joost,1,1,99,1,99,1,99,scholier
+126,14,Fran,2,99,99,1,99,1,99,scholier
+126,15,Brigit,2,1,99,1,99,2,99,99
+126,16,Riekje,2,99,99,99,99,3,99,99
+126,17,Phia,2,99,99,99,99,3,1,vertaler
+127,1,Floor,2,1,99,1,99,1,99,scholier
+127,2,Muijs,1,99,99,1,99,4,99,99
+127,3,Roos,2,99,99,1,99,1,99,scholier
+127,4,moeder,2,1,99,1,99,4,99,99
+127,5,vader,1,1,99,1,99,4,99,99
+127,6,Leonard/Leeuw,1,1,99,1,99,1,99,scholier
+128,1,Oscar,1,1,2,3,6,99,1,officier/docent
+128,2,Esmée,2,1,99,1,2,99,1,docent
+128,3,Id,1,1,2,1,2,99,1,soldaat/docent
+128,4,Bettie,2,1,99,1,2,99,99,99
+129,1,Victor,1,1,99,1,99,1,1,student
+129,2,Nina,2,1,99,1,99,1,1,student
+129,3,Michael,1,1,99,1,99,1,1,student
+129,4,Joke,2,1,99,1,99,1,1,student
+130,1,Betsy,2,1,2,6,13,2,2,huisvrouw
+130,2,Henk,1,1,2,6,13,2,1,bioloog/onderzoeker
+130,3,Pauline,2,1,99,1,99,99,1,schrijver
+130,4,Fredy,2,1,99,1,2,2,99,99
+130,5,Truusje,2,1,13,6,13,1,1,student
+130,6,Beppie,2,1,13,6,13,1,1,student
+130,7,Kiki,2,1,13,6,13,1,99,99
+130,8,Hooft,2,1,99,6,13,99,99,99
+130,9,Joop,1,1,2,1,99,2,99,kantoormedewerker
+130,10,Wim,1,1,2,1,99,1,99,99
+130,11,Lies,2,1,3,1,2,1,99,99
+130,12,Harry,2,1,13,6,13,1,99,99
+130,13,Fré,1,1,99,6,13,2,99,99
+131,1,Chris,1,1,3,1,3,3,1,onderzoeker
+131,2,Saskia,2,1,99,1,3,3,99,99
+131,3,Rebecca,2,1,3,1,3,1,99,scholier
+131,4,John,1,3,6,4,10,6,1,muzikant
+131,5,Katherine,2,99,99,4,10,6,1,psychotherapeut
+131,6,Barend,1,1,3,1,3,1,99,scholier
+131,7,Opa,1,1,3,1,3,6,99,99
+131,8,Tracy,2,4,6,4,6,1,99,scholier
+131,9,Marjo,2,1,99,1,3,99,99,99
+131,10,Marijke,2,1,3,1,3,3,2,verpleegster
+131,11,Maggie,2,3,7,3,6,3,99,gastvrouw
+131,12,Yoko,2,6,99,3,6,99,99,kunstenaar
+131,13,Paul,1,3,6,3,6,99,99,muzikant
+131,14,Sean,1,4,10,4,10,99,99,muzikant
+131,15,Adam,1,3,7,3,6,99,1,psycholoog
+132,1,ik,1,1,1,1,1,1,1,student
+132,2,vader,1,1,3,1,1,4,99,werkloos (ziektewet)
+132,3,Beppie,2,1,1,1,1,99,99,99
+132,4,Ria,2,1,99,1,99,1,99,99
+132,5,Willem,1,1,3,1,3,6,2,scheepsjager/verzetsstrijder
+132,6,Ingrid,2,1,99,1,1,99,2,verpleger
+132,7,Aaltje,2,1,3,1,3,99,2,snackbarmedewerker
+132,8,Janssen,1,1,99,1,99,99,1,arts
+132,9,Pot,1,1,1,1,1,99,2,scheepsjager/verzetsstrijder
+132,10,Donkerbroek,1,1,1,1,1,99,2,scheepsjager/NSB'er
+132,11,Zijlstra,1,1,1,1,1,99,2,scheepsjager/NSB'er
+133,1,Rosa,2,1,99,1,2,4,1,docent/manager
+133,2,Birgit,2,1,99,1,99,2,1,psycholoog
+133,3,Inger,2,1,99,1,99,2,99,99
+133,4,Jessica,2,1,99,1,99,99,1,manager
+133,5,Simone,2,1,99,1,99,99,1,ambtenaar/afdelingshoofd gemeente
+133,6,Lisa,2,1,99,1,99,99,99,99
+133,7,Alphons,1,1,99,1,99,99,1,docent
+133,8,Cees,1,1,99,1,99,99,1,eigenaar aannemersbedrijf
+133,9,Rano,1,6,13,6,13,1,2,99
+133,10,Mara,2,1,99,1,99,4,99,99
+133,11,Klaas,1,1,99,1,99,99,99,vogelaar
+133,12,Ben,1,1,99,1,99,99,99,vogelaar
+133,13,Aya,2,1,99,1,99,1,99,99
+133,14,Fenya,2,1,99,1,99,3,99,99
+133,15,Robin,2,1,99,1,99,99,2,secretaresse
+134,1,J.J.,1,1,3,1,3,1,99,scholier/muzikant/gangster
+134,2,John,1,1,99,1,3,1,2,gangster/rapper
+134,3,José,2,1,99,1,3,1,99,scholier
+134,4,Buk,1,1,99,1,99,99,1,journalist
+134,5,Molenaar,1,1,99,1,99,3,1,politicus
+134,6,De Don,1,1,99,1,99,3,1,platenbaas
+134,7,Khalid,1,99,99,1,3,99,2,pooier/gangster
+134,8,Jiggy,1,5,99,1,3,99,2,rapper/crimineel
+134,9,Riot,1,6,99,1,99,99,2,criminineel
+134,10,Rudolf,1,1,99,1,99,99,1,eindredacteur
+134,11,Likker,1,99,99,1,3,99,99,crimineel
+134,12,Donya,2,1,99,1,99,1,2,grimeur
+134,13,Jeanine,2,1,99,1,99,1,99,scholier
+134,14,Liesbeth,2,1,99,1,99,1,99,scholier
+135,1,Wiel,1,1,2,1,2,1,1,schrijver
+135,2,Zina,2,1,2,1,2,1,1,docent
+135,3,Loos,1,1,99,1,2,1,1,makelaar
+135,4,Femke,2,1,2,1,2,1,99,scholier
+135,5,Suzan,2,1,99,1,2,3,1,schrijver
+135,6,Cas,1,1,2,1,1,1,1,hoogleraar
+135,7,Erik,1,1,2,1,99,1,1,student
+135,8,Ruurd,1,1,2,1,2,2,99,scholier
+135,9,Moeder,2,1,99,1,2,99,99,99
+135,10,Daniel,1,4,99,4,99,99,1,student
+135,11,Claudia,2,1,2,1,2,1,99,99
+135,12,Elsbergh,1,1,2,1,2,99,99,makelaar
+135,13,Hilda,2,1,1,1,1,1,1,student
+135,14,Floor,2,1,99,1,99,1,99,99
+135,15,Thijs,1,1,99,1,99,99,2,tuinder
+135,16,Esther,2,1,99,1,99,1,1,student
+135,17,Eline,2,1,99,1,99,1,1,student
+136,1,Nicky,2,2,5,2,4,3,99,99
+136,2,Chantal,2,2,5,2,5,99,99,99
+136,3,Nadia,2,2,5,6,99,2,2,gastvrouw
+136,4,Eva,2,3,99,99,99,1,99,99
+136,5,Marcelo,1,3,99,3,99,2,2,chauffeur
+136,6,Grizzly,2,2,99,2,99,4,99,99
+136,7,Elisabeth,2,2,4,2,4,99,1,psycholoog
+136,8,Frank,1,2,99,99,99,99,99,reisleider
+137,1,Steegman,1,2,5,2,5,3,1,schrijver
+137,2,ik,1,99,99,99,99,99,1,biograaf
+137,3,Renée,2,2,5,2,5,1,99,99
+137,4,Tereza,2,2,99,2,5,3,1,zakenvrouw
+137,5,Lodewijk,1,2,5,1,5,6,99,99
+137,6,François,1,2,5,2,5,5,99,99
+137,7,Arlette,2,2,5,2,5,3,99,99
+137,8,Sandra,2,2,5,2,99,1,99,99
+137,9,Mieke,2,2,5,2,5,3,99,99
+137,10,Andy,2,2,5,2,5,2,2,ploegbaas
+137,11,Jürgen,2,2,5,2,5,2,99,scholier
+137,12,Petra,1,2,5,2,5,2,2,groenteboer
+138,1,Emma,2,1,99,1,1,2,1,tolk
+138,2,Kris,1,1,99,1,2,99,1,rechercheur
+138,3,Van Drie,1,1,99,1,1,4,2,crimineel
+138,4,Titus,1,1,99,1,1,99,2,conciërge/crimineel
+138,5,Wim,1,1,99,1,99,99,1,rechercheur
+138,6,Dragovich,1,3,99,1,3,99,2,crimineel
+138,7,Karin,2,1,99,1,1,1,99,99
+138,8,Harald,1,1,99,1,99,99,1,crimineel/ICT'er
+138,9,Sanders,1,1,99,1,99,99,99,hoteldirecteur
+138,10,Denise,2,1,99,1,99,99,99,99
+138,11,Bleekvelt,1,1,99,1,99,99,1,rechercheur
+138,12,Carmichael,1,4,10,4,99,4,1,zakenman
+138,13,sr,1,3,99,99,99,99,99,crimineel
+138,14,lk,1,3,99,99,99,99,99,crimineel
+139,1,P.F. Thomése,1,1,99,1,2,4,1,schrijver
+139,2,J. Kessels,1,1,99,1,3,99,1,journalist/eigenaar restaurant
+139,3,Peer,1,1,99,1,3,99,1,eigenaar restaurant
+139,4,Bernadette,1,1,3,6,12,99,99,sexual retainer
+139,5,de Schel,1,6,99,6,12,99,1,journalist/fotograaf
+139,6,Gerd,1,3,99,3,99,99,99,99
+139,7,Mei Lan,2,6,99,6,12,99,2,ober
+140,1,Richter,1,2,5,2,99,2,2,marinier
+140,2,Clovis,1,2,5,2,5,6,1,scheepsbouwer
+140,3,Layla,2,2,99,2,99,99,1,fotograaf
+140,4,Jacques,1,2,5,2,5,6,2,scheepsbouwer
+140,5,Jadran,1,3,99,2,99,3,2,seizoensarbeider
+140,6,Bojana,2,3,99,2,99,99,99,vluchteling
+140,7,Abraham,1,2,5,2,5,6,99,scheepsbouwer
+140,8,Afra,2,2,5,2,5,6,99,99
+141,1,Robert,1,1,99,1,3,3,1,restaurateur 
+141,2,Micky,2,1,99,1,3,3,1,rechercheur/privédetective
+141,3,Katja,2,6,99,3,7,99,1,rechercheur
+141,4,Carsten,1,3,99,3,7,99,1,eigenaar prothesenproducent
+141,5,Ingrid,2,3,99,3,6,99,1,onderzoeker
+141,6,Debriek,1,1,99,1,3,4,1,ondernemer
+141,7,Hinrichs,1,3,99,3,6,3,1,directeur
+141,8,Patrick,1,3,99,3,6,3,2,portier/beveiligingsmedewerker
+141,9,Sascha,2,3,99,3,6,3,2,portier/beveiligingsmedewerker
+141,10,Bayder,1,3,99,3,99,99,1,chef beveiligingsbedrijf
+141,11,Sybille,2,3,99,3,6,99,1,onderzoeker
+141,12,Molendorp,1,1,99,1,3,99,1,commissaris
+141,13,Anouk,2,1,99,1,99,99,1,restaurateur 
+141,14,Auber,1,1,99,1,3,99,1,boekhouder
+141,15,Raik,1,1,99,1,99,99,2,beveiligingsmedewerker
+141,16,Michael,1,1,99,1,99,99,2,secretaris
+141,17,Anderman,1,1,3,1,99,99,1,ambtenaar
+141,18,Kampmann,1,1,99,1,99,99,1,verzekeraar
+142,1,Viktor,1,1,99,3,6,4,1,hoogleraar
+142,2,Vibeke,2,4,99,4,10,5,99,99
+142,3,Anne,2,4,12,4,12,99,1,verpleger
+142,4,Anders,1,4,99,4,99,99,1,fotograaf
+142,5,Erna,2,3,6,4,10,1,99,scholier
+142,6,Ole,1,3,6,3,6,1,99,scholier
+142,7,Nielsen,1,99,99,99,99,4,1,advocaat
+143,1,Lucas,1,1,3,1,3,1,1,artsassistent
+143,2,Shala,1,6,99,6,99,1,2,slaaf
+143,3,Mijntje,2,6,13,6,13,1,1,verpleger
+143,4,Van Spilberghen,1,1,99,1,3,2,1,arts
+143,5,Amada,2,6,99,6,13,1,99,slaaf/oppas
+143,6,Bruno,1,6,99,6,13,6,2,slaaf/verhalenverteller
+143,7,Claes,1,1,99,6,13,99,1,arts
+143,8,Hannes,1,1,99,6,13,4,99,planter
+143,9,Bruno,2,6,13,6,13,6,2,slaaf
+143,10,Seitz,1,3,99,6,13,99,1,arts
+143,11,Albert,1,1,99,6,13,99,1,pater
+143,12,Johannes,1,2,99,99,99,1,2,scheepsjongen
+143,13,Eline,2,1,3,1,3,1,99,99
+143,14,Fien,2,1,99,1,99,1,2,dienstmeisje
+143,15,Mercier,1,99,99,6,13,99,99,99
+143,16,Tula,1,6,99,6,13,99,2,slaaf
+143,17,Jacqueline,2,1,99,6,13,99,1,verpleegkundige
+144,1,Sam,2,1,99,3,6,99,1,journalist
+144,2,Jur,1,1,99,3,6,99,1,journalist
+144,3,Sofie,2,1,99,99,99,99,1,journalist/hoofdredacteur
+144,4,Schulz,1,3,99,3,6,6,1,docent natuurkunde
+144,5,Morris,1,1,99,1,1,99,1,galeriehouder
+144,6,Monika,2,99,99,99,99,99,1,archivaris
+144,7,Dieter,1,3,99,3,99,99,1,muzikant/Stasi-agent/journalist (kunst)
+144,8,Berg,1,3,99,3,6,3,1,uitgever/crimineel
+144,9,Eefje,2,1,99,3,99,99,1,muzikant
+144,10,Jenny,2,99,99,3,99,99,99,99
+144,11,Neumeyer,1,3,99,3,6,6,99,politieman/ondernemer
+144,12,Hoffmann,1,3,99,3,6,5,99,politicus
+144,13,Thelma,2,1,99,1,99,99,1,journalist
+144,14,Lukas,1,99,99,3,6,1,99,99
+144,15,Van Groeningen,1,1,99,3,99,99,1,onderzoeker
+144,16,Job,1,1,99,1,99,99,1,schrijver
+145,1,Sofia,2,1,99,3,99,1,99,scholier
+145,2,Wilbert,1,1,99,1,99,4,1,universitair medewerker
+145,3,Harold,1,1,99,3,99,4,1,99
+145,4,Adriaan,1,1,99,1,99,99,1,accountant
+145,5,Jules,1,1,99,1,99,1,1,acteur
+145,6,Marco,1,3,99,3,99,1,2,muzikant/verkoper 
+145,7,Kim,2,1,99,1,2,1,1,student
+145,8,Robbert,1,1,99,1,99,99,99,99
+145,9,Pauline,2,1,99,1,99,99,99,99
+145,10,Caroline,1,1,99,1,99,1,99,scholier
+145,11,Ilja,1,1,99,1,99,99,1,acteur
+145,12,BJ,1,1,99,1,99,99,1,regisseur
+145,13,Janine,2,1,99,1,99,4,99,99
+145,14,Karel,1,1,99,1,99,4,99,99
+145,15,Erik,1,1,99,1,3,4,99,99
+146,1,Isebrand,1,1,99,1,3,2,1,consultant
+146,2,Cornelis,1,1,99,1,3,5,1,organisatieadviseur
+146,3,Gesina,2,1,99,1,99,99,1,onderzoeker/redacteur
+146,4,Tineke,2,1,99,1,3,2,99,99
+146,5,Sylvio,1,1,3,1,99,99,1,verpleger (psychiatrie)
+146,6,Jean-Luc,1,1,3,1,99,99,2,werkloos/wietteler
+146,7,Robert,1,1,99,3,7,99,2,kunstenaar
+146,8,Ebel,1,1,3,1,3,99,99,99
+146,9,Manja,2,1,99,1,3,99,1,chef callcenter
+146,10,Boudewijn,1,1,99,1,3,99,2,werkloos 
+146,11,Menno,1,1,99,1,3,2,99,scholier
+146,12,Froukje,2,1,99,1,99,99,99,99
+147,1,Margot,2,99,99,2,4,2,1,journalist
+147,2,Henry,1,99,99,2,4,99,1,reclamemaker
+147,3,Judith,2,99,99,99,99,99,1,journalist
+147,4,Lee Bao,1,6,99,99,99,99,1,biochemicus
+147,5,Wen,1,6,99,99,99,99,1,spion
+147,6,Mia,2,99,99,99,99,99,2,landbouwer
+147,7,Phil,1,99,99,99,99,99,1,journalist
+147,8,Levy,1,99,99,99,99,99,1,journalist
+147,9,B,1,99,99,99,99,99,99,99
+147,10,Tim,1,4,99,99,99,99,99,huurmoordenaar
+147,11,Chantal,1,6,99,99,99,99,99,99
+147,12,Howard,1,4,99,99,99,99,99,huurmoordenaar
+147,13,Hyun-Ki,1,6,99,99,99,99,1,internetondernemer
+148,1,Tjepko,1,1,3,1,3,3,2,bokser/crimineel
+148,2,Cor,1,1,99,1,3,3,1,mentor TBS-kliniek
+148,3,Wiesje,2,1,3,1,99,2,99,99
+148,4,Alice,2,1,99,1,99,2,99,arts
+148,5,Aajee,1,1,99,1,3,99,1,psychiater
+148,6,Thérése,2,1,99,1,3,99,1,therapeut
+148,7,Bé,1,1,99,1,99,3,99,99
+148,8,Kobus,1,1,2,1,3,99,2,crimineel/pooier
+148,9,Pjotr,1,2,99,1,3,99,2,crimineel
+148,10,Boelo,1,1,99,1,99,99,2,bokser
+148,11,Tuck,1,1,99,1,99,99,99,crimineel
+148,12,Stefan,1,1,99,1,99,99,1,advocaat
+148,13,Jo,1,1,99,1,99,99,1,therapeut
+148,14,Fris,1,1,99,1,99,99,99,crimineel/kweker
+148,15,Theodoor,1,1,99,1,99,99,99,crimineel
+148,16,Hajo,1,1,99,1,99,3,99,raadslid/loodgieter
+148,17,Ricardo,1,1,99,1,99,99,99,crimineel
+148,18,Rosita,2,3,99,1,99,1,2,kok/kassadame
+148,19,Karel,1,1,99,1,99,99,99,crimineel
+148,20,Hinnerk,1,3,7,1,99,99,99,crimineel
+148,21,Aaf,2,1,99,1,99,3,99,crimineel
+149,1,Gwen,2,1,5,2,4,2,1,student
+149,2,Dieter,1,99,99,2,4,2,1,student
+149,3,Kathy,2,2,99,2,5,3,99,99
+149,4,Edward,1,2,99,2,5,2,99,99
+149,5,Vanessa,2,1,2,2,5,1,99,scholier
+149,6,Thomas,1,99,99,2,5,3,1,student
+149,7,René,1,2,99,2,5,99,1,student
+149,8,Luuk,1,2,99,2,5,2,1,docent
+149,9,Jolien,2,2,99,2,5,2,1,docent
+149,10,Jana,2,2,5,2,5,1,1,scholier
+149,11,Monique,2,2,5,2,5,1,1,scholier
+150,1,Marlena,2,3,7,1,3,2,2,boer/hotelmedewerkster
+150,2,Andries,1,1,3,1,3,4,2,boer
+150,3,Szymon,1,1,99,3,6,6,1,advocaat/eigenaar hotel
+150,4,Boris,1,1,3,1,3,1,99,99
+150,5,Nathan,1,4,99,3,6,2,1,journalist
+150,6,Riet,2,1,3,1,3,2,2,slager
+150,7,Basia,2,3,99,3,6,6,1,eigenaar hotel
+150,8,Muijssens,1,1,99,1,99,99,1,advocaat
+150,9,Irina,2,3,7,3,7,6,2,boer
+150,10,Chiel,1,1,3,1,3,2,2,slager
+150,11,Richard,1,1,99,3,3,99,99,eigenaar reisbureau
+150,12,Jens,1,1,3,1,3,1,2,knecht
+150,13,Annetje,2,1,3,1,3,3,2,boer
+150,14,Milosz,1,3,7,3,7,99,99,99
+150,15,Polak,1,1,99,1,2,99,1,advocaat
+151,1,Vera,2,1,1,3,1,3,2,fotograaf
+151,2,Lucien,1,99,99,99,99,4,1,eigenaar schoonmaakbedrijf
+151,3,Annie,2,99,99,99,99,99,2,ziektewet
+151,4,Nico,1,1,3,1,3,3,1,fotograaf
+151,5,Aron,1,3,99,3,99,3,1,reclamemaker
+151,6,Theodorus,1,1,99,1,99,99,2,sergeant
+151,7,oma,2,1,99,1,99,6,99,99
+151,8,Van Grunsven,2,1,99,1,3,99,2,boerin
+151,9,Hans,1,1,99,1,99,6,99,restauranteur/gepensioneer
+151,10,Rosalie,2,3,99,1,99,6,99,gepensioneerd
+151,11,Laura,2,1,99,99,99,3,1,verpleegkundige
+151,12,Ingrid,1,1,99,1,99,99,1,verpleegkundige
+151,13,Robert,1,1,99,1,99,3,1,accountant
+151,14,Noa,2,1,99,1,99,1,99,99
+151,15,Manders,1,1,99,1,99,99,1,psycholoog
+151,16,Chiel,1,1,99,1,99,1,99,99
+151,17,Nora,2,1,99,1,99,1,99,99
+152,1,Victor,1,2,99,6,99,4,1,arts
+152,2,Patrix,1,99,99,6,99,4,1,priester
+152,3,Madame,2,6,99,6,99,99,2,eigenaar koffiezaak
+152,4,Cassandra,2,6,99,6,99,99,99,99
+152,5,commissaris,1,99,99,6,99,99,1,commissaris
+153,1,Ismeen,2,1,99,1,99,2,1,promovenda
+153,2,Clarissa,2,1,99,1,99,3,99,99
+153,3,Gone,2,1,99,1,99,1,99,99
+153,4,Siegfried,1,1,99,1,99,5,1,docent
+153,5,George,1,1,99,1,99,99,99,99
+153,6,Peter,1,1,99,1,99,2,1,academicus
+154,1,Ik,1,1,99,1,99,99,1,schrijver
+154,2,Snoep,2,1,99,1,99,99,1,bedrijfsmedewerker
+154,3,Kanarie,1,1,99,1,99,99,2,drugsdealer
+154,4,Willem,1,1,99,1,99,99,99,
+154,5,Alex,1,1,99,1,99,99,2,crimineel
+154,6,Maria,2,1,99,1,99,99,99,
+154,7,Willemijn,2,1,99,1,99,99,1,psychiater
+154,8,Lina,2,1,99,1,99,99,99,medewerker apotheek
+154,9,Van Damme,1,1,99,1,99,99,1,arts
+154,10,Chris,,1,99,1,99,99,99,uitvaartsondernemer
+155,1,Emma,2,1,99,1,1,1,99,verzetstrijder/koerier
+155,2,Willem,1,1,99,1,1,1,1,verzetstrijder
+155,3,Piet,1,1,99,2,99,6,99,99
+155,4,Charlie,2,1,99,1,1,1,1,student
+155,5,Chris,1,1,99,3,6,99,99,verzetstrijder
+155,6,Erik,1,6,12,3,6,99,1,verzetstrijder 
+155,7,Maria,2,1,99,1,99,99,2,kok
+155,8,Pierre,1,3,99,3,7,5,2,boer
+155,9,Angelique,2,3,99,3,7,5,2,boer
+155,10,Lotte,2,1,99,3,99,1,99,99
+155,11,Dirk,1,1,99,1,99,99,99,verzetstrijder
+155,12,Gerda,2,1,99,3,99,4,99,99
+155,13,Chris,1,1,99,1,99,1,1,piloot/verzetstrijder
+155,14,Peter,1,1,99,1,99,1,99,verzetstrijder
+155,15,Christian,1,1,99,1,99,1,99,scholier
+156,1,Sanders,1,1,99,6,13,4,2,plantageleider
+156,2,Metz,1,1,99,6,13,4,2,plantageleider
+156,3,No,2,6,99,6,13,2,2,huishoudhulp
+156,4,Moerta,2,6,13,6,13,2,1,huishoudhulp/student
+156,5,Lientje,2,6,13,6,13,1,99,99
+156,6,Klaassen,1,1,99,6,13,4,1,voorzitter Deli plantagevereniging
+156,7,Jans,2,1,99,1,99,5,99,99
+156,8,Sarima,2,6,99,6,13,1,99,99
+156,9,Itih,2,1,99,6,13,1,99,99
+156,10,Broers,1,1,99,6,13,5,99,plantagemanager
+156,11,Ketu,1,6,13,6,13,3,2,arbeider
+156,12,Adinda,1,6,13,6,13,1,2,huishoudhulp
+156,13,Oma T,2,6,99,6,13,6,2,99
+156,14,Von Ritter,1,3,99,6,13,1,1,veldassistent
+156,15,Teng Li,1,6,99,6,13,99,2,veldassistent
+156,16,Ang Wei,1,6,99,6,13,99,2,hoofdtandil
+156,17,Kramer,1,1,99,6,13,4,1,plantageleider
+156,18,Achmed,1,6,99,6,13,1,2,huisjongen
+156,19,Rhemrev,1,6,99,6,99,99,1,magistraat
+156,20,Boonstra,1,1,99,6,13,99,1,plantagechef
+156,21,Woedjonno,1,6,13,6,13,99,2,arbeider
+156,22,Moerman,1,1,99,6,13,99,1,verentegenwoordiger
+157,1,Jonah,1,1,1,1,3,6,2,diamantenhandelaar
+157,2,Nana,2,6,99,6,99,5,99,huishoudhulp/medewerker apotheek
+157,3,Augusto,1,6,99,6,99,99,1,arts
+157,4,Vicky,2,6,99,6,99,99,99,99
+157,5,Seno,1,1,99,1,99,99,99,99
+157,6,Linda,2,1,99,1,1,6,1,eigenaar hotel
+157,7,Landau,1,1,99,1,99,99,1,diamantenhandelaar
+157,8,Max,1,1,99,1,99,99,1,diamantenhandelaar
+157,9,Noor,2,1,99,1,99,99,2,kamermeisje
+157,10,Sonja,2,1,99,1,1,99,99,99
+157,11,moeder,2,99,99,1,1,99,99,99
+157,12,Delmonte,1,1,99,5,99,6,99,99
+157,13,Steenstra,1,1,99,1,99,99,1,arts
+157,14,Kaptein,1,1,99,1,99,6,99,99
+157,15,Brander,1,1,99,99,99,99,99,diamantenhandelaar
+157,16,Naki,1,6,99,6,99,99,2,knecht
+157,17,Van Groen,2,1,99,1,99,2,99,99
+158,1,Tomaso,1,1,3,3,7,1,1,student
+158,2,Domenico,1,3,7,3,7,99,2,eigenaar boomgaard
+158,3,mevrouw Mastromatteo,2,3,7,3,7,99,99,99
+158,4,Romagnoli,1,3,7,3,7,99,1,priester
+158,5,Carmela,2,3,7,3,7,99,99,99
+158,6,Freddy,1,3,7,3,7,99,99,medewerker boomgaard
+158,7,Giuseppe,1,3,7,3,7,99,1,antiquair
+158,8,Marco,1,3,7,3,7,99,2,agent
+158,9,Antonella,2,3,7,3,7,99,99,ober/verkoper
+158,10,Gianluigi Biscotti,1,3,7,3,7,99,1,arts
+158,11,Davide,1,3,7,3,7,99,1,docent
+158,12,Vincenzo,1,3,7,3,7,99,2,tuinder
+159,1,Samuel,1,1,1,1,1,3,99,
+159,2,Venus,2,6,99,1,1,2,1,maatschappelijk werker
+159,3,Sammie,1,6,1,1,1,1,99,99
+159,4,Rocky,1,99,99,1,99,4,2,coach
+159,5,Cynthia,2,6,99,1,3,99,99,99
+159,6,Vincent,1,1,1,1,1,3,99,99
+159,7,Sonny,1,6,12,1,1,99,2,schoonmaker
+159,9,Jean,1,1,99,1,99,99,99,ontwerper
+159,8,Ernst,1,1,99,1,1,99,1,student
+159,10,Harold,1,1,99,1,99,99,99,kok
+159,11,Mayke,2,1,3,1,99,1,99,model
+159,12,Ferdinand,1,1,99,1,99,5,1,politicus/tv-persoonlijkheid
+159,13,George,1,99,99,1,99,99,99,voetballer/tv-persoonlijkheid
+160,1,Vermeer,1,1,2,1,2,3,1,architect
+160,2,Isa,2,1,2,1,1,3,1,bouwstofontwikkelaar
+160,3,Celine,2,1,2,1,2,3,1,metereoloog
+160,4,Kasper,1,1,99,1,2,3,1,accountant /crimineel
+160,5,Anne,2,1,2,1,2,1,99,
+160,6,Olivier,1,1,99,1,2,3,1,architect
+160,7,Arend,1,1,99,1,2,99,1,politicus
+160,8,Teijmen,1,1,99,1,2,99,1,projectontwikkelaar/investeerder/vastgoedbaron/crimineel
+160,9,Ronnie,1,1,2,1,99,99,1,analist
+160,10,Dennis,1,1,2,4,10,2,1,applicatie engineer
+160,11,Remco,1,1,99,1,99,1,99,scholier/muzikant
+160,12,Quist,1,1,99,1,2,99,1,burgemeester
+160,13,Visserlink,1,1,99,1,2,99,1,wethouder
+160,14,Maarten,1,1,2,1,2,1,99,scholier
+160,15,Alexander,1,1,2,1,99,3,1,manager
+161,1,Franny,2,1,3,1,1,6,1,letterkundige
+161,2,Maud,2,1,3,1,1,6,1,hoogleraar
+161,3,Birgit,2,1,3,1,2,6,1,eigenaar modellenbureau
+161,4,Ella,2,1,3,1,3,5,1,huisvrouw
+161,5,Klaartje,2,1,3,1,3,5,1,makelaar
+161,6,Gitta,2,1,3,1,3,5,1,milieuadviseur/bioloog
+161,7,Anneke,2,1,99,1,99,5,1,jurist/schoonmaker
+162,1,Pontus,1,99,99,3,12,4,1,politiecommisaris
+162,2,Samira,2,99,99,99,99,1,99,99
+162,3,Saïd,1,99,99,99,99,1,99,99
+162,4,de Ethiopiër,1,6,99,3,99,99,99,99
+162,5,Zalman,1,99,99,3,12,99,1,rabbijn
+162,6,Zita,2,99,99,3,12,99,2,huishoudhulp
+162,7,Vitaly,1,99,99,3,99,99,99,99
+162,8,Alexander,1,99,99,3,99,99,2,stroper
+162,9,Akmuhammet,1,6,12,3,99,99,2,chauffeur
+162,10,de lange man,1,99,99,99,99,99,99,99
+162,11,Oksana,2,99,99,3,12,99,99,secretaresse
+162,12,Koller,1,99,99,3,12,99,1,brigadier
+162,13,Tina,2,99,99,3,12,99,2,hoer/barkeeper
+162,14,Yehuda,1,99,99,99,99,99,1,rabbijn
+162,15,Eva,2,99,99,99,99,99,99,99
+162,16,Chiop,1,99,99,99,3,99,99,handelaar
+162,17,Nacer ,1,99,99,99,99,99,99,smokkelaar
+162,18,Semjon,1,99,99,3,12,99,1,burgemeester
+162,19,Ivan,1,99,99,3,12,99,1,politieagent
+163,1,John,1,1,99,1,3,99,1,mediabaas
+163,2,Cees,1,1,99,99,99,99,1,regisseur
+163,3,Mark,1,1,99,1,2,99,1,regisseur
+163,4,Jezus,1,1,99,1,2,1,1,audiotechnicus
+163,5,Vincent,1,1,99,1,2,99,1,beeldtechnicus
+163,6,Jasper,1,1,99,1,2,99,1,audiotechnicus
+163,7,Eline,2,1,2,1,2,2,99,
+163,8,Leo,1,1,99,1,2,3,2,lichttechnicus/crimineel
+163,9,Ronald,1,1,99,1,2,99,2,lichttechnicus/crimineel
+163,10,Donna,2,1,99,1,99,99,2,stylist
+163,11,Sasha,2,1,99,1,1,99,1,acteur
+163,12,Rogier,1,1,99,1,3,99,2,audiotechnicus
+163,13,Ray,1,1,99,1,99,99,1,cameraman
+163,14,Hans,1,1,99,1,2,99,1,cameraman
+163,15,Lieke,2,1,99,1,99,99,99,acteur
+163,16,Sofie,2,1,99,1,99,99,99,televisieproducent
+163,17,Dennis,1,1,99,1,2,99,99,setdresser
+163,18,Antonio,1,1,99,1,2,99,1,schrijver
+163,19,Abdel,1,5,99,1,2,99,99,cameraman
+163,20,Theo,1,1,99,1,2,4,1,uitvoerend producent
+163,21,Ella,2,1,99,1,2,3,1,regieassistent
+163,22,Marco,1,1,99,1,2,4,99,acteur
+163,23,Joost,1,1,99,1,2,99,1,opnameleider
+163,24,Sunee,2,6,99,1,3,1,99,prostituee
+164,1,Nathan,1,1,1,1,1,1,99,scholier
+164,2,Theo,1,1,99,1,1,4,1,regisseur
+164,3,Kohn,1,1,99,1,1,4,1,crimineel
+164,4,Sonja,2,1,99,1,1,3,1,arts
+164,5,Leon,1,1,99,1,1,5,1,schrijver
+164,6,Cohen,1,1,99,1,1,5,1,burgemeester/politicus
+164,7,Boujeri,1,5,99,1,1,2,2,crimineel
+164,8,Sallie,1,5,99,1,1,2,2,terrorist
+164,9,Bram,1,1,99,1,1,5,1,advocaat
+164,10,Marijke Hogeveld,2,1,99,1,1,5,1,hoogleraar
+164,11,Jimmy,1,4,99,4,99,3,1,priester
+164,12,Kichie,1,5,13,1,1,4,2,crimineel
+164,13,Donner,1,1,99,1,2,5,1,minister van justitie
+164,14,Wilders,1,1,3,1,2,4,1,politicus
+164,15,Frits,1,5,99,1,1,1,99,terrorist
+164,16,Janet,2,4,10,4,10,4,99,99
+164,17,Lia,2,1,99,1,99,1,99,scholier
+164,18,Van der Ven,1,1,99,1,99,3,1,medewerker veiligheidsdienst
+164,19,Father Joseph,99,99,99,99,99,99,1,priester
+164,20,Van Ast,1,1,99,1,99,99,1,secretaris
+164,21,Karel,1,5,99,1,1,2,2,terrorist
+165,1,Sylvester,1,1,1,1,1,1,2,moordenaar
+165,2,Rufus,1,1,99,1,1,99,2,caberetier 
+165,3,Lavendel ,2,99,99,99,99,99,2,prostituee
+165,4,Rikkert,1,1,99,1,1,99,1,rechercheur
+165,5,Rivka,2,99,99,1,1,99,99,99
+165,6,Kiki,2,99,99,1,1,99,99,99
+165,7,Milou,2,99,99,1,1,1,99,scholier
+165,8,Hannelore,2,1,99,1,99,99,99,99
+165,9,Charlotte,2,1,99,1,99,99,99,99
+166,1,Sonja,2,6,12,4,10,6,1,diplomaat/presidentsvrouw
+166,2,Chiang,1,6,99,6,99,6,1,generaal/president van China
+166,3,Ailing,2,6,12,6,12,2,99,militair investeerder
+166,4,Chingling,2,6,12,6,12,99,1,partijvoorzitter
+166,5,Charlie,1,6,99,6,12,6,99,eigenaar drukkerij/couppleger
+166,6,moeder,2,6,99,6,12,6,99,99
+166,7,T.V.,1,6,99,6,12,6,1,minister
+166,8,Zhang,1,99,99,6,99,99,1,politicus
+166,9,Donald,1,4,99,4,99,99,1,adviseur
+166,10,Wendell,1,4,99,4,99,99,1,politicus
+166,11,Sun,1,4,99,6,99,99,1,rebel
+166,12,Roosevelt,1,4,10,4,10,3,1,president
+166,13,Stilwell,1,4,99,4,99,99,1,generaal
+166,14,Churchill,1,3,6,3,6,99,1,president
+166,15,Mao Zedong,1,4,13,6,12,99,2,boer/politicus
+166,16,Kung,1,4,12,4,12,2,1,bankier
+167,1,Laura,2,1,2,6,12,2,1,hostess
+167,2,Chess,2,6,99,6,12,2,1,hostess
+167,3,Jun,1,6,99,6,12,99,2,muzikant
+167,4,Amélie,2,3,99,6,12,2,2,hostess
+167,5,Elijah,1,99,99,6,12,2,1,ongedefinieerde functie in de cultuursector
+167,6,Mama-San,2,6,99,6,12,5,1,eigenaar hostessclub
+167,7,Daniël,1,3,7,6,12,2,99,99
+167,8,Karina,2,99,99,6,12,2,2,hostess
+167,9,Kenji,1,6,99,6,12,1,1,student
+167,10,Valentina,2,99,99,6,12,1,99,hostess
+167,11,Angela,2,99,99,6,12,1,99,hostess
+167,12,Katalin,2,99,99,6,12,1,99,paaldanser/hostess
+167,13,Nobu,1,4,99,6,12,99,99,99
+167,14,Takashi,1,4,99,6,12,99,99,99
+167,15,Shachõ,1,4,12,6,12,99,99,manager hostessclub
+167,16,Thomas,1,1,99,6,99,1,1,student
+167,17,Mark,1,4,10,6,12,1,99,99
+168,1,Tatjana,2,1,1,1,2,3,1,99
+168,2,Babs,2,1,99,1,2,3,1,rentenier
+168,3,Lot,2,1,99,1,2,3,99,99
+168,4,Rudolf,1,1,99,1,2,3,1,zakenman
+168,5,Mevrouw Super,2,1,99,1,2,3,1,makelaar
+168,6,Katja,2,1,99,1,2,3,1,kunstenaar
+168,7,Myrthe,2,1,99,1,2,3,1,historicus
+168,8,Maartje,2,1,99,1,2,1,99,scholier
+168,9,Nada,2,99,99,1,2,3,99,99
+168,10,Juna,2,1,1,1,2,1,99,scholier
+168,11,Christina,2,1,99,1,2,3,99,99
+168,12,Reinier,1,1,99,1,2,3,99,99
+168,13,Monique,2,1,99,1,2,3,99,99
+168,14,Mariska,2,1,99,1,2,3,99,99
+168,15,Valerie,2,1,99,1,2,3,99,99
+168,16,Emmy,2,1,99,1,2,1,99,scholier
+168,17,Gifkikker,2,1,99,1,2,3,99,99
+168,18,Adriaan,1,1,99,1,2,3,1,advocaat
+168,19,Nada,1,1,99,1,2,3,99,99
+168,20,Super,1,1,99,1,2,99,99,99
+168,21,Eliza,1,1,99,1,2,3,99,99
+168,22,Sophie,1,1,99,1,2,1,99,scholier
+169,1,Margot,2,3,99,1,1,1,99,scholier
+169,2,Lotte,2,1,99,1,1,99,2,coach/secretaris roeivereniging
+169,3,Anne,2,3,99,1,1,1,99,scholier
+169,4,Edith,2,3,99,1,1,3,99,99
+169,5,Otto,1,3,99,1,1,3,99,99
+169,6,Erna,2,3,99,1,1,1,99,scholier
+169,7,Oma Aken,2,3,99,1,1,6,99,99
+169,8,Gerard,1,1,99,1,1,99,1,dokter/voorzitter roeivereniging
+169,9,Peter,1,1,99,1,1,99,99,bestuurslid roeivereniging
+169,10,Anton,1,1,99,1,1,99,99,bakker/bestuurslid roeivereniging
+169,11,Florentine,2,1,99,1,1,99,99,naaister/gemeentelijke afgevaardigde voor landelijk bestuur/bestuurslid roeivereniging
+169,12,Lidy,2,1,99,1,1,1,99,scholier
+169,13,Miep,2,1,99,1,1,99,2,secretaresse
+169,14,Hein,1,1,99,1,1,1,2,99
+170,1,Van Kempen,1,99,99,99,99,99,99,99
+170,2,Simon,1,1,99,1,1,3,1,werknemer uitgeverij
+170,3,A. A. Staal,1,1,99,1,3,6,1,schrijver
+170,4,Marieke,2,1,99,1,3,99,1,kunstenares
+170,5,Rudi,1,1,99,1,1,6,99,99
+170,6,Ton,1,1,99,1,2,3,99,99
+170,7,Anna,2,1,99,1,99,99,99,99
+170,8,Peter,1,1,99,1,99,4,1,hoofdredacteur (uitgeverij)
+170,9,Lex,1,1,99,1,99,99,1,directeur
+170,10,Van Toorn,1,1,99,3,99,99,99,schrijver
