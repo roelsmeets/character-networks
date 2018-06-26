@@ -1,0 +1,171 @@
+book_id,title,name_author,gender_author,age_author,publisher,perspective,filename
+1,De lichtekooi van Loven,Ineke van der Aa,2,2,De Geus,1,AaVander_DeLichtekooiVanLoven_clean.txt
+2,EUS,Ozcan Akyol,1,2,Prometheus,1,Akyol_Eus_clean.txt
+3,Mambo Jambo,Arthur Amerongen,1,5,Nijgh & Van Ditmar,2,Amerongen_MamboJambo_clean.txt
+4,Een beschaafde man,Jan-Willem Anker,1,3,De Arbeiderspers,2,Anker_EenBeschaafdeMan_clean.txt
+5,De mooiste leugen,Erdal Balci,1,4,De Bezige Bij,2,Balci_DeMooisteLeugen_clean.txt
+6,Joy,Patrick Bassant,1,3,Wereldbibliotheek,3,Bassant_Joy_clean_annotated.txt
+7,Celeste,Adri van Beelen,1,5,Marmer,1,Beelen_Celeste_clean.txt
+8,Dromers,Cornelis van den Berg,1,3,Prometheus,1,Berg_Dromers_clean.txt
+9,De hemelse kamer,Huub Beurskens,1,6,Wereldbibliotheek,3,Beurskens_DeHemelseKamer_clean_annotated.txt
+10,In de naam van TienKamelen,Bouke Billiet,1,3,Wereldbibliotheek,1,Billiet_InDeNaamVanTienKamelen_clean.txt
+11,Een meisje van Honderd,Marion Bloem,2,6,Arbeiderspers,2,Bloem_EenMeisjeVanHonderd_clean.txt
+12,Slagschaduw,Lilian Blom,2,6,Atlas Contact,1,Blom_Slagschaduw_clean.txt
+13,Nood breekt wet,David van Bodegom,1,3,Prometheus,2,Bodegom_NoodBreektWet_clean.txt
+14,Heldhaftig,Britta Bolt (= Britta B_hler en Rodney Bolt),2/1,4,De Arbeiderspers,2,Bolt_Heldhaftig_clean.txt
+15,Alle dingen zijn schitterend,Alex Boogers,1,4,Podium,3,Boogers_AlleDingenZijnSchitterend_clean_annotated.txt
+16,Orang-oetans drijven niet,Stephan ter Borg,1,2,Prometheus,1,Borg_Orang-oetansDrijvenNiet_clean.txt
+17,Op zwart,Willem Bosch,1,2,Lebowski,1,Bosch_OpZwart_clean.txt
+18,Laatste reis,Anton Brand,1,5,Passage,1,Brand_LaatsteReis_clean.txt
+19,Pontus,Job Breemer ter Stege,1,2,Passage,1,BreemerTerSteege_Pontus_clean.txt
+20,Eb,Rebekka W. R. Bremmer,2,3,Querido,2,Bremmer_Eb_clean.txt
+21,Broer,Maurits de Bruijn,1,2,Nieuw Amsterdam,1,Bruijn_Broer_clean.txt
+22,Watervrees tijdens een verdrinking,Herman Brusselmans,1,5,Prometheus,1,Brusselmans_WatervreesTijdensEenVerdrinking_clean.txt
+23,Guggenheimer in de mode,Herman Brusselmans,1,5,Prometheus,2,Brusselmans_GuggenheimerInDeMode_clean.txt
+24,De keisnijders,Pieter de Buysser,1,3,De Geus,2,Buysser_DeKeisnijders_clean.txt
+25,Het heerlijk avondje,Aat Ceelen,1,6,De kring,2,Ceelen_HetHeerlijkAvondje_clean.txt
+26,Luchtmeisjes,Ingrid van der Chijs,2,3,Nijgh & Van Ditmar,2,Chijs_Luchtmeisjes_clean.txt
+27,Park,Willem Claassen,1,2,De Bezige Bij,1,Claassen_Park_clean.txt
+28,De seingever,Ann de Craemer,2,3,De Bezige Bij,1,Craemer_DeSeingever_clean.txt
+29,De verleider van Damascus,Kajo Daad,2,3,De Geus,3,Kajo_DeVerleiderVanDamascus_clean_annotated.txt
+30,Maartse kamers,V.M. Dangre,1,2,De Bezige Bij,3,Dangre_MaartseKamers_clean_annotated.txt
+31,Extra tijd,A.H.J. Dautzenberg,1,4,Atlas,2,Dautzenberg_ExtraTijd_clean.txt
+32,Isis,Hans Dekkers,1,5,Wereldbibliotheek,1,Dekkers_Isis_clean.txt
+33,Kruisverhoor,Peter Delpeut,1,5,Atlas Contact,2,Delpeut_Kruisverhoor_clean.txt
+34,Hondsster,Guy Dierckx,1,5,Houtekiet,2,Dierckx_Hondsster_clean.txt
+35,En het regende brood,Stefan Dierendonck,1,3,Thomas Rap,1,Dierendonck_EnHetRegendeBrood_clean.txt
+36,Nooit ziek geweest,Nico Dijkshoorn,1,5,Contact,1,Dijkshoorn_NooitZiekGeweest_clean.txt
+37,Vader van God,Martin Michael Driessen,1,5,Wereldbibliotheek,2,Driessen_VaderVanGod_clean.txt
+38,Oorlogsparadijs,Nico Dros,1,5,Van Oorschot,2,Dros_Oorlogsparadijs_clean.txt
+39,Zwijgend verleden,Wim Duijst,1,5,Marmer,1,Duijst_ZwijgendVerleden_clean.txt
+40,De engel van Spakenburg,Wim Duijst,1,5,Marmer,2,Duijst_DeEngelVanSpakenburg_clean.txt
+41,Twee zusters,Inez van Dullemen,2,6,De Bezige Bij,3,Dullemen_TweeZusters_clean_annotated.txt
+42,Stille mensen,Esther J. Ending,2,3,Prometheus,1,Ending_StilleMensen_clean.txt
+43,Alles komt goed,Rob van Essen,1,4,Atlas Contact,3,Essen_AllesKomtGoed_clean_annotated.txt
+44,Het meisje met de mooiste heupen,Ad Fransen,1,5,De Bezige Bij,1,Fransen_HetMeisjeMetDeMooisteHeupen_clean.txt
+45,Fretz 2025,Johan Fetz,1,2,Lebowski,1,Fretz_Fretz2025_clean.txt
+46,Suskind,Alex van Galen,1,4,De Arbeiderspers,3,Galen_Suskind_clean_annotated.txt
+47,Op de hoogte,Christophe van Gerrewey,1,2,De Bezige Bij,1,Gerrewey_OpDeHoogte_clean.txt
+48,Dorst,Esther Gerritsen,2,3,De Geus,2,Gerritsen_Dorst_clean.txt
+49,Een rijk alleen,Niels Gerson Lohman,1,2,Nijgh & Van Ditmar,1,GersonLohman_EenRijkAlleen_clean.txt
+50,De hormoonfabriek,Saskia Goldschmidt,2,5,Cossee,1,Goldschmidt_DeHormoonFabriek_clean.txt
+51,Adams seconde,Jacob Groot,1,6,De Harmonie,1,Groot_AdamSeconde_clean.txt
+52,Dealey Plaza 's-Gravenhage,Jos de Gruiter,1,6,PMA,2,Gruiter_DealeyPlazasGravenhage_clean.txt
+53,De man zonder ziekte,Arnon Grunberg,1,4,Nijgh & Van Ditmar,2,Grunberg_DeManZonderZiekte_clean.txt
+54,Het ruime bed,Robert Haasnoot,1,5,De Geus,2,Haasnoot_HetRuimeBed_clean.txt
+55,De man die in zijn eentje de Olympische Spelen organiseerde,Erik Jan Harmens,1,4,Lebowski,2,Harmens_DeManDieInZijnEentje_clean.txt
+56,Hotel Vertigo,Kees 't Hart,1,6,Querido,1,Hart_HotelVertigo_clean.txt
+57,De laatste aedema,Marjolein van Heemstra,2,3,De Bezige Bij,1,Heemstra_DeLaatsteAedema_clean.txt
+58,Zonder tijd te verliezen,Daan Heerma van Voss,1,2,Atlas,1,HeermavanVoss_ZonderTijdTeVerliezen_clean.txt
+59,Haar bloed,Kristien Hemmerechts,2,5,De Geus,2,Hemmerechts_HaarBloed_clean.txt
+60,De verjaardagen,Hanneke Hendrix,2,3,De Geus,2,Hendrix_DeVerjaardagen_clean.txt
+61,Blindgangers,Joke J. Hermsen,2,5,De Arbeiderspers,2,Hermsen_Blindgangers_clean.txt
+62,Familiestuk,Mireille van Hout,2,4,Mistral,3,Hout_Familiestuk_clean_annotated.txt
+63,Niemand in de stad,Philip Huff,1,2,De Bezige Bij,1,Huff_NiemandInDeStad_clean.txt
+64,De windbel,Lucas Husgen,1,5,het balanseer,1,Husgen_DeWindbel_clean.txt
+65,De handel in emtionele goederen,Maarten Inghels,1,2,De Bezige Bij,3,Inghels_DeHandelInEmotioneleGoederen_clean_annotated.txt
+66,Verloren grond,Murat Isik,1,3,Ambo Anthos,1,Isik_VerlorenGrond_clean.txt
+67,Maar buiten is het feest,Arthur Japin,1,5,Arbeiderspers,2,Japin_MaarBuitenIsHetFeest_clean.txt
+68,Het bombardement,Ate de Jong,1,5,Thomas Rap,2,JongAte_HetBombardement_clean.txt
+69,Gebroken wit,Carla de Jong,2,99,De Arbeiderspers,2,JongCarla_GebrokenWit_clean.txt
+70,Pier en oceaan,Oek de Jong,1,6,Atlas Contact,2,JongOek_PierEnOceaan_clean.txt
+71,Spring,Hella de Jonge,2,6,De Bezige Bij,1,Jonge_Spring_clean.txt
+72,Schaduwstad,Fleur Jurgens,2,3,De Bezige Bij,1,Jurgens_Schaduwstad_clean.txt
+73,Havik,Marco Kamphuis,1,4,Wereldbibliotheek,1,Kamphuis_Havik_clean.txt
+74,Bericht uit Berlijn,Otto de Kat,1,6,Van Oorschot,2,Kat_BerichtUitBerlijn_clean.txt
+75,M. ,Shira Keller,2,2,Podium,2,Keller_M_clean.txt
+76,Het lichtatelier,Marie Kessels,2,5,De Bezige Bij,1,Kessels_HetLichtatelier_clean.txt
+77,Liefde heeft geen hersens,Mensje van Keulen,2,6,Atlas,3,Keulen_LiefdeHeeftGeenHersens_clean_annotated.txt
+78,Zwarte kant,Kisling (Corine) & Verhuyck (Paul),2/1,5/6,De Arbeiderspers,2,Kisling&Verhuyck_ZwarteKant_clean.txt
+79,Helena,Geert de Kockere,1,4,Houtekiet,2,Kockere_Helena_clean.txt
+80,De waterverkoper,Geert van der Kolk,1,5,Nieuw Amsterdam,1,Kolk_DeWaterverkoper_clean.txt
+81,De loopjongen,Gerrit Komrij,1,6,De Bezige Bij,2,Komrij_DeLoopjongen_clean.txt
+82,Geen sterveling weet,Gerard Koolschijn,1,6,Athenaeum,1,Koolschijn_GeenStervelingWeet_clean.txt
+83,Duisternis,Kortsmit (Simone) & Lotz (Emile),2/1,4/4,Mistral,3,Kortsmit&Lotz_Duisternis_clean_annotated.txt
+84,De Brooklynclub,Bart Koubaa,1,4,Querido,1,Koubaa_DeBrooklynclub_clean.txt
+85,Die honden van boven,Ton Kruisbergen,1,5,Nieuw Amsterdam,1,Kruisbergen_DieHondenVanBoven_clean.txt
+86,Feest van het begin,Joke van Leeuwen,2,6,Querido,2,Leeuwen_FeestVanHetBegin_clean.txt
+87,Tula,Jeroen Leinders,1,4,Conserve,2,Leinders_Tula_clean.txt
+88,De onvervangbare,Simone Lenaerts,2,6,De geus,3,Lenaerts_DeOnvervangbare_clean_annotated.txt
+89,Bach onder de palmen,Lisette Lewin,2,6,Nijgh & Van Ditmar,2,Lewin_BachOnderDePalmen_clean.txt
+90,Mijn meneer,Ted van Lieshout,1,5,Querido,1,Lieshout_MijnMeneer_clean.txt
+91,Halverwege de heuvel,Gio Lippens,1,5,Atlas Contact,1,Lippens_HalverwegeDeHeuvel_clean.txt
+92,Slopers,Stijn van der Loo,1,4,Querido,1,Loo_Slopers_clean.txt
+93,De vijand van binnen,Mieke de Loof,2,6,De Geus,1,Loof_DeVijandVanBinnen_clean.txt
+94,Ik ben Maan,Leo Maan,2,2,De Wereldbibliotheek,1,Maan_IkBenMaan_clean.txt
+95,Strak blauw,Renee van Marissing,2,3,Atlas,1,Marissing_StrakBlauw_clean.txt
+96,Dubbel rood,Lidewij Martens,2,4,Cargo,3,Martens_DubbelRood_clean_annotated.txt
+97,Vroeger was er later,Vera Marynissen,2,5,De Bezige Bij,1,Marynissen_VroegerWasErLater_clean.txt
+98,Nieuwe Chinese plantenkunde,J.B. Matto,1,99,Wereldbibliotheek,3,Matto_NieuweChinesePlantenkunde_clean_annotated.txt
+99,Kinderschrik,Josef Willems & Vonne van der Meer,1/2,6,Atlas Contact,3,Meer_Kinderschrik_clean_annotated.txt
+100,Een kamer in Rome,Sipko Melissen,1,6,Van Oorschot,3,Melissen_EenKamerinRome_clean_annotated.txt
+101,Mont Blanc,Edzard Mik,1,5,De Bezige Bij,3,Mik_MontBlanc_clean_annotated.txt
+102,Meneer Sadek en de anderen,Kaweh Modiri,1,2,Thomas Rap,1,Modiri_MeneerSadekEnDeAnderen_clean.txt
+103,Hou me vast,Hans Munstermann,1,6,Nieuw Amsterdam,3,Munstermann_HouMeVast_clean_annotated.txt
+104,Hoe staat het met de liefde?,Bert Natter,1,4,Thomas Rap,1,Natter_HoeStaatHetMetDeLiefde_clean.txt
+105,Man van de wereld,Erik Nieuwenhuis,1,4,Thomas Rap,2,Nieuwenhuis_ManVanDeWereld_clean.txt
+106,Westerlingen,Arjaan Nimwegen,1,6,Wereldbibliotheek,3,Nimwegen_Westerlingen_clean_annotated.txt
+107,Vrij man,Nelleke Noordervliet,2,6,Atlas Contact,3,Noordervliet_VrijMan_clean_annotated.txt
+108,Winst,Jeroen Olyslaegers,1,4,De Bezige Bij,1,Olyslaegers_Winst_clean.txt
+109,De Parijs Conventie /Metafysische uitdagingen,Milan van Opmeer,1,4,MVO,2,Opmeer_DeParijseConventie_clean.txt
+110,Suikertantes,Joseph Pearce,1,6,De Bezige Bij,1,Pearce_Suikertantes_clean.txt
+111,Dinsdag,Elvis Peeters,1,5,Podium,1,PeetersElvis_Dinsdag_clean.txt
+112,Duizend heuvels,Koen Peeters,1,5,De Bezige Bij,3,PeetersKoen_DuizendHeuvels_clean_annotated.txt
+113,De dag dat we Andy zijn arm afzaagden,Marnix Peeters,1,4,De Bezige Bij,1,PeetersMarnix_DeDagDatWeAndyZijnArmAfzaagden_clean.txt
+114,De verzwegen soldaat,Sylvia Pessireron,2,5,The House of Books,2,Pessireron_DeVerzwegenSoldaat_clean.txt
+115,Altijd iets,Joachim Pohlmann,1,3,van Halewyck,3,Pohlmann_AltijdIets_clean_annotated.txt
+116,Voetlicht,Marieke van der Pol,2,5,Arbeiderspers,1,Pol_Voetlicht_clean.txt
+117,De Comedy Club,Eva Posthuma de Boer,2,3,Nieuw Amsterdam,2,PosthumadeBoer_DeComedyClub_clean.txt
+118,Incognito,Henk Rijks,1,4,Atlas,2,Rijks_Incognito_clean.txt
+119,Kronkjaar,Bennie Roeters,1,99,Anthos,2,Roeters_Kronkjaar_clean.txt
+120,Kunstroof,Raymond Rombout,1,5,van Halewyck,2,Rombout_Kunstroof_clean.txt
+121,Het licht,Jeroen van Rooij,1,3,De Bezige Bij,3,Rooij_HetLicht_clean_annotated.txt
+122,De rode loper,Thomas Rosenboom,1,5,Querido,2,Rosenboom_DeRodeLoper_clean.txt
+123,Zonde,Suus Ruis,2,3,Mistral,3,Ruis_Zonde_clean_annotated.txt
+124,Dromen van Schalkwijk,Victor Schiferli,1,4,De Arbeiderspers,1,Schiferli_DromenVanSchalkwijk_clean.txt
+125,Eerst een huis,Cathelijn Schilder,1,3,Nieuw Amsterdam,2,Schilder_EerstEenHuis_clean.txt
+126,Op de foto,K. Schippers,1,6,Querido,2,Schippers_OpDeFoto_clean.txt
+127,Met Muijs,Frederique Schut,2,2,Contact,1,Schut_MetMuijs_clean.txt
+128,Oscar,Jan Siebelink,1,6,De Bezige Bij,2,Siebelink_Oscar_clean.txt
+129,Vloed,Roderik Six,1,3,Arbeiderspers,1,Six_Vloed_clean.txt
+130,Soerabaja,Pauline Slot,2,5,Arbeiderspers,1,Slot_Soerabaja_clean.txt
+131,Ik ben de zoon van John Lennon,Roel Smits,1,4,Nieuw Amsterdam,1,Smits_IkBenDeZoonVanJohnLennon_clean.txt
+132,Het geschenk,Philip Snijder,1,5,Atlas,3,Snijder_HetGeschenk_clean_annotated.txt
+133,Ver van mij,Rita Spijker,2,5,Marmer,3,Spijker_VerVanMij_clean_annotated.txt
+134,Witte panters,Saul van Stapele,1,3,Lebowski,3,Stapele_WittePanters_clean_annotated.txt
+135,Gloriejaren,Herman Stevens,1,5,Prometheus,2,Stevens_Gloriejaren_clean.txt
+136,Moedermoord,Chris de Stoop,1,5,De Bezige Bij,2,Stoop_Moedermoord_clean.txt
+137,Post mortem,Peter Terrin,1,4,De Arbeiderspers,3,Terrin_PostMortem_clean_annotated.txt
+138,De vriend,Charles den Tex,1,6,De Geus,2,Tex_DeVriend_clean.txt
+139,J. Kessels in: Het bamischandaal,P.F. Thomese,1,5,Atlas Contact,1,Thomese_HetBamischandaal_clean.txt
+140,Zielhond,Lia Tilon,2,4,Cossee,3,Tilon_Zielhond_clean_annotated.txt
+141,Het hoogste bod,Toes (Jac.) & Hoeps (Thomas),1/1,6/4,De Geus,2,Toes&Hoeps_HetHoogsteBod_clean.txt
+142,Gezichtsverlies,Pieter Toussaint,1,4,Cossee,1,Toussaint_Gezichtsverlies_clean.txt
+143,Gouden handel,Kees Uittenhout,1,6,Conserve,2,Uittenhout_GoudenHandel_clean.txt
+144,Een fatale primeur,Marjolijn Uitzinger,2,6,De Geus,1,Uitzinger_EenFatalePremier_clean.txt
+145,Hotel Sofia,Arthur Umbgrove,1,4,Contact,3,Umbgrove_HotelSofia_clean_annotated.txt
+146,Het boek Ont,Anton Valens,1,4,Augustus,2,Valens_HetBoekOnt_clean.txt
+147,Massa,Joost Vandecasteele,1,3,De Bezige Bij,2,Vandecasteele_Massa_clean.txt
+148,Here weg,Jan Veenstra,1,6,Passage,1,Veenstra_HereWeg_clean.txt
+149,Een uitzonderlijke vrouw,Christophe Vekeman,1,3,De Arbeiderspers,2,Vekeman_EenUitzonderlijkeVrouw_clean.txt
+150,Een bruidsjurk uit Warschau,Lot Vekemans,2,4,Cossee,3,Vekemans_EenBruidsjurkUitWarschau_clean_annotated.txt
+151,Tegenlicht,Esther Verhoef,2,4,Ambo Anthos,1,Verhoef_Tegenlicht_clean.txt
+152,De allerlaatste caracara ter wereld,Peter Verhulst,1,4,Prometheus,2,Verhelst_DeAllerlaatsteCaracaraTerWereld_clean.txt
+153,De wezenlozen,Wytske Versteeg,2,2,Prometheus,3,Versteeg_DeWezenlozen_clean_annotated.txt
+154,Snoep,Mark Verver,1,4,Marmer,1,Verver_Snoep_clean.txt
+155,Vrij spel,Carlijn Vis,2,2,Atlas Contact,1,VisCarlijn_VrijSpel_clean.txt
+156,Tandem,Jacob Vis,1,6,Conserve,1,VisJacob_Tandem_clean.txt
+157,Hotel Linda,Arjan Visser,1,5,Arbeiderspers,1,Visser_HotelLinda_clean.txt
+158,De duivel van Vico,Ton Vogels,1,3,Prometheus,2,Vogels_DeDuivelvanVico_clean.txt
+159,Beste vriend,Robert Vuijsje,1,4,Nijgh & Van Ditmar,1,Vuijsje_BesteVriend_clean.txt
+160,Euforie,Christiaan Weijts,1,3,Arbeiderspers,2,Weijts_Euforie_clean.txt
+161,"Vriendinnen van vroeger, vrouwen van nu",Rudi Wester,2,6,Arbeiderspers,1,Wester_VriendinnenVanVroeger_clean.txt
+162,Dit zijn de namen,Tommy Wieringa,1,4,De Bezige Bij,2,Wieringa_DitZijnDeNamen_clean.txt
+163,Zeep,Nico van Wijk,1,3,L.J. Veen,2,Wijk_Zeep_clean.txt
+164,VSV,Leon de Winter,1,5,De Bezige Bij,3,Winter_VsvOfDaden_clean_annotated.txt
+165,Zwarte Sylvester,James Worthy,1,3,Lebowski,2,Worthy_ZwarteSylvester_clean.txt
+166,Mayling. Moeder van het Chinese volk,Lucas Zandberg,1,3,Arbeiderspers,1,Zandberg_Mayling_clean.txt
+167,Tokyo Ohayo!,Charlotte van Zanten,2,2,Prometheus,1,ZantenCharlotte_TokyoOhayo_clean.txt
+168,Supergelukkig,Tatjana van Zanten,2,4,Thomas Rap,1,ZantenTatjana_Supergelukkig_clean.txt
+169,Margot,Sophie Zijlstra,2,4,Querido,1,Zijlstra_Margot_clean.txt
+170,Rondom staal,Koos van Zomeren,1,6,Arbeiderspers,2,Zomeren_RondomStaal_clean.txt
