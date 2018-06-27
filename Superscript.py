@@ -1,10 +1,5 @@
 # #!/usr/bin/env python
-
 # # -*- coding: utf-8 -*-
-
-
-
-
 
 # 1. IMPORTS
 
@@ -22,31 +17,15 @@ import errno
 import csv
 from characternetworks import Book, Character, Network
 
-
-
-
+import variables
 
 
 # 2. INPUT
 
-path = {}
-path['1'] = '/Users/roelsmeets/desktop/corpus_1stpers_clean'
-path['2'] = '/Users/roelsmeets/desktop/corpus_3rdpers_clean'
-path['3'] = '/Users/roelsmeets/desktop/corpus_multi_clean_annotated' 
-path['4'] = '/Users/roelsmeets/desktop/corpus_other_clean'
-
-
-# print (path[1])
-
-#NOVELS_1stpers = glob.glob(path1)
-#NOVELS_3rdpers = glob.glob(path2)
-#NOVELS_multi = glob.glob(path3)
-#NOVELS_other = glob.glob(path4)
-
-with open('/Users/roelsmeets/desktop/Libris_networks/BOOKS_complete/BOOKS_complete.csv', 'rt') as csvfile1, \
-     open('/Users/roelsmeets/desktop/Libris_networks/NODES_complete/NODES_complete.csv', 'rt') as csvfile2, \
-     open('/Users/roelsmeets/desktop/Libris_networks/EDGES_complete/EDGES_complete.csv', 'rt') as csvfile3, \
-     open('/Users/roelsmeets/desktop/Libris_networks/NAMES_complete/NAMES_complete.csv', 'rt') as csvfile4:
+with open(csvfiles['books'], 'rt') as csvfile1, \
+     open(csvfiles['nodes'], 'rt') as csvfile2, \
+     open(csvfiles['edges'], 'rt') as csvfile3, \
+     open(csvfiles['names'], 'rt') as csvfile4:
     # Csv-file with information on each novel, columns: Book_ID, Title, Author, Publisher, Perspective (1stpers, 3rdpers, multi, other)
     BOOKS_complete = csv.reader(csvfile1, delimiter=',')
     # Csv-file with information on characters, columns: Book-ID, Character-ID, Name, Gender, Descent_country, Descent_city, Living_country, Living_city, Age, Education, Profession
@@ -56,24 +35,10 @@ with open('/Users/roelsmeets/desktop/Libris_networks/BOOKS_complete/BOOKS_comple
     # Csv-file with information on name variances, columns: Book-ID, Character-ID, Name-ID, Name-variances
     NAMES_complete = csv.reader(csvfile4, delimiter=',')
 
-
-
-
-
-    # print (BOOKS_complete)
-    # for line in BOOKS_complete:
-    #     print (line)
-
-
-
-
-
-
+    
 # 3. CREATE BOOK OBJECTS, CHARACTER OBJECTS, ADD NAME VARIANTS TO CHARACTER OBJECTS IN BOOKS OBJECTS, ADD EDGES TO NETWORK OBJECTS IN BOOK OBJECTS
 
-
     allbooks = {}
-
 
     for line in BOOKS_complete: 
         """ Creates instances of Book for every novel in the corpus
@@ -90,11 +55,8 @@ with open('/Users/roelsmeets/desktop/Libris_networks/BOOKS_complete/BOOKS_comple
             publisher = line[5]
             perspective = line[6]
             filename = line[7]
-    
         
             allbooks[book_id] = Book(book_id, title, name_author, gender_author, age_author, publisher, perspective, filename)
-
-
 
     for line in NODES_complete:
         """ Creates instances of Character for every character in the corpus and adds them to instances of Book
@@ -119,7 +81,6 @@ with open('/Users/roelsmeets/desktop/Libris_networks/BOOKS_complete/BOOKS_comple
             allbooks[book_id].addcharacter(book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession)
 
 
-
     for line in NAMES_complete:
         """ Adds name variants to instances of Character in instances of Book 
 
@@ -141,7 +102,6 @@ with open('/Users/roelsmeets/desktop/Libris_networks/BOOKS_complete/BOOKS_comple
             allbooks[book_id].allcharacters[character_id].addnamevariant(name_variant)
 
 
-
     for line in EDGES_complete:
         """ Add edges to instances of Network in instances of Book 
 
@@ -158,12 +118,7 @@ with open('/Users/roelsmeets/desktop/Libris_networks/BOOKS_complete/BOOKS_comple
             allbooks[book_id].network.add_edge(source, target, relation_type)
 
 
-
-
 # 4. OUTPUT
-
-
-
 
     for book_id in allbooks: 
         """ Eventually otputs the weight of character relations to column 'weight' in EDGES_complete
@@ -172,7 +127,7 @@ with open('/Users/roelsmeets/desktop/Libris_networks/BOOKS_complete/BOOKS_comple
         """
     
 
-        allbooks[book_id].readfile(path[allbooks[book_id].perspective]) # Call method readfile on Book objects with perspective (1, 2, 3)
+        allbooks[book_id].readfile(bookpath[allbooks[book_id].perspective]) # Call method readfile on Book objects with perspective (1, 2, 3)
            
         allbooks[book_id].novel_word_count() # Call method novel_word_count on each Book object
 
@@ -181,12 +136,4 @@ with open('/Users/roelsmeets/desktop/Libris_networks/BOOKS_complete/BOOKS_comple
 
         allbooks[book_id].compute_network() # Computes weight of relations between Characters objects in Book objects
 
-            
-
-
- 
-
-
-      
-     
 
