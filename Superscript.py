@@ -17,7 +17,7 @@ import errno
 import csv
 from characternetworks import Book, Character, Network
 
-import variables
+from variables import *
 
 
 # 2. INPUT
