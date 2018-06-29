@@ -121,7 +121,7 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
 # 4. OUTPUT
 
     for book_id in allbooks: 
-        """ Eventually otputs the weight of character relations to column 'weight' in EDGES_complete
+        """ Computes all necessary steps for the construction of character networks and outputs centrality values per character to new csv file
 
 
         """
@@ -135,5 +135,5 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
             #print (allbooks[book_id].markedtext)
 
         allbooks[book_id].compute_network() # Computes weight of relations between Characters objects in Book objects
-
+        
 

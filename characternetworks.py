@@ -763,6 +763,11 @@ class Network():
 		age_dict = {}
 		education_dict = {}
 		profession_dict = {}
+		degree_dict = {}
+		betweenness_dict = {}
+		closeness_dict = {}
+		eigenvector_dict = {}
+		katz_dict = {}
 
 		for character_id in allcharacters:
 			"""Define attributes by accessing Character attributes in allcharacters
@@ -777,6 +782,11 @@ class Network():
 			age_dict[character_id] = allcharacters[character_id].age
 			education_dict[character_id] = allcharacters[character_id].education
 			profession_dict[character_id] = allcharacters[character_id].profession
+			degree_dict[character_id] = 0
+			betweenness_dict[character_id] = 0
+			closeness_dict[character_id] = 0
+			eigenvector_dict[character_id] = 0
+			katz_dict[character_id] = 0
 
 
 		nx.set_node_attributes(self.Graph, name_dict, 'name')
@@ -788,6 +798,11 @@ class Network():
 		nx.set_node_attributes(self.Graph, age_dict, 'age')
 		nx.set_node_attributes(self.Graph, education_dict, 'education')
 		nx.set_node_attributes(self.Graph, profession_dict, 'profession')
+		nx.set_node_attributes(self.Graph, degree_dict, 'degree')
+		nx.set_node_attributes(self.Graph, betweenness_dict, 'betweenness')
+		nx.set_node_attributes(self.Graph, closeness_dict, 'closeness')
+		nx.set_node_attributes(self.Graph, eigenvector_dict, 'eigenvector')
+		nx.set_node_attributes(self.Graph, katz_dict, 'katz')
 
 		# print(nx.info(self.Graph)) # Print information about the Graph   
 
@@ -878,15 +893,30 @@ class Network():
 		Writes to columns in new file:
 
 		- book_id
-		- ...
-		- ...
+		- character_Id
+		- name
+		- gender
+		- descent_country
+		- descent_city
+		- living_country
+		- living_city
+		- age
+		- education
+		- profession
 		- degree_centrality
 		- betweenness_centrality
 		- closeness_centrality
 		- eigenvector
 
 		"""
-		
+		with open ('character-rankings.csv', 'w', newline='') as f:
+			csvwriter = csv.writer(f)
+
+			for character_id in allcharacters:
+
+
+				csvwriter.writerow([self.book_id, allcharacters[character_id].character_id, allcharacters[character_id].name, allcharacters[character_id].gender, allcharacters[character_id].descent_country, allcharacters[character_id].descent_city, allcharacters[character_id].living_country, allcharacters[character_id].living_city, allcharacters[character_id].age, allcharacters[character_id].education, allcharacters[character_id].profession]) 
+				# STILL NEED TO ADD DEGREE, BETWEENNESS, CLOSENESS, EIGENVECTOR AND KATZ VALUE 
 
 
 
