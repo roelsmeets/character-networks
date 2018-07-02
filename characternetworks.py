@@ -794,8 +794,8 @@ class Network():
 
 
 		# 1. DEGREE CENTRALITY
-		degree_dict = nx.degree_centrality(self.Graph) # Compute degree centrality of all nodes in the Graph object
-		#degree_dict = self.Graph.degree(self.Graph.nodes(),weight='weight') # Compute degree centrality of all nodes in the Graph object
+		degree_dict = nx.degree_centrality(self.Graph) # Compute degree centrality of all nodes in the Graph object. IMPORTANT: parameter 'weight' cannot be set, scores are thus unweighted degree
+		#degree_dict = self.Graph.degree(self.Graph.nodes(), weight='weight') # Compute degree centrality of all nodes in the Graph object
 		nx.set_node_attributes(self.Graph, degree_dict, 'degree') # Put degree as an attribute in the Graph object
 		#print (self.Graph.node['1']) # print degree of specific nodes
 		sorted_degree = sorted(degree_dict.items(), key=itemgetter(1), reverse=True) # Sort dictionary of degrees
@@ -853,7 +853,7 @@ class Network():
 
 	def write_to_csv2(self, filename, book_id, allcharacters):
 		"""
-		Writes to columns in new fil, for each character in the corpus:
+		Writes to columns in new file, for each character in the corpus:
 
 		- book_id
 		- character_Id
