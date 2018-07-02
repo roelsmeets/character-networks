@@ -128,12 +128,10 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
     
 
         allbooks[book_id].readfile(bookpath[allbooks[book_id].perspective]) # Call method readfile on Book objects with perspective (1, 2, 3)
-           
+               
         allbooks[book_id].novel_word_count() # Call method novel_word_count on each Book object
-
-            #allbooks[book_id].replace_namevariants() # Replace names with character identity markers in the text-files of the Book objects
-            #print (allbooks[book_id].markedtext)
 
         allbooks[book_id].compute_network() # Computes weight of relations between Characters objects in Book objects
         
+        allbooks[book_id].write_to_csv1() # Writes to a csv file all character info + their scores for the 5 centrality measures
 
