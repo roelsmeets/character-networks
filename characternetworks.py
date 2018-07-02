@@ -229,16 +229,6 @@ class Book:
 				endbookid = pat[5]
 				endcharacterid = pat[6]
 				endperspective = pat[7]
-				
-				# startperspective_upper = startperspective.upper() # Make startperspective (= character name) uppercase 
-				# endperspective_upper = endperspective.upper() # Make endperspective (= character name) uppercase 
-				# re.sub(startperspective, startperspective_upper, pat[2]) # Replace character name in startperspective with uppercase-variant to not overwrite it in replace_namevariants()
-				# re.sub(endperspective, endperspective_upper, pat[7]) # Replace character name in endperspective with uppercase-variant to not overwrite it in replace_namevariants()
-
-		
-
-
-				#print (subbooknr, startbookid, startcharacterid, startperspective, text, endbookid, endcharacterid, endperspective)
 
 				if not startbookid == endbookid:
 					print ('book_id causing ERROR =,', self.book_id, '### startbookid does not equal endbookid ###,', 'startbookid =', startbookid, 'endbookid =', endbookid)
@@ -284,10 +274,7 @@ class Book:
 				#subbook.replace_namevariants() 
 
 
-				subbooks.append(subbook) # Append eash subbook Book object to a list
-
-
-			
+				subbooks.append(subbook) # Append eash subbook Book object to a list		
 
 
 		return (subbooks)
@@ -312,32 +299,7 @@ class Book:
 		#print (self.name_counts)
 
 
-	  
-	# if isinstance(self.names, str):
-	# 		names = [names]
 
-
-	  	# for ch_start, ch_end in chapter_indexes:
-				# for line in text[ch_start: ch_end]:
-
-				# if not name in name_counts:
-				# 			name_counts[name] = 0
-				# 			name_counts[name] += line.count(name)
-
-				#print(ch_start,ch_end,name)
-
-	    # Split name parts
-	    # for name in names:
-	    #     parts = name.split()
-	    #     for part in parts:
-	    #         if not part ==  name:
-	    #             print("Name = ",name,"Part = ",part)
-	    #             name_counts[part] -= name_counts[name]
-	    #             print(name_counts)
-	    # return sum(name_counts.values())
-
-
-	# print ('The count of the occurence of name character in the novel is:', count_names(['Turis', 'Budamar', 'Turis Budamar'], text, all_chapters))
 
 
 	def tokenize_text(self):
@@ -505,9 +467,10 @@ class Book:
 		elif self.perspective == '3': 
 			""" In case the attribute 'perspective' of Book object equals 3 (multi) do this ...
 
+			
+
 			"""
 
-			# NOVELS SHOULD BE SPLIT INTO DIFFERENT CHAPTERS PER CHARACTER --> ON THE BASIS OF AN ANNOTATED VERSION OF THE FILES
 
 			
 			subbooks = self.split_multinovel() # Split Book object in list of subbooks based on separate character perspectives
@@ -542,12 +505,12 @@ class Book:
 			exit(1)
   
 
-	def write_to_csv(self, filename, book_id, allcharacters):
+	def write_to_csv1(self):
 		"""
 		Function to pass Character information to write_to_csv function in class Network
 
 		"""
-		self.network.write_to_csv(self, self.filename, self.book_id, self.allcharacters)
+		self.network.write_to_csv2(self.filename, self.book_id, self.allcharacters)
 
 
 	     
@@ -888,9 +851,9 @@ class Network():
 
 
 
-	def write_to_csv(self, filename, book_id, allcharacters):
+	def write_to_csv2(self, filename, book_id, allcharacters):
 		"""
-		Writes to columns in new file:
+		Writes to columns in new fil, for each character in the corpus:
 
 		- book_id
 		- character_Id
@@ -907,27 +870,40 @@ class Network():
 		- betweenness_centrality
 		- closeness_centrality
 		- eigenvector
+		- katz
 
 		"""
-		with open ('character-rankings.csv', 'w', newline='') as f:
+		with open ('character-rankings.csv', 'a', newline='') as f:
 			csvwriter = csv.writer(f)
 
+			degree = nx.get_node_attributes(self.Graph, 'degree')
+			betweenness = nx.get_node_attributes(self.Graph, 'betweenness')
+			closeness = nx.get_node_attributes(self.Graph, 'closeness')
+			eigenvector = nx.get_node_attributes(self.Graph, 'eigenvector')
+			katz = nx.get_node_attributes(self.Graph, 'katz')
+
+
 			for character_id in allcharacters:
-
-
-				csvwriter.writerow([self.book_id, allcharacters[character_id].character_id, allcharacters[character_id].name, allcharacters[character_id].gender, allcharacters[character_id].descent_country, allcharacters[character_id].descent_city, allcharacters[character_id].living_country, allcharacters[character_id].living_city, allcharacters[character_id].age, allcharacters[character_id].education, allcharacters[character_id].profession]) 
-				# STILL NEED TO ADD DEGREE, BETWEENNESS, CLOSENESS, EIGENVECTOR AND KATZ VALUE 
-
-
-
-
+				csvwriter.writerow([self.book_id, \
+					allcharacters[character_id].character_id, \
+					allcharacters[character_id].name, \
+					allcharacters[character_id].gender, \
+					allcharacters[character_id].descent_country, \
+					allcharacters[character_id].descent_city, \
+					allcharacters[character_id].living_country, \
+					allcharacters[character_id].living_city, \
+					allcharacters[character_id].age, \
+					allcharacters[character_id].education, \
+					allcharacters[character_id].profession, \
+					degree[character_id], \
+					betweenness[character_id], \
+					closeness[character_id], \
+					eigenvector[character_id], \
+					katz[character_id]]) 
 
 
 
 		#nx.write_gexf(self.Graph, 'sample_graph.gexf') # Export the data as a GEXF file to upload in Gephi for visualization
-
-
-
 
 
 
