@@ -3,6 +3,7 @@
 
 # 1. IMPORTS
 
+import argparse
 from collections import Counter 
 from itertools import islice
 import networkx as nx
@@ -19,6 +20,16 @@ from characternetworks import Book, Character, Network
 
 from variables import *
 
+argparser = argparse.ArgumentParser(description='computes character network of (subset of) novels')
+argparser.add_argument('--task', default=1, type=int, help='number of task when parallelising')
+argparser.add_argument('--total', default=1, type=int, help='total number of tasks when parallelising')
+args = argparser.parse_args()
+parameters=vars(args)
+task = parameters['task']
+total = parameters['total']
+if task > total:
+    sys.exit('task can not be higher than total!')
+    
 
 # 2. INPUT
 
@@ -55,7 +66,7 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
             publisher = line[5]
             perspective = line[6]
             filename = line[7]
-        
+
             allbooks[book_id] = Book(book_id, title, name_author, gender_author, age_author, publisher, perspective, filename)
 
     for line in NODES_complete:
@@ -97,7 +108,7 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
                 print ('NAMES_COMPLETE DOES NOT CORRESPOND WELL WITH NODES_COMPLETE!!!') # Raise error if there are mistakes or typo's in the two corresponding csv-files
                 print (allbooks[book_id].allcharacters[character_id].name, name) # Print instance to which the error is due
                 exit(1)
-            
+
 
             allbooks[book_id].allcharacters[character_id].addnamevariant(name_variant)
 
@@ -109,7 +120,7 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
         book_id = line[0]
 
         if book_id.isdigit(): # Check if book_id is a digit
-          
+
             source = line[1]
             target = line[2]
             relation_type = line[3]
@@ -118,20 +129,33 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
             allbooks[book_id].network.add_edge(source, target, relation_type)
 
 
-# 4. OUTPUT
+    # 4. OUTPUT
 
-    for book_id in allbooks: 
+    bookids = sorted(allbooks.keys(),key=int)
+    tasksize = len(bookids) / total
+    startnr = int((task-1) * tasksize)
+    endnr = int((task) * tasksize)
+
+    taskbookids = bookids[startnr:endnr]
+
+    csvfile = 'character_rankings.csv'
+    if total > 1:
+        csvfile = 'character_rankings_task_'+str(task)+'.csv'
+
+    for book_id in taskbookids: 
         """ Computes all necessary steps for the construction of character networks and outputs centrality values per character to new csv file
 
 
         """
-    
 
+        print('computing network of book '+str(book_id))
         allbooks[book_id].readfile(bookpath[allbooks[book_id].perspective]) # Call method readfile on Book objects with perspective (1, 2, 3)
-               
+
         allbooks[book_id].novel_word_count() # Call method novel_word_count on each Book object
 
         allbooks[book_id].compute_network() # Computes weight of relations between Characters objects in Book objects
+
+
         
-        allbooks[book_id].write_to_csv1() # Writes to a csv file all character info + their scores for the 5 centrality measures
+        allbooks[book_id].write_to_csv(csvfile) # Writes to a csv file all character info + their scores for the 5 centrality measures
 

@@ -505,12 +505,12 @@ class Book:
 			exit(1)
   
 
-	def write_to_csv1(self):
+	def write_to_csv(self,filename='character-rankings.csv'):
 		"""
 		Function to pass Character information to write_to_csv function in class Network
 
 		"""
-		self.network.write_to_csv2(self.filename, self.book_id, self.allcharacters)
+		self.network.write_to_csv(filename)
 
 
 	     
@@ -628,9 +628,9 @@ class Network():
 					self.normalized_weights[source] = {}	
 				self.normalized_weights[source][target] = self.weights[source][target] / word_count # Compute normalized_weights by dividing weights through word_count
 
-		print (self.book_id, self.weights)
-		print ('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
-		print (self.book_id, self.normalized_weights)
+		#print (self.book_id, self.weights)
+		#print ('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+		#print (self.book_id, self.normalized_weights)
 
 		
 		# if self.normalized_weights == {}:
@@ -798,60 +798,60 @@ class Network():
 		#degree_dict = self.Graph.degree(self.Graph.nodes(), weight='weight') # Compute degree centrality of all nodes in the Graph object
 		nx.set_node_attributes(self.Graph, degree_dict, 'degree') # Put degree as an attribute in the Graph object
 		#print (self.Graph.node['1']) # print degree of specific nodes
-		sorted_degree = sorted(degree_dict.items(), key=itemgetter(1), reverse=True) # Sort dictionary of degrees
+		#sorted_degree = sorted(degree_dict.items(), key=itemgetter(1), reverse=True) # Sort dictionary of degrees
 
-		print ('book_id =', self.book_id, 'Nodes by degree:')
-		for degree in sorted_degree:
-			print (degree)
-		print ('===============')
+		#print ('book_id =', self.book_id, 'Nodes by degree:')
+		#for degree in sorted_degree:
+		#	print (degree)
+		#print ('===============')
 
 
 		# 2. BETWEENESS CENTRALITY
 		betweenness_dict = nx.betweenness_centrality(self.Graph, weight='weight') # Run betweenness centrality
 		nx.set_node_attributes(self.Graph, betweenness_dict, 'betweenness') # Put betweenness as an attribute in the Graph object
-		sorted_betweenness = sorted(betweenness_dict.items(), key=itemgetter(1), reverse=True)
+		#sorted_betweenness = sorted(betweenness_dict.items(), key=itemgetter(1), reverse=True)
 		
 
-		print('book_id =', self.book_id,"Nodes by betweenness:")
-		for betweenness in sorted_betweenness:
-		    print(betweenness)
-		print ('===============')
+		#print('book_id =', self.book_id,"Nodes by betweenness:")
+		#for betweenness in sorted_betweenness:
+		#    print(betweenness)
+		#print ('===============')
 
 		# 3. CLOSENESS CENTRALITY
 		closeness_dict = nx.closeness_centrality(self.Graph, distance='weight') # Run betweenness centrality
 		nx.set_node_attributes(self.Graph, closeness_dict, 'closeness') # Put betweenness as an attribute in the Graph object
-		sorted_closeness = sorted(closeness_dict.items(), key=itemgetter(1), reverse=True)
+		#sorted_closeness = sorted(closeness_dict.items(), key=itemgetter(1), reverse=True)
 		
 
-		print('book_id =', self.book_id,"Nodes by closeness:")
-		for closeness in sorted_closeness:
-		    print(closeness)
-		print ('===============')
+		#print('book_id =', self.book_id,"Nodes by closeness:")
+		#for closeness in sorted_closeness:
+		#    print(closeness)
+		#print ('===============')
 
 
 		# 4. EIGENVECTOR CENTRALITY
 		eigenvector_dict = nx.eigenvector_centrality_numpy(self.Graph, weight='weight') # Run eigenvector centrality
 		nx.set_node_attributes(self.Graph, eigenvector_dict, 'eigenvector') # Put eigenvector as an attribute in the Graph object
-		sorted_eigenvector = sorted(eigenvector_dict.items(), key=itemgetter(1), reverse=True)
+		#sorted_eigenvector = sorted(eigenvector_dict.items(), key=itemgetter(1), reverse=True)
 
-		print('book_id =', self.book_id,"Nodes by eigenvector:")
-		for eigenvector in sorted_eigenvector:
-		    print(eigenvector)
-		print ('===============')
+		#print('book_id =', self.book_id,"Nodes by eigenvector:")
+		#for eigenvector in sorted_eigenvector:
+		#    print(eigenvector)
+		#print ('===============')
 
 		# 5. KATZ CENTRALITY
 		katz_dict = nx.katz_centrality(self.Graph, weight='weight') # Run eigenvector centrality
 		nx.set_node_attributes(self.Graph, katz_dict, 'katz') # Put eigenvector as an attribute in the Graph object
-		sorted_katz = sorted(katz_dict.items(), key=itemgetter(1), reverse=True)
+		#sorted_katz = sorted(katz_dict.items(), key=itemgetter(1), reverse=True)
 
-		print('book_id =', self.book_id,"Nodes by katz:")
-		for katz in sorted_katz:
-		    print(katz)
-		print ('===============')
+		#print('book_id =', self.book_id,"Nodes by katz:")
+		#for katz in sorted_katz:
+		#    print(katz)
+		#print ('===============')
 
 
 
-	def write_to_csv2(self, filename, book_id, allcharacters):
+	def write_to_csv(self, filename='character-rankings.csv'):
 		"""
 		Writes to columns in new file, for each character in the corpus:
 
@@ -873,34 +873,26 @@ class Network():
 		- katz
 
 		"""
-		with open ('character-rankings.csv', 'a', newline='') as f:
+		with open (filename, 'a', newline='') as f:
 			csvwriter = csv.writer(f)
 
-			degree = nx.get_node_attributes(self.Graph, 'degree')
-			betweenness = nx.get_node_attributes(self.Graph, 'betweenness')
-			closeness = nx.get_node_attributes(self.Graph, 'closeness')
-			eigenvector = nx.get_node_attributes(self.Graph, 'eigenvector')
-			katz = nx.get_node_attributes(self.Graph, 'katz')
-
-
-			for character_id in allcharacters:
+			for character_id in sorted(list(self.Graph.nodes)):
 				csvwriter.writerow([self.book_id, \
-					allcharacters[character_id].character_id, \
-					allcharacters[character_id].name, \
-					allcharacters[character_id].gender, \
-					allcharacters[character_id].descent_country, \
-					allcharacters[character_id].descent_city, \
-					allcharacters[character_id].living_country, \
-					allcharacters[character_id].living_city, \
-					allcharacters[character_id].age, \
-					allcharacters[character_id].education, \
-					allcharacters[character_id].profession, \
-					degree[character_id], \
-					betweenness[character_id], \
-					closeness[character_id], \
-					eigenvector[character_id], \
-					katz[character_id]]) 
-
+                                                    character_id, \
+                                                    nx.get_node_attributes(self.Graph, 'name')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'gender')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'descent_country')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'descent_city')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'living_country')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'living_city')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'age')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'education')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'profession')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'degree')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'betweenness')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'closeness')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'eigenvector')[character_id], \
+                                                    nx.get_node_attributes(self.Graph, 'katz')[character_id]])
 
 
 		#nx.write_gexf(self.Graph, 'sample_graph.gexf') # Export the data as a GEXF file to upload in Gephi for visualization
