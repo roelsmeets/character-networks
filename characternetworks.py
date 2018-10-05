@@ -74,9 +74,18 @@ class Character:
         self.namevariants.append(name_variant)
 
         
-
     
 
+# 2.1. SUBCLASS Character_Centrality
+
+class Character_Centrality(Character):
+    def __init__(self, book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession, degree, betweenness, closeness, eigenvector, katz):
+        Character.__init__(self, book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession)
+        self.degree = degree
+        self.betweenness = betweenness
+        self.closeness = closeness
+        self.eigenvector = eigenvector
+        self.katz = katz
 
 
 
@@ -636,50 +645,6 @@ class Network():
         #     exit(0)
 
 
-
-    # def remove_isolates(self,allcharacters):
-    #     """ Function for removing nodes that do not have any weights between them and other nodes
-
-    #     Arguments:
-    #         allcharacters: Dictionary of Character objects, attribute of Book object
-
-    #     """
-    #     todelete = []
-    #     nrweigths = {}
-    #     nrofcharacters = len(allcharacters)
-
-    #     for characternr1 in range(1,nrofcharacters):
-    #         characternr1str = str(characternr1) # Transform the integer into a string
-    #         #print(characternr1str)
-    #         for characternr2 in range(1,nrofcharacters): 
-    #             characternr2str = str(characternr2) # Transform the integer into a string
-    #             #print(characternr2str)
-    #             if characternr1str in self.normalized_weights:
-    #                 if characternr2str in self.normalized_weights[characternr1str]:
-    #                     if self.normalized_weights[characternr1str][characternr2str] > 0:
-    #                         if not characternr1str in nrweigths:
-    #                             nrweigths[characternr1str] = 0
-    #                         nrweigths[characternr1str] += 1
-    #             if characternr2str in self.normalized_weights:
-    #                 if characternr1str in self.normalized_weights[characternr2str]:
-    #                     if self.normalized_weights[characternr2str][characternr1str] > 0:
-    #                         if not characternr2str in nrweigths:
-    #                             nrweigths[characternr2str] = 0
-    #                         nrweigths[characternr2str] += 1
-
-    #     for source in allcharacters:
-    #         print(source)
-    #         if source in nrweigths:
-    #             print (source,nrweigths[source])
-    #         else:
-    #             todelete.append(source)
-    #             print("removed "+str(source))
-    #     for source in todelete:
-    #         if source in self.normalized_weights:
-    #             del (self.normalized_weights[source]) # than delete them as an edge
-    #         del (allcharacters[source])
-
-
     
     def networkx_ranking (self, allcharacters):
         """ Function for ranking Character objects within Network object using Python library networkx
@@ -711,7 +676,7 @@ class Network():
             
         
         self.Graph.add_nodes_from(nodeslist)
-        self.Graph.add_weighted_edges_from(edgestuplelist) # Tuple of list containing node paris + float weights
+        self.Graph.add_weighted_edges_from(edgestuplelist) # Tuple of list containing node pairs + float weights
 
         
         # Create empty dictionaries for node attributes
@@ -731,7 +696,7 @@ class Network():
         katz_dict = {}
 
         for character_id in allcharacters:
-            """Define attributes by accessing Character attributes in allcharacters
+            """Define node attributes by accessing Character attributes in allcharacters
 
             """
             name_dict[character_id] = allcharacters[character_id].name
@@ -764,6 +729,7 @@ class Network():
         nx.set_node_attributes(self.Graph, closeness_dict, 'closeness')
         nx.set_node_attributes(self.Graph, eigenvector_dict, 'eigenvector')
         nx.set_node_attributes(self.Graph, katz_dict, 'katz')
+
 
         # print(nx.info(self.Graph)) # Print information about the Graph   
 
