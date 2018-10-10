@@ -49,7 +49,7 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
 	balance = 0
 	imbalance = 0
 
-	enemypairs = {}
+	enemypairs = {} 
 	friendpairs = {}
 	friends = {}
 	enemies = {}
@@ -84,12 +84,14 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
 	        target = line[2]
 	        relation_type = line[3]
 
-	        relation_types[(source, target)] = relation_type
+
+	        relation_types[book_id][(source, target)] = relation_type
 
 	       
 	        #enemyfound = 0
 
-	        if relation_type.find('vijand'):
+	        if relation_type.find('vijand') > -1:
+	        	#print (relation_type,relation_type.find('vijand'))
 	        	#enemyfound += 1
 	        	#print ('Found:', enemyfound, 'enemies')
 	        	if not (target,source) in enemypairs[book_id]:
@@ -100,7 +102,7 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
 
 	       	#friendfound = 0
 
-	        if relation_type.find('vriend'):
+	        if relation_type.find('vriend') > -1:
 	        	#friendfound += 1
 	        	#print ('Found:', friendfound, 'friends')
 	        	if not (target,source) in friendpairs[book_id]:
@@ -113,22 +115,32 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
 
 
 	for book_id in enemypairs:
+		#for enemypair in enemypairs[book_id]:
+			#print (book_id, enemypair)
 		for (source, target) in enemypairs[book_id]:
-			for enemy in enemies[book_id][source]:
-				if enemy in enemies[book_id][target]:
-					print ('1: imbalance',relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
-			for friend in friends[book_id][source]:
-				if friend in friends[book_id][target]:
-					print ('2: balance',relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+			try:
+				for enemy in enemies[book_id][source]:
+					if enemy in enemies[book_id][target]:
+						print ('1: falsified',book_id,source,target,enemy,relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
+				if source in friends[book_id] and target in friends[book_id]:
+					for friend in friends[book_id][source]:
+						if friend in friends[book_id][target]:
+							print ('2: verified',book_id,source,target,friend,relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+			except:
+				print('ERROR:',book_id,source,target)
 
 	for book_id in friendpairs:
 		for (source, target) in friendpairs[book_id]:
-			for enemy in enemies[book_id][source]:
-				if enemy in enemies[book_id][target]:
-					print ('3: imbalance', relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
-			for friend in friends[book_id][source]:
-				if friend in friends[book_id][target]:
-					print ('4: balance', relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+			try:
+				if source in enemies[book_id] and target in enemies[book_id]:
+					for enemy in enemies[book_id][source]:
+						if enemy in enemies[book_id][target]:
+							print ('3: falsified', book_id,source,target,enemy,relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
+					for friend in friends[book_id][source]:
+						if friend in friends[book_id][target]:
+							print ('4: verfied',book_id,source,target,friend, relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+			except:
+				print('ERROR:',book_id,source,target)
 
 
 
