@@ -6338,9 +6338,9 @@ book_id,source,target,relation_type
 134,7,8,collega_neef
 134,8,7,collega_neef
 134,4,10,collega_vijand
-134,1,2,collega_vijand
-134,2,1,collega_vijand
-134,2,7,collega_vijand
+134,1,2,vijand
+134,2,1,vijand
+134,2,7,vijand
 134,2,8,collega_vijand
 134,5,6,collega_vijand_vriend
 134,6,5,collega_vijand_vriend
@@ -7107,11 +7107,11 @@ book_id,source,target,relation_type
 148,11,21,vriend_collega
 148,18,10,vriend_collega
 148,18,19,vriend_collega
-148,19,1,vriend_collega
+148,19,1,collega_vijand
 148,19,10,vriend_collega
 148,19,18,vriend_collega
 148,21,11,vriend_collega
-148,1,19,vriend_collega_vijand
+148,1,19,collega_vijand
 148,1,16,vijand
 148,1,17,vriend_collega
 148,8,17,collega
