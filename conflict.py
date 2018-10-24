@@ -125,7 +125,7 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
 				if source in friends[book_id] and target in friends[book_id]:
 					for friend in friends[book_id][source]:
 						if friend in friends[book_id][target]:
-							print ('2: verified',book_id,source,target,friend,relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+							print ('2: falsified',book_id,source,target,friend,relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
 			except:
 				print('ERROR:',book_id,source,target)
 
@@ -135,10 +135,10 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
 				if source in enemies[book_id] and target in enemies[book_id]:
 					for enemy in enemies[book_id][source]:
 						if enemy in enemies[book_id][target]:
-							print ('3: falsified', book_id,source,target,enemy,relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
+							print ('3: verified', book_id,source,target,enemy,relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
 					for friend in friends[book_id][source]:
 						if friend in friends[book_id][target]:
-							print ('4: verfied',book_id,source,target,friend, relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+							print ('4: verified',book_id,source,target,friend, relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
 			except:
 				print('ERROR:',book_id,source,target)
 
