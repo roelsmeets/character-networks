@@ -123,6 +123,7 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
 
 
 
+    tripletsseen = {}
 
     for book_id in enemypairs:
         #for enemypair in enemypairs[book_id]:
@@ -131,13 +132,19 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
             try:
                 for enemy in enemies[book_id][source]:
                     if enemy in enemies[book_id][target]:
-                        imbalance += 1
-                        print ('1: falsified',book_id,source,target,enemy,relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
+                    	triplet = book_id+",".join(sorted([source,target,enemy]))
+                    	if not triplet in tripletsseen:
+                    		imbalance += 1
+                    		print ('1: falsified',book_id,source,target,enemy,relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
+                    		tripletsseen[triplet] = True
                 if source in friends[book_id] and target in friends[book_id]:
                     for friend in friends[book_id][source]:
                         if friend in friends[book_id][target]:
-                            imbalance += 1
-                            print ('2: falsified',book_id,source,target,friend,relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+                        	triplet = book_id+",".join(sorted([source,target,friend]))
+                        	if not triplet in tripletsseen:
+                        		imbalance += 1
+                        		print ('2: falsified',book_id,source,target,friend,relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+                        		tripletsseen[triplet] = True
             except:
                 print('ERROR:',book_id,source,target)
 
@@ -147,12 +154,18 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
                 if source in enemies[book_id] and target in enemies[book_id]:
                     for enemy in enemies[book_id][source]:
                         if enemy in enemies[book_id][target]:
-                            balance += 1
-                            print ('3: verified', book_id,source,target,enemy,relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
+                        	triplet = book_id+",".join(sorted([source,target,enemy]))
+                        	if not triplet in tripletsseen:
+                        		balance += 1
+                        		print ('3: verified',book_id,source,target,enemy,relation_types[book_id][(source,target)],relation_types[book_id][(source,enemy)],relation_types[book_id][(enemy,target)])
+                        		tripletsseen[triplet] = True
                     for friend in friends[book_id][source]:
                         if friend in friends[book_id][target]:
-                            balance += 1
-                            print ('4: verified',book_id,source,target,friend, relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+                        	triplet = book_id+",".join(sorted([source,target,friend]))
+                        	if not triplet in tripletsseen:
+                        		balance += 1
+                        		print ('4: verified',book_id,source,target,friend,relation_types[book_id][(source,target)],relation_types[book_id][(source,friend)],relation_types[book_id][(friend,target)])
+                        		tripletsseen[triplet] = True
             except:
                 print('ERROR:',book_id,source,target)
 
@@ -171,7 +184,7 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
                 if allcharacters[source] and allcharacters[target] in enemypairs[book_id]:
                     # print ('source:', allcharacters[source])
                     # print ('target:', allcharacters[target])
-                    if allcharacters[book_id][source].dcd binegree > allcharacters[book_id][target].degree:
+                    if allcharacters[book_id][source].degree > allcharacters[book_id][target].degree:
                         allcharacters[book_id][source].conflictscore += 1
                     print ('book_id source =', allcharacters[book_id][source].book_id, 'character_id source =', allcharacters[book_id][source].character_id, 'degree source =', allcharacters[book_id][source].degree,  'source conflictscore degree=', allcharacters[book_id][source].conflictscore)
                     if allcharacters[book_id][target].degree > allcharacters[book_id][source].degree:
@@ -183,7 +196,7 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
     
 
     
-    # Strategy 2
+    # Strategy 2l
     # for book_id in enemypairs:
     #     for (source, target) in enemypairs[book_id]:
     #         for character_id in allcharacters[book_id][source]:
