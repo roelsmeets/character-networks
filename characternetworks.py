@@ -79,7 +79,7 @@ class Character:
 # 2.1. SUBCLASS Character_Centrality
 
 class Character_Centrality(Character):
-    def __init__(self, book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession, degree, betweenness, closeness, eigenvector, katz, winlose):
+    def __init__(self, book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession, degree, betweenness, closeness, eigenvector, katz, conflictscore):
         Character.__init__(self, book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession)
         self.degree = degree
         self.betweenness = betweenness
@@ -87,7 +87,7 @@ class Character_Centrality(Character):
         self.eigenvector = eigenvector
         self.katz = katz
 
-        self.winlose = winlose
+        self.conflictscore = conflictscore
   
 
 
