@@ -47,11 +47,11 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
             eigenvector = line[14]
             katz = line[15]
 
-            winlose = 0 
+            conflictscore = 0 
 
             if not book_id in allcharacters:
                 allcharacters[book_id] = {}
-            allcharacters[book_id][character_id] = Character_Centrality(book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession, degree, betweenness, closeness, eigenvector, katz, winlose)
+            allcharacters[book_id][character_id] = Character_Centrality(book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession, degree, betweenness, closeness, eigenvector, katz, conflictscore)
 
 
 # 3. COMPUTE SOCIAL BALANCE
@@ -171,12 +171,12 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
                 if allcharacters[source] and allcharacters[target] in enemypairs[book_id]:
                     # print ('source:', allcharacters[source])
                     # print ('target:', allcharacters[target])
-                    if allcharacters[book_id][source].degree > allcharacters[book_id][target].degree:
-                        allcharacters[book_id][source].winlose += 1
-                    print ('book_id source =', allcharacters[book_id][source].book_id, 'character_id source =', allcharacters[book_id][source].character_id, 'degree source =', allcharacters[book_id][source].degree,  'source winlose score degree=', allcharacters[book_id][source].winlose)
+                    if allcharacters[book_id][source].dcd binegree > allcharacters[book_id][target].degree:
+                        allcharacters[book_id][source].conflictscore += 1
+                    print ('book_id source =', allcharacters[book_id][source].book_id, 'character_id source =', allcharacters[book_id][source].character_id, 'degree source =', allcharacters[book_id][source].degree,  'source conflictscore degree=', allcharacters[book_id][source].conflictscore)
                     if allcharacters[book_id][target].degree > allcharacters[book_id][source].degree:
-                        allcharacters[book_id][target].winlose += 1
-                        print ('book_id target =', allcharacters[book_id][target].book_id, 'character_id target =', allcharacters[book_id][target].character_id, 'degree target =', allcharacters[book_id][target].degree,  'target winlose score degree=', allcharacters[book_id][target].winlose)
+                        allcharacters[book_id][target].conflictscore += 1
+                        print ('book_id target =', allcharacters[book_id][target].book_id, 'character_id target =', allcharacters[book_id][target].character_id, 'degree target =', allcharacters[book_id][target].degree,  'target conflictscore degree=', allcharacters[book_id][target].conflictscore)
 
 
 
