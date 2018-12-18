@@ -10,6 +10,7 @@ import csv
 
 
 
+
 # 2. INPUT
 
 allcharacters = {}
@@ -18,8 +19,6 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
      open(csvfiles['edges'], 'rt') as csvfile2:
     RANKINGS = csv.reader(csvfile1, delimiter=',')
     EDGES_complete = csv.reader(csvfile2, delimiter=',')
-
-
 
 
     for line in RANKINGS:
@@ -47,14 +46,32 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
             eigenvector = line[14]
             katz = line[15]
 
-            #conflictscore = 0 
-
             if not book_id in allcharacters:
                 allcharacters[book_id] = {}
             allcharacters[book_id][character_id] = Character_Centrality(book_id, character_id, name, gender, descent_country, descent_city, living_country, living_city, age, education, profession, degree, betweenness, closeness, eigenvector, katz)
 
 
+
+
 # 3. COMPUTE SOCIAL BALANCE
+
+    """
+        Testing the social balance theory of social psychologist Fritz Heider (1946) for all enemy/friend triads in the corpus. 
+
+        Categories of social balance:
+
+        Balance = 
+                enemy (-) enemy (- ) friend (+) 
+                    OR
+                friend (+) friend (+) friend (+)
+
+        Imbalance = 
+                friend (+) friend (+) enemy (-) 
+                    OR 
+                enemy(-) enemy (-) enemy (- )
+
+
+    """
     
     balance = 0
     imbalance = 0
@@ -84,7 +101,6 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
 
         if not book_id in relation_types:
             relation_types[book_id] = {}
-
 
 
 
@@ -173,55 +189,66 @@ with open(csvfiles['rankings'], 'rt') as csvfile1, \
 
 # 4. COMPUTE ENEMY HIERARCHIES
 
-    for book_id in allcharacters:
-        for character_id in allcharacters[book_id]:
-            if character_id in enemies[book_id]:
-                print(book_id,character_id)
-                for enemy in enemies[book_id][character_id]:
-                    for measure in allcharacters[book_id][character_id].conflictscore:
-                        print(measure)
-                        if getattr(allcharacters[book_id][character_id],measure) > getattr(allcharacters[book_id][enemy],measure):
-                            allcharacters[book_id][character_id].conflictscore[measure] += 1
-                        print (allcharacters[book_id][character_id].conflictscore[measure])
+    """
+        Modelling 'conflict scores' for all enemy dyads in the corpus. 
+        Each Character_Centrality class object (see characternetworks.py) has five conflictscore attributes, one for each measure
 
-
-
+        Steps:
+        - Check for every two enemies (enemypairs) who has a higher score on centrality measures (degree, betweenness, closeness, eigenvector, katz)
+        - In case a character has a higher score, increment the conflictscore for each measure by one 
+        - Output all metadata for enemies + their conflictscores to character-rankings_conflictscore.csv (to be used in multiple linear regression in SPSS)
+        
+    """
 
     
+    with open ('character-rankings_conflictscore', 'a', newline='') as csvoutput:
+        csvwriter = csv.writer(csvoutput, lineterminator='\n') 
 
+        for book_id in allcharacters:
+            for character_id in allcharacters[book_id]:
+                if character_id in enemies[book_id]:
+                    #print(book_id,character_id)
+                    for enemy in enemies[book_id][character_id]:
+                        for measure in allcharacters[book_id][character_id].conflictscore:
+                            #rint(measure)
+                            if getattr(allcharacters[book_id][character_id],measure) > getattr(allcharacters[book_id][enemy],measure): # For every two enemies, a character's conflictscore is incremented by one when he/she is more central than his enemy
+                                allcharacters[book_id][character_id].conflictscore[measure] += 1
+                            #print (allcharacters[book_id][character_id].conflictscore[measure])
 
+        for book_id in allcharacters:
+            for character_id in allcharacters[book_id]:
+                if character_id in enemies[book_id]:
+                    # Write to a csv file all metadata (+ conflictscores for every centrality measure) for characters that are enemies 
+                    csvwriter.writerow([book_id, \
+                                character_id, \
+                                allcharacters[book_id][character_id].name, \
+                                allcharacters[book_id][character_id].gender, \
+                                allcharacters[book_id][character_id].descent_country, \
+                                allcharacters[book_id][character_id].descent_city, \
+                                allcharacters[book_id][character_id].living_country, \
+                                allcharacters[book_id][character_id].living_city, \
+                                allcharacters[book_id][character_id].age, \
+                                allcharacters[book_id][character_id].education, \
+                                allcharacters[book_id][character_id].profession, \
+                                allcharacters[book_id][character_id].degree, \
+                                allcharacters[book_id][character_id].betweenness, \
+                                allcharacters[book_id][character_id].closeness, \
+                                allcharacters[book_id][character_id].eigenvector, \
+                                allcharacters[book_id][character_id].katz, \
+                                allcharacters[book_id][character_id].conflictscore['degree'], \
+                                allcharacters[book_id][character_id].conflictscore['betweenness'], \
+                                allcharacters[book_id][character_id].conflictscore['closeness'], \
+                                allcharacters[book_id][character_id].conflictscore['eigenvector'], \
+                                allcharacters[book_id][character_id].conflictscore['katz']])
+                                
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        # print ('Degree:', allcharacters['3']['4'].conflictscore['degree'])
+        # print ('Betweennes:',allcharacters['3']['4'].conflictscore['betweenness'])
+        # print ('Closeness:', allcharacters['3']['4'].conflictscore['closeness'])
+        # print ('Eigenvector:', allcharacters['3']['4'].conflictscore['eigenvector'])
+        # print ('Katz:', allcharacters['3']['4'].conflictscore['katz'])
 
     
-
-
-
-
-
-
-
 
 
 
