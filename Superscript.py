@@ -154,8 +154,12 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
         allbooks[book_id].novel_word_count() # Call method novel_word_count on each Book object
 
         allbooks[book_id].compute_network() # Computes weight of relations between Characters objects in Book objects
-
-
         
-        allbooks[book_id].write_to_csv(csvfile) # Writes to a csv file all character info + their scores for the 5 centrality measures
+        #allbooks[book_id].write_to_csv(csvfile) # Writes to a csv file all character info + their scores for the 5 centrality measures
+
+
+
+        allbooks[book_id].network.compute_assortativity()
+
+
 
