@@ -765,6 +765,7 @@ class Network():
         # print("Triadic closure:", triadic_closure) # 
 
 
+       
 
         # 1. DEGREE CENTRALITY
         degree_dict = nx.degree_centrality(self.Graph) # Compute degree centrality of all nodes in the Graph object. IMPORTANT: parameter 'weight' cannot be set, scores are thus unweighted degree
@@ -869,7 +870,58 @@ class Network():
                             nx.get_node_attributes(self.Graph, 'katz')[character_id]])
 
 
-        #nx.write_gexf(self.Graph, 'sample_graph.gexf') # Export the data as a GEXF file to upload in Gephi for visualization
+
+
+
+    def compute_assortativity(self):
+    	"""
+    	Computes assortativity per node attribute for each Book object
+
+
+    	"""
+
+
+    	gender_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'gender')
+    	descent_country_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_country')
+    	descent_city_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_city')
+    	living_country_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'living_country')
+    	living_city_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'living_city')
+    	age_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'age')
+    	education_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'education')
+
+    	print ('gender assortativity for book', self.book_id, '=', gender_assortativity)
+
+
+
+    	#nx.write_gexf(self.Graph, 'sample_graph.gexf') # Export the data as a GEXF file to upload in Gephi for visualization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
