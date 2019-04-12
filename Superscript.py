@@ -142,6 +142,10 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
     if total > 1:
         csvfile = 'character_rankings_task_'+str(task)+'.csv'
 
+    csvfile2 = 'networkstats.csv'
+    if total > 1:
+        csvfile2 = 'networkstats_task_'+str(task)+'.csv'
+
     for book_id in taskbookids: 
         """ Computes all necessary steps for the construction of character networks and outputs centrality values per character to new csv file
 
@@ -158,8 +162,7 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
         #allbooks[book_id].write_to_csv(csvfile) # Writes to a csv file all character info + their scores for the 5 centrality measures
 
 
-
-        allbooks[book_id].network.compute_networkstats()
+        allbooks[book_id].network.compute_networkstats(csvfile2)
 
 
 
