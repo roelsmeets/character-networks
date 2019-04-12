@@ -134,7 +134,7 @@ class Book:
         self.filename = filename
         self.word_count = 0
         self.name_counts = {}
-        self.network = Network(book_id) # Every time a book object is created, a Network object for each book_id is also created
+        self.network = Network(book_id, self.word_count, self.gender_author, self.age_author) # Every time a book object is created, a Network object is also created
     
 
 
@@ -540,18 +540,40 @@ class Network():
 
     Attributes: 
         book_id = An integer representing the number of the book on the Libris list (aplhabetically ordered)
+        word_count = An integer representing the number of words per Book object
+        gender_author = An integer representing a code for the gender of the author (1 = male, 2 = female)
+        age_author = An integer representing a code for the age of the author (1 = <25, 2 = 26-35, 3 = 36-45, 4= 46-55, 5 = 56-64, 6 = 65+)
         
     """
 
 
     
-    def __init__(self, book_id):
+    def __init__(self, book_id, word_count, gender_author, age_author):
         self.weights = {}
         self.relation_type = {}
         self.normalized_weights = {}
         #self.composed_weights = Counter()
         self.Graph = nx.Graph() # networkx Graph object
         self.book_id = book_id
+        self.word_count = word_count
+        self.gender_author = gender_author
+        self.age_author = age_author
+
+
+        self.number_of_nodes = 0
+        self.number_of_edges = 0
+        self.gender_assortativity = 0
+        self.descent_country_assortativity = 0
+        self.descent_city_assortativity = 0
+        self.living_country_assortativity = 0
+        self.living_city_assortativity = 0
+        self.age_assortativity = 0
+        self.education_assortativity = 0
+        self.density = 0
+        self.triadic_closure = 0
+        self.clustering_coefficient = 0
+        self.reciprocity = 0 
+
 
         
     def add_edge(self,source, target, relation_type):
@@ -874,7 +896,7 @@ class Network():
 
 
 
-    def compute_networkstats(self, filename='character-rankings.csv'):
+    def compute_networkstats(self, filename='networkstats.csv'):
         """
             Computes network statistics for each Book object
 
@@ -886,42 +908,73 @@ class Network():
                 - clustering coefficient
                 - reciprocity 
 
+            And writes the results to networkstats.csv 
+
 
         """
 
-        number_of_nodes = len(self.Graph) # Returns number of nodes
-        print ("Number of nodes for book", self.book_id, '=', number_of_nodes)
+        self.number_of_nodes = len(self.Graph) # Returns number of nodes
+        print ("Number of nodes for book", self.book_id, '=', self.number_of_nodes)
 
-        number_of_edges = self.Graph.number_of_edges()  # Returns number of edges
-        print ("Number of edges for book", self.book_id, '=', number_of_edges)
+        self.number_of_edges = self.Graph.number_of_edges()  # Returns number of edges
+        print ("Number of edges for book", self.book_id, '=', self.number_of_edges)
 
-        gender_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'gender')
-        descent_country_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_country')
-        descent_city_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_city')
-        living_country_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'living_country')
-        living_city_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'living_city')
-        age_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'age')
-        education_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'education')
-        print ('Gender assortativity for book', self.book_id, '=', gender_assortativity)
-        print ('Country of descent assortativity for book', self.book_id, '=', descent_country_assortativity)
-        print ('City of descent assortativity for book', self.book_id, '=', descent_city_assortativity)
-        print ('Country of living assortativity for book', self.book_id, '=', living_country_assortativity)
-        print ('City of living assortativity for book', self.book_id, '=', living_city_assortativity)
-        print ('Age assortativity for book', self.book_id, '=', age_assortativity)
-        print ('Education assortativity for book', self.book_id, '=', education_assortativity)
+        self.gender_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'gender')
+        self.descent_country_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_country')
+        self.descent_city_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_city')
+        self.living_country_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'living_country')
+        self.living_city_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'living_city')
+        self.age_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'age')
+        self.education_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'education')
+        print ('Gender assortativity for book', self.book_id, '=', self.gender_assortativity)
+        print ('Country of descent assortativity for book', self.book_id, '=', self.descent_country_assortativity)
+        print ('City of descent assortativity for book', self.book_id, '=', self.descent_city_assortativity)
+        print ('Country of living assortativity for book', self.book_id, '=', self.living_country_assortativity)
+        print ('City of living assortativity for book', self.book_id, '=', self.living_city_assortativity)
+        print ('Age assortativity for book', self.book_id, '=', self.age_assortativity)
+        print ('Education assortativity for book', self.book_id, '=', self.education_assortativity)
 
 
-        density = nx.density(self.Graph) # Computes density of the network: he ratio of actual edges in the network to all possible edges in the network (scale 0-1)
-        print("Network density for book", self.book_id, '=', density)
+        self.density = nx.density(self.Graph) # Computes density of the network: the ratio of actual edges in the network to all possible edges in the network (scale 0-1)
+        print("Network density for book", self.book_id, '=', self.density)
 
-        triadic_closure = nx.transitivity(self.Graph) # Computes transitivity: how interconnected a graph is in terms of a ratio of actual over possible connections (scale 0-1), all the relationships in your graph that may exist but currently do not
-        print("Triadic closure for book", self.book_id, '=', triadic_closure) 
+        self.triadic_closure = nx.transitivity(self.Graph) # Computes transitivity: how interconnected a graph is in terms of a ratio of actual over possible connections (scale 0-1), all the relationships in your graph that may exist but currently do not
+        print("Triadic closure for book", self.book_id, '=', self.triadic_closure) 
 
-        clustering_coefficient = nx.average_clustering(self.Graph) # Computes the degree to which nodes in a graph tend to cluster together
-        print ('The clustering coefficient for book', self.book_id, '=', clustering_coefficient)
+        self.clustering_coefficient = nx.average_clustering(self.Graph) # Computes the degree to which nodes in a graph tend to cluster together
+        print ('The clustering coefficient for book', self.book_id, '=', self.clustering_coefficient)
 
-        reciprocity = nx.reciprocity(self.Graph)
-        print ('The reciprocity for book', self.book_id, '=', reciprocity)
+        self.reciprocity = nx.reciprocity(self.Graph)
+        print ('The reciprocity for book', self.book_id, '=', self.reciprocity)
+
+
+
+        with open (filename, 'a', newline='') as f:
+            csvwriter = csv.writer(f)
+            #csvwriter = csv.writer(f, fieldnames=['book_id', 'word_count', 'gender_author', 'age_author', 'number_of_nodes', 'number_of_edges', 'gender_assortativity', 'descent_country_assortativity', 'descent_city_assortativity', 'living_country_assortativity', 'living_city_assortativity', 'age_assortativity', 'education_assortativity', 'density', 'triadic_closure', 'clustering_coefficient', 'reciprocity'])
+            #csvwriter.writeheader()
+
+            csvwriter.writerow([self.book_id, \
+                        self.word_count, \
+                        self.gender_author, \
+                        self.age_author, \
+                        self.number_of_nodes, \
+                        self.number_of_edges, \
+                        self.gender_assortativity, \
+                        self.descent_country_assortativity, \
+                        self.descent_city_assortativity, \
+                        self.living_country_assortativity, \
+                        self.living_city_assortativity, \
+                        self.age_assortativity, \
+                        self.education_assortativity, \
+                        self.density, \
+                        self.triadic_closure, \
+                        self.clustering_coefficient, \
+                        self.reciprocity])
+
+
+
+
 
 
         #nx.write_gexf(self.Graph, 'sample_graph.gexf') # Export the data as a GEXF file to upload in Gephi for visualization
