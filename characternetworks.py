@@ -201,6 +201,7 @@ class Book:
         """
 
         self.word_count = sum(len(line.split()) for line in self.originaltext)
+        self.network.word_count = self.word_count
 
         
 
