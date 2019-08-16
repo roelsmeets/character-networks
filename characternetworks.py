@@ -975,16 +975,16 @@ class Network():
                         self.education_assortativity])
 
 
-    # def detect_communities(self):
-    #     """
-    #     Divides the Network object into communities using the Clauset-Newman-Moore modularity maximization.
+    def detect_communities(self):
+        """
+        Divides the Network object into communities using the Clauset-Newman-Moore modularity maximization.
 
-    #     Greedy modularity maximization begins with each node in its own community and joins the pair of communities that most increases modularity until no such pair exists.
+        Greedy modularity maximization begins with each node in its own community and joins the pair of communities that most increases modularity until no such pair exists.
 
 
-    #     """
+        """
 
-    #     communities = list(greedy_modularity_communities(self.Graph))
+        communities = list(greedy_modularity_communities(self.Graph))
 
 
 
