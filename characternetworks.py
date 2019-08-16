@@ -559,10 +559,13 @@ class Network():
         self.word_count = word_count
         self.gender_author = gender_author
         self.age_author = age_author
-
-
         self.number_of_nodes = 0
         self.number_of_edges = 0
+        self.density = 0
+        self.triadic_closure = 0
+        self.clustering_coefficient = 0
+        self.is_connected = False 
+        #self.diameter = 0
         self.gender_assortativity = 0
         self.descent_country_assortativity = 0
         self.descent_city_assortativity = 0
@@ -570,10 +573,6 @@ class Network():
         self.living_city_assortativity = 0
         self.age_assortativity = 0
         self.education_assortativity = 0
-        self.density = 0
-        self.triadic_closure = 0
-        self.clustering_coefficient = 0
-        self.reciprocity = 0 
 
 
         
@@ -899,15 +898,15 @@ class Network():
 
     def compute_networkstats(self, filename='networkstats.csv'):
         """
-            Computes network statistics for each Book object
+            Computes network statistics for each Network object
 
                 - number of nodes
                 - number of edges
-                - assortativity per node attribute
                 - density 
                 - transitivity/triadic closure
                 - clustering coefficient
-                - reciprocity 
+                - diameter
+                - assortativity per node attribute
 
             And writes the results to networkstats.csv 
 
@@ -919,6 +918,21 @@ class Network():
 
         self.number_of_edges = self.Graph.number_of_edges()  # Returns number of edges
         print ("Number of edges for book", self.book_id, '=', self.number_of_edges)
+
+        self.density = nx.density(self.Graph) # Computes density of the network: the ratio of actual edges in the network to all possible edges in the network (scale 0-1)
+        print("Network density for book", self.book_id, '=', self.density)
+
+        self.triadic_closure = nx.transitivity(self.Graph) # Computes transitivity: how interconnected a graph is in terms of a ratio of actual over possible connections (scale 0-1), all the relationships in your graph that may exist but currently do not
+        print("Triadic closure for book", self.book_id, '=', self.triadic_closure) 
+
+        self.clustering_coefficient = nx.average_clustering(self.Graph) # Computes the degree to which nodes in a graph tend to cluster together
+        print ('The clustering coefficient for book', self.book_id, '=', self.clustering_coefficient)
+
+        self.is_connected = nx.is_connected(self.Graph)
+        print ('Is the network of book', self.book_id, 'connected?', self.is_connected)
+
+
+        # self.diameter = nx.diameter(self.Graph) # Computes the shortest distance between the two most distant nodes in the network which represents the linear size of the network
 
         self.gender_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'gender')
         self.descent_country_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_country')
@@ -936,19 +950,6 @@ class Network():
         print ('Education assortativity for book', self.book_id, '=', self.education_assortativity)
 
 
-        self.density = nx.density(self.Graph) # Computes density of the network: the ratio of actual edges in the network to all possible edges in the network (scale 0-1)
-        print("Network density for book", self.book_id, '=', self.density)
-
-        self.triadic_closure = nx.transitivity(self.Graph) # Computes transitivity: how interconnected a graph is in terms of a ratio of actual over possible connections (scale 0-1), all the relationships in your graph that may exist but currently do not
-        print("Triadic closure for book", self.book_id, '=', self.triadic_closure) 
-
-        self.clustering_coefficient = nx.average_clustering(self.Graph) # Computes the degree to which nodes in a graph tend to cluster together
-        print ('The clustering coefficient for book', self.book_id, '=', self.clustering_coefficient)
-
-        self.reciprocity = nx.reciprocity(self.Graph)
-        print ('The reciprocity for book', self.book_id, '=', self.reciprocity)
-
-
 
         with open (filename, 'a', newline='') as f:
             csvwriter = csv.writer(f)
@@ -961,17 +962,33 @@ class Network():
                         self.age_author, \
                         self.number_of_nodes, \
                         self.number_of_edges, \
+                        self.density, \
+                        self.triadic_closure, \
+                        self.clustering_coefficient, \
+                        self.is_connected, \
                         self.gender_assortativity, \
                         self.descent_country_assortativity, \
                         self.descent_city_assortativity, \
                         self.living_country_assortativity, \
                         self.living_city_assortativity, \
                         self.age_assortativity, \
-                        self.education_assortativity, \
-                        self.density, \
-                        self.triadic_closure, \
-                        self.clustering_coefficient, \
-                        self.reciprocity])
+                        self.education_assortativity])
+
+
+    # def detect_communities(self):
+    #     """
+    #     Divides the Network object into communities using the Clauset-Newman-Moore modularity maximization.
+
+    #     Greedy modularity maximization begins with each node in its own community and joins the pair of communities that most increases modularity until no such pair exists.
+
+
+    #     """
+
+    #     communities = list(greedy_modularity_communities(self.Graph))
+
+
+
+
 
 
 
