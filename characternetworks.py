@@ -8,6 +8,7 @@ from collections import Counter
 import itertools 
 import networkx as nx
 from networkx.algorithms import community
+from networkx.algorithms.community import greedy_modularity_communities
 import matplotlib.pyplot as plt
 import re
 import pandas as pd
@@ -925,7 +926,7 @@ class Network():
         self.triadic_closure = nx.transitivity(self.Graph) # Computes transitivity: how interconnected a graph is in terms of a ratio of actual over possible connections (scale 0-1), all the relationships in your graph that may exist but currently do not
         print("Triadic closure for book", self.book_id, '=', self.triadic_closure) 
 
-        self.clustering_coefficient = nx.average_clustering(self.Graph) # Computes the degree to which nodes in a graph tend to cluster together
+        self.clustering_coefficient = nx.average_clustering(self.Graph, weight='weight') # Computes the degree to which nodes in a graph tend to cluster together
         print ('The clustering coefficient for book', self.book_id, '=', self.clustering_coefficient)
 
         self.is_connected = nx.is_connected(self.Graph)
@@ -953,8 +954,8 @@ class Network():
 
         with open (filename, 'a', newline='') as f:
             csvwriter = csv.writer(f)
-            #csvwriter = csv.writer(f, fieldnames=['book_id', 'word_count', 'gender_author', 'age_author', 'number_of_nodes', 'number_of_edges', 'gender_assortativity', 'descent_country_assortativity', 'descent_city_assortativity', 'living_country_assortativity', 'living_city_assortativity', 'age_assortativity', 'education_assortativity', 'density', 'triadic_closure', 'clustering_coefficient', 'reciprocity'])
-            #csvwriter.writeheader()
+            # csvwriter = csv.writer(f, fieldnames=['book_id', 'word_count', 'gender_author', 'age_author', 'number_of_nodes', 'number_of_edges', 'density', 'triadic_closure', 'clustering_coefficient', 'is_connected', 'gender_assortativity', 'descent_country_assortativity', 'descent_city_assortativity', 'living_country_assortativity', 'living_city_assortativity', 'age_assortativity', 'education_assortativity'])
+            # csvwriter.writeheader()
 
             csvwriter.writerow([self.book_id, \
                         self.word_count, \
@@ -985,6 +986,15 @@ class Network():
         """
 
         communities = list(greedy_modularity_communities(self.Graph))
+        print ('Communities of book', self.book_id, sorted(communities))
+
+
+
+    def draw_network(self):
+
+        nx.draw_networkx(self.Graph, pos=nx.circular_layout(self.Graph))
+        plt.draw()
+        plt.show()
 
 
 

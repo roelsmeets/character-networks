@@ -163,6 +163,22 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
 
 
         allbooks[book_id].network.compute_networkstats(csvfile2)
+        allbooks[book_id].network.detect_communities()
+
+        allbooks[book_id].network.draw_network()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
