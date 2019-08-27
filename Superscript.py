@@ -162,7 +162,8 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
         #allbooks[book_id].write_to_csv(csvfile) # Writes to a csv file all character info + their scores for the 5 centrality measures
 
 
-        allbooks[book_id].network.compute_networkstats(csvfile2)
+        #allbooks[book_id].network.compute_networkstats(csvfile2)
+
         allbooks[book_id].network.detect_communities()
 
         allbooks[book_id].network.draw_network()

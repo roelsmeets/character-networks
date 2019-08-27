@@ -9,6 +9,7 @@ import itertools
 import networkx as nx
 from networkx.algorithms import community
 from networkx.algorithms.community import greedy_modularity_communities
+from networkx.algorithms.community.centrality import girvan_newman
 import matplotlib.pyplot as plt
 import re
 import pandas as pd
@@ -985,16 +986,25 @@ class Network():
 
         """
 
-        communities = list(greedy_modularity_communities(self.Graph))
-        print ('Communities of book', self.book_id, sorted(communities))
+        # communities = list(greedy_modularity_communities(self.Graph))
+        # print ('Communities of book', self.book_id, sorted(communities))
+
+        communities = girvan_newman(self.Graph)
+        print ('Communities of book', self.book_id,tuple(sorted(c) for c in next(communities)))
+      
+
+
 
 
 
     def draw_network(self):
+    	"""
+    	Draws network and show the visualization in a WebAgg server
 
-        nx.draw_networkx(self.Graph, pos=nx.circular_layout(self.Graph))
-        plt.draw()
-        plt.show()
+    	"""
+    	nx.draw_networkx(self.Graph, pos=nx.circular_layout(self.Graph))
+    	plt.draw()
+    	plt.show()
 
 
 
