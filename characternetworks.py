@@ -117,6 +117,7 @@ class Book:
         publisher = A string representing the name of the publisher 
         perspective = An integer representing a code for the narrative situtation in the novel (1 = 1stpers, 2 = 3rdpers, 3 = multi, 4 = other)
         filename =  A string representing the name of the plain text file of the novel, ending with '_clean.txt'
+        word_count = An integer representing the number of words the book has
     """
 
     def __init__(self, book_id, title, name_author, gender_author, age_author, publisher, perspective, filename):
@@ -728,6 +729,7 @@ class Network():
         closeness_dict = {}
         eigenvector_dict = {}
         katz_dict = {}
+        descent_recode_dict = {}
 
         for character_id in allcharacters:
             """Define node attributes by accessing Character attributes in allcharacters
@@ -748,6 +750,20 @@ class Network():
             eigenvector_dict[character_id] = 0
             katz_dict[character_id] = 0
 
+            if (allcharacters[character_id].descent_country == '1') or (allcharacters[character_id].descent_country == '2'):
+                descent_recode_dict[character_id] = '0' # Recode 1 (Dutch) and 2 (Belgian) into 0 ('non-migrant')
+            if (allcharacters[character_id].descent_country == '3') or (allcharacters[character_id].descent_country =='4') or (allcharacters[character_id].descent_country =='5') or (allcharacters[character_id].descent_country =='6'):
+                descent_recode_dict[character_id] = '1' # Recode 3 (European), 4 (Western), 5 (Middle Eastern), 6 (Other) into 1 ('migrant')
+            if allcharacters[character_id].descent_country == '99':
+                descent_recode_dict[character_id] = '99' # 99 (unknown) remains the same
+
+            # Check if recoding descent_country into descent_recode worked properly
+            # print ('character =', allcharacters[character_id].name, 'descent_country =', allcharacters[character_id].descent_country)
+            # print ('character =', allcharacters[character_id].name, 'descent_recode =', descent_recode_dict[character_id])
+            # print ('***************************************')
+
+            
+
 
         nx.set_node_attributes(self.Graph, name_dict, 'name')
         nx.set_node_attributes(self.Graph, gender_dict, 'gender')
@@ -763,6 +779,7 @@ class Network():
         nx.set_node_attributes(self.Graph, closeness_dict, 'closeness')
         nx.set_node_attributes(self.Graph, eigenvector_dict, 'eigenvector')
         nx.set_node_attributes(self.Graph, katz_dict, 'katz')
+        nx.set_node_attributes(self.Graph, descent_recode_dict, 'descent_recode')
 
 
         # print(nx.info(self.Graph)) # Print information about the Graph   
@@ -936,6 +953,8 @@ class Network():
 
         # self.diameter = nx.diameter(self.Graph) # Computes the shortest distance between the two most distant nodes in the network which represents the linear size of the network
 
+     
+
         self.gender_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'gender')
         self.descent_country_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_country')
         self.descent_city_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_city')
@@ -943,6 +962,7 @@ class Network():
         self.living_city_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'living_city')
         self.age_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'age')
         self.education_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'education')
+        self.descent_recode_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_recode')
         print ('Gender assortativity for book', self.book_id, '=', self.gender_assortativity)
         print ('Country of descent assortativity for book', self.book_id, '=', self.descent_country_assortativity)
         print ('City of descent assortativity for book', self.book_id, '=', self.descent_city_assortativity)
@@ -950,6 +970,7 @@ class Network():
         print ('City of living assortativity for book', self.book_id, '=', self.living_city_assortativity)
         print ('Age assortativity for book', self.book_id, '=', self.age_assortativity)
         print ('Education assortativity for book', self.book_id, '=', self.education_assortativity)
+        print ('Descent_recode assortativity for book', self.book_id, '=', self.descent_recode_assortativity)
 
 
 
@@ -974,14 +995,17 @@ class Network():
                         self.living_country_assortativity, \
                         self.living_city_assortativity, \
                         self.age_assortativity, \
-                        self.education_assortativity])
+                        self.education_assortativity, \
+                        self.descent_recode_assortativity])
 
 
     def detect_communities(self):
         """
-        Divides the Network object into communities using the Clauset-Newman-Moore modularity maximization.
+        Divides the Network object into communities using the Clauset-Newman-Moore modularity maximization or the Girvan-Newman algorithm.
 
         Greedy modularity maximization begins with each node in its own community and joins the pair of communities that most increases modularity until no such pair exists.
+
+        The Girvan–Newman algorithm detects communities by progressively removing edges from the original graph. The algorithm removes the “most valuable” edge, traditionally the edge with the highest betweenness centrality, at each step. As the graph breaks down into pieces, the tightly knit community structure is exposed and the result can be depicted as a dendrogram.
 
 
         """
@@ -991,6 +1015,7 @@ class Network():
 
         communities = girvan_newman(self.Graph)
         print ('Communities of book', self.book_id,tuple(sorted(c) for c in next(communities)))
+        # print ('Communities of book', self.book_id,tuple(sorted(communities)))
       
 
 
@@ -1002,7 +1027,7 @@ class Network():
     	Draws network and show the visualization in a WebAgg server
 
     	"""
-    	nx.draw_networkx(self.Graph, pos=nx.circular_layout(self.Graph))
+    	nx.draw_networkx(self.Graph, pos=nx.random_layout(self.Graph))
     	plt.draw()
     	plt.show()
 
