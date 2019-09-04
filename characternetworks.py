@@ -1011,16 +1011,18 @@ class Network():
         """
 
         # communities = list(greedy_modularity_communities(self.Graph))
-        # print ('Communities of book', self.book_id, sorted(communities))
+
+        # for community in communities:
+        #     print ('Communities of book', self.book_id, sorted(community))
 
         communities = girvan_newman(self.Graph)
-        print ('Communities of book', self.book_id,tuple(sorted(c) for c in next(communities)))
-        # print ('Communities of book', self.book_id,tuple(sorted(communities)))
+        #print ('Communities of book', self.book_id,tuple(sorted(c) for c in next(communities)))
+        print ('Communities of book', self.book_id,tuple(sorted(communities)))
       
 
 
 
-
+ 
 
     def draw_network(self):
     	"""
