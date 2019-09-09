@@ -337,8 +337,18 @@ class Book:
 
         configurationfile = "tokconfig-nld" 
         tokenizer = ucto.Tokenizer(configurationfile)
-
         tokenizer.process(self.markedtext)
+
+
+        # Print number of words of the text
+        # nr_of_tokens = 0
+        # for token in tokenizer:
+        #     nr_of_tokens += 1
+        # print ('Number of tokens of book', self.book_id, '=', nr_of_tokens)
+
+
+
+        # Print all tokens in the text
         # for token in tokenizer:
         #     print(str(token))
         #     if token.isendofsentence():
