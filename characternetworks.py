@@ -10,6 +10,10 @@ import networkx as nx
 from networkx.algorithms import community
 from networkx.algorithms.community import greedy_modularity_communities
 from networkx.algorithms.community.centrality import girvan_newman
+from networkx.algorithms.community import kernighan_lin_bisection
+from networkx.algorithms.community import label_propagation_communities
+from networkx.algorithms.community import asyn_lpa_communities
+from networkx.algorithms.community import k_clique_communities
 import matplotlib.pyplot as plt
 import re
 import pandas as pd
@@ -1021,14 +1025,34 @@ class Network():
         """
 
         # communities = list(greedy_modularity_communities(self.Graph))
-
         # for community in communities:
         #     print ('Communities of book', self.book_id, sorted(community))
 
-        communities = girvan_newman(self.Graph)
+        #communities = girvan_newman(self.Graph)
         #print ('Communities of book', self.book_id,tuple(sorted(c) for c in next(communities)))
-        print ('Communities of book', self.book_id,tuple(sorted(communities)))
+        #print ('Communities of book', self.book_id,tuple(sorted(communities)))
+
+        # communities = kernighan_lin_bisection(self.Graph, weight='weight')
+        # print ('Communities of book', self.book_id, ':', communities)
       
+        # communities = label_propagation_communities(self.Graph)
+        # for community in communities:
+        #     print ('Communities of book', self.book_id, sorted(community))
+
+        # communities = asyn_lpa_communities(self.Graph)
+        # for community in communities:
+        #     print ('Communities of book', self.book_id, sorted(community))
+
+
+        communities = list(k_clique_communities(self.Graph, 2))
+        for community in communities:
+            print ('Communities of book', self.book_id, sorted(community))
+
+
+
+
+
+
 
 
 
