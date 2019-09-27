@@ -1032,9 +1032,6 @@ class Network():
         #print ('Communities of book', self.book_id,tuple(sorted(c) for c in next(communities)))
         #print ('Communities of book', self.book_id,tuple(sorted(communities)))
 
-        # communities = kernighan_lin_bisection(self.Graph, weight='weight')
-        # print ('Communities of book', self.book_id, ':', communities)
-      
         # communities = label_propagation_communities(self.Graph)
         # for community in communities:
         #     print ('Communities of book', self.book_id, sorted(community))
@@ -1044,12 +1041,18 @@ class Network():
         #     print ('Communities of book', self.book_id, sorted(community))
 
 
-        communities = list(k_clique_communities(self.Graph, 2))
+        # communities = list(k_clique_communities(self.Graph, 2))
+        # for community in communities:
+        #     print ('Communities of book', self.book_id, sorted(community))
+
+
+        communities = kernighan_lin_bisection(self.Graph, weight='weight')
+        print ('Communities of book', self.book_id, ':', sorted(communities))
+
         for community in communities:
-            print ('Communities of book', self.book_id, sorted(community))
+        	nx.get_node_attributes(self.Graph, 'gender')
 
-
-
+        
 
 
 
