@@ -40,7 +40,7 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
     # Csv-file with information on each novel, columns: Book_ID, Title, Author, Publisher, Perspective (1stpers, 3rdpers, multi, other)
     BOOKS_complete = csv.reader(csvfile1, delimiter=',')
     # Csv-file with information on characters, columns: Book-ID, Character-ID, Name, Gender, Descent_country, Descent_city, Living_country, Living_city, Age, Education, Profession
-    NODES_complete = csv.reader(csvfile2, delimiter=',')
+    NODES_complete = csv.reader(csvfile2, delimiter=';')
     # Csv-file with information on character relations, columns: Book-ID, Source, Target, Relation-type
     EDGES_complete = csv.reader(csvfile3, delimiter=',')
     # Csv-file with information on name variances, columns: Book-ID, Character-ID, Name-ID, Name-variances
@@ -146,9 +146,9 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
     if total > 1:
         csvfile2 = 'networkstats_task_'+str(task)+'.csv'
 
-    csvfile3 = 'communities_distributions.csv'
+    csvfile3 = 'communities_frequency_distributions.csv'
     if total > 1:
-        csvfile3 = 'communities_distributions_task_'+str(task)+'.csv'
+        csvfile3 = 'communities_frequency_distributions_task_'+str(task)+'.csv'
 
 
 

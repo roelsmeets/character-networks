@@ -1026,7 +1026,7 @@ class Network():
                         self.descent_recode_assortativity])
 
 
-    def detect_communities(self, filename='communities_distributions.csv'):
+    def detect_communities(self, filename='communities_frequency_distributions.csv'):
         """
         Divides the Network object into communities using the Clauset-Newman-Moore modularity maximization, the Girvan-Newman algorithm, the Kernighan–Lin algorithm, or other methods. 
 
@@ -1315,18 +1315,21 @@ class Network():
                         self.age_distribution_book['36-45'], \
                         self.age_distribution_book['46-55'], \
                         self.age_distribution_book['56-64'], \
+                        self.age_distribution_book['65+'], \
                         self.age_distribution_book['unknown'], \
                         self.age_distribution_community_a['<25'], \
                         self.age_distribution_community_a['26-35'], \
                         self.age_distribution_community_a['36-45'], \
                         self.age_distribution_community_a['46-55'], \
                         self.age_distribution_community_a['56-64'], \
+                        self.age_distribution_community_a['65+'], \
                         self.age_distribution_community_a['unknown'], \
                         self.age_distribution_community_b['<25'], \
                         self.age_distribution_community_b['26-35'], \
                         self.age_distribution_community_b['36-45'], \
                         self.age_distribution_community_b['46-55'], \
                         self.age_distribution_community_b['56-64'], \
+                        self.age_distribution_community_b['65+'], \
                         self.age_distribution_community_b['unknown']])
 
 
