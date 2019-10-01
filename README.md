@@ -17,5 +17,7 @@ Python scripts:
   2. enemy dyads: computes hierarchies between every two enemies based on a 'conflictscore' (one for each measure)
 
  Csv output:
- * character-rankings.csv (output from Superscript.py)
- * character-rankings_conflictscore.csv (output from conflict.py)
+ * character-rankings.csv (output of write_to_csv() in Superscript.py)
+ * character-rankings_conflictscore.csv (output of conflict.py)
+ * networkstats.csv (output of compute_networkstats() in Superscript.py)
+ * communities_frequency_distributions.csv (output of detect_communities() in Superscript.py)
