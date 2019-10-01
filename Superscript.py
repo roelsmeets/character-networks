@@ -146,6 +146,13 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
     if total > 1:
         csvfile2 = 'networkstats_task_'+str(task)+'.csv'
 
+    csvfile3 = 'communities_distributions.csv'
+    if total > 1:
+        csvfile3 = 'communities_distributions_task_'+str(task)+'.csv'
+
+
+
+
     for book_id in taskbookids: 
         """ Computes all necessary steps for the construction of character networks and outputs centrality values per character to new csv file
 
@@ -164,7 +171,7 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
 
         #allbooks[book_id].network.compute_networkstats(csvfile2)
 
-        allbooks[book_id].network.detect_communities()
+        allbooks[book_id].network.detect_communities(csvfile3)
 
         #allbooks[book_id].network.draw_network()
 

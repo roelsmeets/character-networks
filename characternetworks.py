@@ -590,6 +590,22 @@ class Network():
         self.living_city_assortativity = 0
         self.age_assortativity = 0
         self.education_assortativity = 0
+        self.communities = []
+        self.community_a = set()
+        self.community_b = set()
+        self.gender_distribution_book = {'male': 0, 'female': 0, 'unknown': 0}
+        self.descent_recode_distribution_book = {'non-migrant': 0, 'migrant': 0, 'unknown': 0}
+        self.education_distribution_book = {'high education': 0, 'low education': 0, 'unknown': 0}
+        self.age_distribution_book = {'<25': 0, '26-35': 0, '36-45': 0, '46-55': 0, '56-64': 0, '65+': 0, 'unknown': 0}
+        self.gender_distribution_community_a = {'male': 0, 'female': 0, 'unknown': 0}
+        self.descent_recode_distribution_community_a = {'non-migrant': 0, 'migrant': 0, 'unknown': 0}
+        self.education_distribution_community_a = {'high education': 0, 'low education': 0, 'unknown': 0}
+        self.age_distribution_community_a = {'<25': 0, '26-35': 0, '36-45': 0, '46-55': 0, '56-64': 0, '65+': 0, 'unknown': 0}
+        self.gender_distribution_community_b = {'male': 0, 'female': 0, 'unknown': 0}
+        self.descent_recode_distribution_community_b = {'non-migrant': 0, 'migrant': 0, 'unknown': 0}
+        self.education_distribution_community_b = {'high education': 0, 'low education': 0, 'unknown': 0}
+        self.age_distribution_community_b = {'<25': 0, '26-35': 0, '36-45': 0, '46-55': 0, '56-64': 0, '65+': 0, 'unknown': 0}
+
 
 
         
@@ -775,8 +791,7 @@ class Network():
             # print ('character =', allcharacters[character_id].name, 'descent_country =', allcharacters[character_id].descent_country)
             # print ('character =', allcharacters[character_id].name, 'descent_recode =', descent_recode_dict[character_id])
             # print ('***************************************')
-
-            
+      
 
 
         nx.set_node_attributes(self.Graph, name_dict, 'name')
@@ -990,8 +1005,6 @@ class Network():
 
         with open (filename, 'a', newline='') as f:
             csvwriter = csv.writer(f)
-            # csvwriter = csv.writer(f, fieldnames=['book_id', 'word_count', 'gender_author', 'age_author', 'number_of_nodes', 'number_of_edges', 'density', 'triadic_closure', 'clustering_coefficient', 'is_connected', 'gender_assortativity', 'descent_country_assortativity', 'descent_city_assortativity', 'living_country_assortativity', 'living_city_assortativity', 'age_assortativity', 'education_assortativity'])
-            # csvwriter.writeheader()
 
             csvwriter.writerow([self.book_id, \
                         self.word_count, \
@@ -1013,13 +1026,17 @@ class Network():
                         self.descent_recode_assortativity])
 
 
-    def detect_communities(self):
+    def detect_communities(self, filename='communities_distributions.csv'):
         """
-        Divides the Network object into communities using the Clauset-Newman-Moore modularity maximization or the Girvan-Newman algorithm.
+        Divides the Network object into communities using the Clauset-Newman-Moore modularity maximization, the Girvan-Newman algorithm, the Kernighan–Lin algorithm, or other methods. 
 
         Greedy modularity maximization begins with each node in its own community and joins the pair of communities that most increases modularity until no such pair exists.
 
         The Girvan–Newman algorithm detects communities by progressively removing edges from the original graph. The algorithm removes the “most valuable” edge, traditionally the edge with the highest betweenness centrality, at each step. As the graph breaks down into pieces, the tightly knit community structure is exposed and the result can be depicted as a dendrogram.
+
+        The Kernighan–Lin algorithm paritions a network into two sets by iteratively swapping pairs of nodes to reduce the edge cut between the two sets.
+
+        Outputs the results to communities_distributions.csv to use in further statistical analysis
 
 
         """
@@ -1046,21 +1063,284 @@ class Network():
         #     print ('Communities of book', self.book_id, sorted(community))
 
 
-        communities = kernighan_lin_bisection(self.Graph, weight='weight')
-        print ('Communities of book', self.book_id, ':', sorted(communities))
+        self.communities = kernighan_lin_bisection(self.Graph, weight='weight')
+        #print ('Communities of book', self.book_id, ':', sorted(self.communities))
 
-        for community in communities:
-        	nx.get_node_attributes(self.Graph, 'gender')
+        self.community_a = self.communities[0]
+        self.community_b = self.communities[1]
+        # print ('Community a of book', self.book_id, ':', self.community_a)
+        # print ('Community b of book', self.book_id, ':', self.community_b)
 
-        
+        gender_nx = nx.get_node_attributes(self.Graph, 'gender')
+        descent_recode_nx = nx.get_node_attributes(self.Graph, 'descent_recode')
+        education_nx = nx.get_node_attributes(self.Graph, 'education')
+        age_nx = nx.get_node_attributes(self.Graph, 'age')
+
+        for community in self.communities:
+            for character_id in community:
+                """
+                    For the book as a whole, store demographic info in four dictionaries (gender, descent, education, age) to compute distributions
+
+
+                """
+                # print ('character_id:', character_id, 'gender:', gender_nx[character_id])
+                # print ('character_id:', character_id, 'descent:', descent_recode_nx[character_id])
+                # print ('character_id:', character_id, 'education:', education_nx[character_id])
+                # print ('character_id:', character_id, 'age:', age_nx[character_id])
+                if gender_nx[character_id] == '1':
+                    self.gender_distribution_book['male'] += 1
+                elif gender_nx[character_id] == '2':
+                    self.gender_distribution_book['female'] += 1
+                elif gender_nx[character_id] == '99':
+                    self.gender_distribution_book['unknown'] += 1
+
+                if descent_recode_nx[character_id] == '0':
+                    self.descent_recode_distribution_book['non-migrant'] += 1
+                elif descent_recode_nx[character_id] == '1':
+                    self.descent_recode_distribution_book['migrant'] += 1
+                elif descent_recode_nx[character_id] == '99':
+                    self.descent_recode_distribution_book['unknown'] += 1
+                
+                if education_nx[character_id] == '1':
+                    self.education_distribution_book['high education'] += 1
+                elif education_nx[character_id] == '2':
+                    self.education_distribution_book['low education'] += 1
+                elif education_nx[character_id] == '99':
+                    self.education_distribution_book['unknown'] += 1
+
+                if age_nx[character_id] == '1':
+                    self.age_distribution_book['<25'] += 1
+                elif age_nx[character_id] == '2':
+                    self.age_distribution_book['26-35'] += 1
+                elif age_nx[character_id] == '3':
+                    self.age_distribution_book['36-45'] += 1
+                elif age_nx[character_id] == '4':
+                    self.age_distribution_book['46-55'] += 1
+                elif age_nx[character_id] == '5':
+                    self.age_distribution_book['56-64'] += 1
+                elif age_nx[character_id] == '6':
+                    self.age_distribution_book['65+'] += 1
+                elif age_nx[character_id] == '99':
+                    self.age_distribution_book['unknown'] += 1
+
+
+        # print ('male characters in book', self.book_id, self.gender_distribution_book['male'])
+        # print ('female characters in book', self.book_id, self.gender_distribution_book['female'])
+        # print ('unknown gender characters in book', self.book_id, self.gender_distribution_book['unknown'])
+
+        # print ('non-migrant characters in book', self.book_id, self.descent_recode_distribution_book['non-migrant'])
+        # print ('migrant characters in book', self.book_id, self.descent_recode_distribution_book['migrant'])
+        # print ('unknown descent characters in book', self.book_id, self.descent_recode_distribution_book['unknown'])
+
+        # print ('higher educated characters in book', self.book_id, self.education_distribution_book['high education'])
+        # print ('lower educated characters in book', self.book_id, self.education_distribution_book['low education'])
+        # print ('unknown education characters in book', self.book_id, self.education_distribution_book['unknown'])
+
+        # print ('age <25 characters in book', self.book_id, self.age_distribution_book['<25'])
+        # print ('age 26-35 characters in book', self.book_id, self.age_distribution_book['26-35'])
+        # print ('age 36-45 characters in book', self.book_id, self.age_distribution_book['36-45'])
+        # print ('age 46-55 characters in book', self.book_id, self.age_distribution_book['46-55'])
+        # print ('age 56-64 characters in book', self.book_id, self.age_distribution_book['56-64'])
+        # print ('age unknown characters in book', self.book_id, self.age_distribution_book['unknown'])
+
+
+
+        for character_id in self.community_a:
+            """
+                For community_a, store demographic info in four dictionaries (gender, descent, education, age) to compute distribution
+
+
+            """
+            # print ('character_id:', character_id, 'gender:', gender_nx[character_id])
+            # print ('character_id:', character_id, 'descent:', descent_recode_nx[character_id])
+            # print ('character_id:', character_id, 'education:', education_nx[character_id])
+            # print ('character_id:', character_id, 'age:', age_nx[character_id])
+            if gender_nx[character_id] == '1':
+                self.gender_distribution_community_a['male'] += 1
+            elif gender_nx[character_id] == '2':
+                self.gender_distribution_community_a['female'] += 1
+            elif gender_nx[character_id] == '99':
+                self.gender_distribution_community_a['unknown'] += 1
+
+            if descent_recode_nx[character_id] == '0':
+                self.descent_recode_distribution_community_a['non-migrant'] += 1
+            elif descent_recode_nx[character_id] == '1':
+                self.descent_recode_distribution_community_a['migrant'] += 1
+            elif descent_recode_nx[character_id] == '99':
+                self.descent_recode_distribution_community_a['unknown'] += 1
+            
+            if education_nx[character_id] == '1':
+                self.education_distribution_community_a['high education'] += 1
+            elif education_nx[character_id] == '2':
+                self.education_distribution_community_a['low education'] += 1
+            elif education_nx[character_id] == '99':
+                self.education_distribution_community_a['unknown'] += 1
+
+            if age_nx[character_id] == '1':
+                self.age_distribution_community_a['<25'] += 1
+            elif age_nx[character_id] == '2':
+                self.age_distribution_community_a['26-35'] += 1
+            elif age_nx[character_id] == '3':
+                self.age_distribution_community_a['36-45'] += 1
+            elif age_nx[character_id] == '4':
+                self.age_distribution_community_a['46-55'] += 1
+            elif age_nx[character_id] == '5':
+                self.age_distribution_community_a['56-64'] += 1
+            elif age_nx[character_id] == '6':
+                self.age_distribution_community_a['65+'] += 1
+            elif age_nx[character_id] == '99':
+                self.age_distribution_community_a['unknown'] += 1
+
+
+        # print ('male characters in community_a of book', self.book_id, self.gender_distribution_community_a['male'])
+        # print ('female characters in community_a of book', self.book_id, self.gender_distribution_community_a['female'])
+        # print ('unknown gender characters in community_a of book', self.book_id, self.gender_distribution_community_a['unknown'])
+
+        # print ('non-migrant characters in community_a of book', self.book_id, self.descent_recode_distribution_community_a['non-migrant'])
+        # print ('migrant characters in community_a of book', self.book_id, self.descent_recode_distribution_community_a['migrant'])
+        # print ('unknown descent characters in community_a of book', self.book_id, self.descent_recode_distribution_community_a['unknown'])
+
+        # print ('higher educated characters in community_a of book', self.book_id, self.education_distribution_community_a['high education'])
+        # print ('lower educated characters in community_a of book', self.book_id, self.education_distribution_community_a['low education'])
+        # print ('unknown education characters in community_a of book', self.book_id, self.education_distribution_community_a['unknown'])
+
+        # print ('age <25 characters in community_a of book', self.book_id, self.age_distribution_community_a['<25'])
+        # print ('age 26-35 characters in community_a of book', self.book_id, self.age_distribution_community_a['26-35'])
+        # print ('age 36-45 characters in community_a of book', self.book_id, self.age_distribution_community_a['36-45'])
+        # print ('age 46-55 characters in community_a of book', self.book_id, self.age_distribution_community_a['46-55'])
+        # print ('age 56-64 characters in community_a of book', self.book_id, self.age_distribution_community_a['56-64'])
+        # print ('age unknown characters in community_a of book', self.book_id, self.age_distribution_community_a['unknown'])
+
+
+        for character_id in self.community_b:
+            """
+                For community_b, store demographic info in four dictionaries (gender, descent, education, age) to compute distribution
+
+
+            """
+            # print ('character_id:', character_id, 'gender:', gender_nx[character_id])
+            # print ('character_id:', character_id, 'descent:', descent_recode_nx[character_id])
+            # print ('character_id:', character_id, 'education:', education_nx[character_id])
+            # print ('character_id:', character_id, 'age:', age_nx[character_id])
+
+            if gender_nx[character_id] == '1':
+                self.gender_distribution_community_b['male'] += 1
+            elif gender_nx[character_id] == '2':
+                self.gender_distribution_community_b['female'] += 1
+            elif gender_nx[character_id] == '99':
+                self.gender_distribution_community_b['unknown'] += 1
+
+            if descent_recode_nx[character_id] == '0':
+                self.descent_recode_distribution_community_b['non-migrant'] += 1
+            elif descent_recode_nx[character_id] == '1':
+                self.descent_recode_distribution_community_b['migrant'] += 1
+            elif descent_recode_nx[character_id] == '99':
+                self.descent_recode_distribution_community_b['unknown'] += 1
+            
+            if education_nx[character_id] == '1':
+                self.education_distribution_community_b['high education'] += 1
+            elif education_nx[character_id] == '2':
+                self.education_distribution_community_b['low education'] += 1
+            elif education_nx[character_id] == '99':
+                self.education_distribution_community_b['unknown'] += 1
+
+            if age_nx[character_id] == '1':
+                self.age_distribution_community_b['<25'] += 1
+            elif age_nx[character_id] == '2':
+                self.age_distribution_community_b['26-35'] += 1
+            elif age_nx[character_id] == '3':
+                self.age_distribution_community_b['36-45'] += 1
+            elif age_nx[character_id] == '4':
+                self.age_distribution_community_b['46-55'] += 1
+            elif age_nx[character_id] == '5':
+                self.age_distribution_community_b['56-64'] += 1
+            elif age_nx[character_id] == '6':
+                self.age_distribution_community_b['65+'] += 1
+            elif age_nx[character_id] == '99':
+                self.age_distribution_community_b['unknown'] += 1
+
+
+        # print ('male characters in community_b of book', self.book_id, self.gender_distribution_community_b['male'])
+        # print ('female characters in community_b of book', self.book_id, self.gender_distribution_community_b['female'])
+        # print ('unknown gender characters in community_b of book', self.book_id, self.gender_distribution_community_b['unknown'])
+
+        # print ('non-migrant characters in community_b of book', self.book_id, self.descent_recode_distribution_community_b['non-migrant'])
+        # print ('migrant characters in community_b of book', self.book_id, self.descent_recode_distribution_community_b['migrant'])
+        # print ('unknown descent characters in community_b of book', self.book_id, self.descent_recode_distribution_community_b['unknown'])
+
+        # print ('higher educated characters in community_b of book', self.book_id, self.education_distribution_community_b['high education'])
+        # print ('lower educated characters in community_b of book', self.book_id, self.education_distribution_community_b['low education'])
+        # print ('unknown education characters in community_b of book', self.book_id, self.education_distribution_community_b['unknown'])
+
+        # print ('age <25 characters in community_b of book', self.book_id, self.age_distribution_community_b['<25'])
+        # print ('age 26-35 characters in community_b of book', self.book_id, self.age_distribution_community_b['26-35'])
+        # print ('age 36-45 characters in community_b of book', self.book_id, self.age_distribution_community_b['36-45'])
+        # print ('age 46-55 characters in community_b of book', self.book_id, self.age_distribution_community_b['46-55'])
+        # print ('age 56-64 characters in community_b of book', self.book_id, self.age_distribution_community_b['56-64'])
+        # print ('age unknown characters in community_b of book', self.book_id, self.age_distribution_community_b['unknown'])
+
+
+        with open (filename, 'a', newline='') as f:
+            csvwriter = csv.writer(f)
+
+            csvwriter.writerow([self.gender_distribution_book['male'], \
+                        self.gender_distribution_book['female'], \
+                        self.gender_distribution_book['unknown'], \
+                        self.gender_distribution_community_a['male'], \
+                        self.gender_distribution_community_a['female'], \
+                        self.gender_distribution_community_a['unknown'], \
+                        self.gender_distribution_community_b['male'], \
+                        self.gender_distribution_community_b['female'], \
+                        self.gender_distribution_community_b['unknown'], \
+                        self.descent_recode_distribution_book['non-migrant'], \
+                        self.descent_recode_distribution_book['migrant'], \
+                        self.descent_recode_distribution_book['unknown'], \
+                        self.descent_recode_distribution_community_a['non-migrant'], \
+                        self.descent_recode_distribution_community_a['migrant'], \
+                        self.descent_recode_distribution_community_a['unknown'], \
+                        self.descent_recode_distribution_community_b['non-migrant'], \
+                        self.descent_recode_distribution_community_b['migrant'], \
+                        self.descent_recode_distribution_community_b['unknown'], \
+                        self.education_distribution_book['high education'], \
+                        self.education_distribution_book['low education'], \
+                        self.education_distribution_book['unknown'], \
+                        self.education_distribution_community_a['high education'], \
+                        self.education_distribution_community_a['low education'], \
+                        self.education_distribution_community_a['unknown'], \
+                        self.education_distribution_community_b['high education'], \
+                        self.education_distribution_community_b['low education'], \
+                        self.education_distribution_community_b['unknown'], \
+                        self.age_distribution_book['<25'], \
+                        self.age_distribution_book['26-35'], \
+                        self.age_distribution_book['36-45'], \
+                        self.age_distribution_book['46-55'], \
+                        self.age_distribution_book['56-64'], \
+                        self.age_distribution_book['unknown'], \
+                        self.age_distribution_community_a['<25'], \
+                        self.age_distribution_community_a['26-35'], \
+                        self.age_distribution_community_a['36-45'], \
+                        self.age_distribution_community_a['46-55'], \
+                        self.age_distribution_community_a['56-64'], \
+                        self.age_distribution_community_a['unknown'], \
+                        self.age_distribution_community_b['<25'], \
+                        self.age_distribution_community_b['26-35'], \
+                        self.age_distribution_community_b['36-45'], \
+                        self.age_distribution_community_b['46-55'], \
+                        self.age_distribution_community_b['56-64'], \
+                        self.age_distribution_community_b['unknown']])
 
 
 
 
 
 
- 
 
+
+
+
+
+
+            
     def draw_network(self):
     	"""
     	Draws network and show the visualization in a WebAgg server
@@ -1069,11 +1349,6 @@ class Network():
     	nx.draw_networkx(self.Graph, pos=nx.random_layout(self.Graph))
     	plt.draw()
     	plt.show()
-
-
-
-
-
 
 
 
