@@ -150,6 +150,9 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
     if total > 1:
         csvfile3 = 'communities_frequency_distributions_task_'+str(task)+'.csv'
 
+    gephi_file = 'networkx_graph.gexf'
+    if total > 1:
+        gephi_file = 'networkx_graph_task_'+str(task)+'.gexf'
 
 
 
@@ -173,7 +176,7 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
 
         allbooks[book_id].network.detect_communities(csvfile3)
 
-        #allbooks[book_id].network.draw_network()
+        allbooks[book_id].network.draw_network(gephi_file)
 
 
 

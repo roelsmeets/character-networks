@@ -1064,12 +1064,12 @@ class Network():
 
 
         self.communities = kernighan_lin_bisection(self.Graph, weight='weight')
-        #print ('Communities of book', self.book_id, ':', sorted(self.communities))
+        print ('Communities of book', self.book_id, ':', sorted(self.communities))
 
         self.community_a = self.communities[0]
         self.community_b = self.communities[1]
-        # print ('Community a of book', self.book_id, ':', self.community_a)
-        # print ('Community b of book', self.book_id, ':', self.community_b)
+        print ('Community a of book', self.book_id, ':', self.community_a)
+        print ('Community b of book', self.book_id, ':', self.community_b)
 
         gender_nx = nx.get_node_attributes(self.Graph, 'gender')
         descent_recode_nx = nx.get_node_attributes(self.Graph, 'descent_recode')
@@ -1336,15 +1336,8 @@ class Network():
 
 
 
-
-
-
-
-
-
-
             
-    def draw_network(self):
+    def draw_network(self, filename='networkx_graph.gexf'):
     	"""
     	Draws network and show the visualization in a WebAgg server
 
@@ -1353,11 +1346,7 @@ class Network():
     	plt.draw()
     	plt.show()
 
-
-
-
-
-        #nx.write_gexf(self.Graph, 'sample_graph.gexf') # Export the data as a GEXF file to upload in Gephi for visualization
+    	nx.write_gexf(self.Graph, filename) # Export the data as a GEXF file to upload in Gephi for visualization
 
 
 
