@@ -17,17 +17,19 @@ import glob
 import sys
 import errno
 import csv
-from characternetworks_2 import Book, Character, Network
+from characternetworks_permutations import Book, Character, Network
 
 from variables import *
 
 argparser = argparse.ArgumentParser(description='computes character network of (subset of) novels')
 argparser.add_argument('--task', default=1, type=int, help='number of task when parallelising')
 argparser.add_argument('--total', default=1, type=int, help='total number of tasks when parallelising')
+argparser.add_argument('--permutation', default=1, type=str, help='permutation number')
 args = argparser.parse_args()
 parameters=vars(args)
 task = parameters['task']
 total = parameters['total']
+permutation = parameters['permutation']
 if task > total:
     sys.exit('task can not be higher than total!')
     
@@ -264,6 +266,10 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
     mean_descent_recode_assortativity = sum(descent_recode_assortativity_values)/len(descent_recode_assortativity_values)
     #print ('mean descent assortativity', mean_descent_recode_assortativity)
    
+
+    output = open('permutations/permutation_'+permutation+'.txt', 'wt')
+    output.write(str(mean_gender_assortativity)+','+str(mean_age_assortativity)+','+str(mean_education_assortativity)+','+str(mean_descent_recode_assortativity)+'\n')
+    output.close()
 
     # print ('gender_assortativity_values =', gender_assortativity_values)
     # print ('age_assortativity_values =', age_assortativity_values)
