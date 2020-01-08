@@ -984,23 +984,23 @@ class Network():
 
         self.gender_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'gender')
         if math.isnan(self.gender_assortativity):
-            #print ('Value = nan!')
-            self.gender_assortativity = '1'
+            print ('Value = nan!')
+            self.gender_assortativity = 1.0
 
         self.age_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'age')
         if math.isnan(self.age_assortativity):
-            #print ('Value = nan!')
-            self.age_assortativity = '1'
+            print ('Value = nan!')
+            self.age_assortativity = 1.0
 
         self.education_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'education')
         if math.isnan(self.education_assortativity):
-            #print ('Value = nan!')
-            self.education_assortativity = '1'
+            print ('Value = nan!')
+            self.education_assortativity = 1.0
 
         self.descent_recode_assortativity = nx.attribute_assortativity_coefficient(self.Graph, 'descent_recode')
         if math.isnan(self.descent_recode_assortativity):
-            #print ('Value = nan!')
-            self.descent_recode_assortativity = '1'
+            print ('Value = nan!')
+            self.descent_recode_assortativity = 1.0
 
         # print ('Gender assortativity for book', self.book_id, '=', self.gender_assortativity)
         # print ('Age assortativity for book', self.book_id, '=', self.age_assortativity)
