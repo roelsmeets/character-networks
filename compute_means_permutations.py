@@ -8,8 +8,6 @@ import glob
 path = r'/Users/roelsmeets/Desktop/Libris_networks/character-networks/character-networks/permutations' 
 all_files = glob.glob(path + "/*.txt")
 
-print (all_files)
-
 file_list = []
 
 for filename in all_files:
