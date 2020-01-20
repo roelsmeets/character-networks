@@ -17,7 +17,8 @@ for filename in all_files:
 frame = pd.concat(file_list)
 frame.columns = ['gender_assortativity', 'age_assortativity', 'education_assortativity', 'descent_assortativity']
 
-print (frame.mean())
+print ('mean =', frame.mean())
+print ('standard deviation =', frame.std())
 
 
 
