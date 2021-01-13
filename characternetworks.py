@@ -1,4 +1,4 @@
-# #!/usr/bin/env python
+#!/usr/bin/env python
 
 # # -*- coding: utf-8 -*-
 
@@ -65,6 +65,11 @@ class Character:
         self.education = education
         self.profession = profession
         self.isfirstperson = False
+
+        self.balancedtriads1 = 0
+        self.balancedtriads2 = 0
+        self.forbiddentriads1 = 0
+        self.forbiddentriads2 = 0
 
         self.marked_name = list(self.name) 
         self.marked_name = '|'.join(self.marked_name)
@@ -452,6 +457,8 @@ class Book:
         For each perspective another method for computing the weight is used.
 
         """
+
+        #print ('all characters of book', self.book_id, '=',self.allcharacters)
             
 
         if self.perspective == '1' or self.perspective == '2':
@@ -496,6 +503,8 @@ class Book:
                         
             self.network.normalize_weights(self.word_count) # Normalize weights by dividing through word_count 
 
+            self.network.compute_socialbalance(self.allcharacters)
+
             self.network.networkx_ranking(self.allcharacters) # Rank all characters in Book objects with networkx
 
 
@@ -530,6 +539,8 @@ class Book:
 
             self.network.normalize_weights(self.word_count) # Normalize weights for 'mother' Book-object
 
+            self.network.compute_socialbalance(self.allcharacters) 
+
             self.network.networkx_ranking(self.allcharacters) # Rank all characters in 'mother' Book-object with networkx
 
 
@@ -538,6 +549,8 @@ class Book:
             print ('Something goes wrong! Book object is not in one of the three perspective-categories!')
             print ('Book object causing the error:', self.book_id, self.title) # Print instance to which the error is due
             exit(1)
+
+
   
 
     def write_to_csv(self,filename='character-rankings.csv'):
@@ -658,13 +671,13 @@ class Network():
 
 
         # Block of code to print the weights to check if everything works
-        # for source1 in self.normalized_weights:
-        #     for target1 in self.normalized_weights[source1]:
+        # for source1 in self.weights:
+        #     for target1 in self.weights[source1]:
         #         #pass
         #         print(source1,target1) 
-        #         if target1 in self.normalized_weights[source1]:
+        #         if target1 in self.weights[source1]:
         #             #pass
-        #             print("%.7f" % self.normalized_weights[source1][target1])
+        #             print("%.7f" % self.weights[source1][target1])
         #             print (self.weights[source1][target1])
         #         if target1 in self.relation_type[source1]:
         #             #pass
@@ -700,14 +713,81 @@ class Network():
                     self.normalized_weights[source] = {}    
                 self.normalized_weights[source][target] = self.weights[source][target] / word_count # Compute normalized_weights by dividing weights through word_count
 
-        #print (self.book_id, self.weights)
-        #print ('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
-        #print (self.book_id, self.normalized_weights)
+        # print (self.book_id, self.weights)
+        # print ('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+        # print (self.book_id, self.normalized_weights)
 
         
         # if self.normalized_weights == {}:
         #     print ('self.normalized_weights = empty for book_id:', self.book_id)
         #     exit(0)
+
+    def compute_socialbalance(self, allcharacters):
+        """
+        Compute social balance for each triad of Character objects in each Book object
+
+        balanced1: +++
+        balanced2: 00+
+        forbidden1: 000
+        forbidden2: ++0
+
+        self.weights variable is dict with character_ids as keys and a nested dict as values, where nested dict key-value pair is target character_id and weight of relation source-target
+        allcharacters variable is dict with character_ids as keys and characterobjects as value
+
+        For each possible combination of three Character object in allcharacters, check whether or not these three Character objects have or do not share edges.
+
+        Count the amount of occurrences of a Character object for each of these categories, where + represents an edge and 0 represents NO edge.
+
+        balanced1: +++
+        balanced2: 00+
+        forbidden1: 000
+        forbidden2: ++0
+
+        self.balancedtriads1 = 0
+        self.balancedtriads2 = 0
+        self.forbiddentriads1 = 0
+        self.forbiddentriads2 = 0
+
+
+        """
+
+        co_occurrences = {} # dict to track whether or not two character in allcharacters share an edge
+ 
+
+        for character_id in allcharacters: # Loop over each Character object in dict, key = character_id and value = character object
+            if not character_id in co_occurrences:
+                co_occurrences[character_id] = [] 
+
+        for character_id in self.weights:
+            co_occurring_chars = self.weights[character_id].keys() # Maybe do list(self.weights[character_id].keys()) if the output object of key() causes harm
+            #print ('cooccurring characters of character_id', character_id, co_occurring_chars)
+            co_occurrences[character_id].append(co_occurring_chars)
+
+
+        for allcharacters[character_id].character_id in co_occurrences:
+            for co_occuring_char in co_occurrences[allcharacters[character_id].character_id]
+
+
+
+
+
+
+        triad_combinations = list(itertools.combinations(allcharacters, 3))
+
+
+ 
+
+        #print (co_occurrences)
+       
+
+
+
+
+        # for source in self.weights:
+        #     for target in self.weights[source]:
+        #         if 
+
+
 
 
     
@@ -1124,24 +1204,24 @@ class Network():
                     self.age_distribution_book['unknown'] += 1
 
 
-        # print ('male characters in book', self.book_id, self.gender_distribution_book['male'])
-        # print ('female characters in book', self.book_id, self.gender_distribution_book['female'])
-        # print ('unknown gender characters in book', self.book_id, self.gender_distribution_book['unknown'])
+        print ('male characters in book', self.book_id, self.gender_distribution_book['male'])
+        print ('female characters in book', self.book_id, self.gender_distribution_book['female'])
+        print ('unknown gender characters in book', self.book_id, self.gender_distribution_book['unknown'])
 
-        # print ('non-migrant characters in book', self.book_id, self.descent_recode_distribution_book['non-migrant'])
-        # print ('migrant characters in book', self.book_id, self.descent_recode_distribution_book['migrant'])
-        # print ('unknown descent characters in book', self.book_id, self.descent_recode_distribution_book['unknown'])
+        print ('non-migrant characters in book', self.book_id, self.descent_recode_distribution_book['non-migrant'])
+        print ('migrant characters in book', self.book_id, self.descent_recode_distribution_book['migrant'])
+        print ('unknown descent characters in book', self.book_id, self.descent_recode_distribution_book['unknown'])
 
-        # print ('higher educated characters in book', self.book_id, self.education_distribution_book['high education'])
-        # print ('lower educated characters in book', self.book_id, self.education_distribution_book['low education'])
-        # print ('unknown education characters in book', self.book_id, self.education_distribution_book['unknown'])
+        print ('higher educated characters in book', self.book_id, self.education_distribution_book['high education'])
+        print ('lower educated characters in book', self.book_id, self.education_distribution_book['low education'])
+        print ('unknown education characters in book', self.book_id, self.education_distribution_book['unknown'])
 
-        # print ('age <25 characters in book', self.book_id, self.age_distribution_book['<25'])
-        # print ('age 26-35 characters in book', self.book_id, self.age_distribution_book['26-35'])
-        # print ('age 36-45 characters in book', self.book_id, self.age_distribution_book['36-45'])
-        # print ('age 46-55 characters in book', self.book_id, self.age_distribution_book['46-55'])
-        # print ('age 56-64 characters in book', self.book_id, self.age_distribution_book['56-64'])
-        # print ('age unknown characters in book', self.book_id, self.age_distribution_book['unknown'])
+        print ('age <25 characters in book', self.book_id, self.age_distribution_book['<25'])
+        print ('age 26-35 characters in book', self.book_id, self.age_distribution_book['26-35'])
+        print ('age 36-45 characters in book', self.book_id, self.age_distribution_book['36-45'])
+        print ('age 46-55 characters in book', self.book_id, self.age_distribution_book['46-55'])
+        print ('age 56-64 characters in book', self.book_id, self.age_distribution_book['56-64'])
+        print ('age unknown characters in book', self.book_id, self.age_distribution_book['unknown'])
 
 
 
@@ -1192,24 +1272,24 @@ class Network():
                 self.age_distribution_community_a['unknown'] += 1
 
 
-        # print ('male characters in community_a of book', self.book_id, self.gender_distribution_community_a['male'])
-        # print ('female characters in community_a of book', self.book_id, self.gender_distribution_community_a['female'])
-        # print ('unknown gender characters in community_a of book', self.book_id, self.gender_distribution_community_a['unknown'])
+        print ('male characters in community_a of book', self.book_id, self.gender_distribution_community_a['male'])
+        print ('female characters in community_a of book', self.book_id, self.gender_distribution_community_a['female'])
+        print ('unknown gender characters in community_a of book', self.book_id, self.gender_distribution_community_a['unknown'])
 
-        # print ('non-migrant characters in community_a of book', self.book_id, self.descent_recode_distribution_community_a['non-migrant'])
-        # print ('migrant characters in community_a of book', self.book_id, self.descent_recode_distribution_community_a['migrant'])
-        # print ('unknown descent characters in community_a of book', self.book_id, self.descent_recode_distribution_community_a['unknown'])
+        print ('non-migrant characters in community_a of book', self.book_id, self.descent_recode_distribution_community_a['non-migrant'])
+        print ('migrant characters in community_a of book', self.book_id, self.descent_recode_distribution_community_a['migrant'])
+        print ('unknown descent characters in community_a of book', self.book_id, self.descent_recode_distribution_community_a['unknown'])
 
-        # print ('higher educated characters in community_a of book', self.book_id, self.education_distribution_community_a['high education'])
-        # print ('lower educated characters in community_a of book', self.book_id, self.education_distribution_community_a['low education'])
-        # print ('unknown education characters in community_a of book', self.book_id, self.education_distribution_community_a['unknown'])
+        print ('higher educated characters in community_a of book', self.book_id, self.education_distribution_community_a['high education'])
+        print ('lower educated characters in community_a of book', self.book_id, self.education_distribution_community_a['low education'])
+        print ('unknown education characters in community_a of book', self.book_id, self.education_distribution_community_a['unknown'])
 
-        # print ('age <25 characters in community_a of book', self.book_id, self.age_distribution_community_a['<25'])
-        # print ('age 26-35 characters in community_a of book', self.book_id, self.age_distribution_community_a['26-35'])
-        # print ('age 36-45 characters in community_a of book', self.book_id, self.age_distribution_community_a['36-45'])
-        # print ('age 46-55 characters in community_a of book', self.book_id, self.age_distribution_community_a['46-55'])
-        # print ('age 56-64 characters in community_a of book', self.book_id, self.age_distribution_community_a['56-64'])
-        # print ('age unknown characters in community_a of book', self.book_id, self.age_distribution_community_a['unknown'])
+        print ('age <25 characters in community_a of book', self.book_id, self.age_distribution_community_a['<25'])
+        print ('age 26-35 characters in community_a of book', self.book_id, self.age_distribution_community_a['26-35'])
+        print ('age 36-45 characters in community_a of book', self.book_id, self.age_distribution_community_a['36-45'])
+        print ('age 46-55 characters in community_a of book', self.book_id, self.age_distribution_community_a['46-55'])
+        print ('age 56-64 characters in community_a of book', self.book_id, self.age_distribution_community_a['56-64'])
+        print ('age unknown characters in community_a of book', self.book_id, self.age_distribution_community_a['unknown'])
 
 
         for character_id in self.community_b:
@@ -1260,24 +1340,24 @@ class Network():
                 self.age_distribution_community_b['unknown'] += 1
 
 
-        # print ('male characters in community_b of book', self.book_id, self.gender_distribution_community_b['male'])
-        # print ('female characters in community_b of book', self.book_id, self.gender_distribution_community_b['female'])
-        # print ('unknown gender characters in community_b of book', self.book_id, self.gender_distribution_community_b['unknown'])
+        print ('male characters in community_b of book', self.book_id, self.gender_distribution_community_b['male'])
+        print ('female characters in community_b of book', self.book_id, self.gender_distribution_community_b['female'])
+        print ('unknown gender characters in community_b of book', self.book_id, self.gender_distribution_community_b['unknown'])
 
-        # print ('non-migrant characters in community_b of book', self.book_id, self.descent_recode_distribution_community_b['non-migrant'])
-        # print ('migrant characters in community_b of book', self.book_id, self.descent_recode_distribution_community_b['migrant'])
-        # print ('unknown descent characters in community_b of book', self.book_id, self.descent_recode_distribution_community_b['unknown'])
+        print ('non-migrant characters in community_b of book', self.book_id, self.descent_recode_distribution_community_b['non-migrant'])
+        print ('migrant characters in community_b of book', self.book_id, self.descent_recode_distribution_community_b['migrant'])
+        print ('unknown descent characters in community_b of book', self.book_id, self.descent_recode_distribution_community_b['unknown'])
 
-        # print ('higher educated characters in community_b of book', self.book_id, self.education_distribution_community_b['high education'])
-        # print ('lower educated characters in community_b of book', self.book_id, self.education_distribution_community_b['low education'])
-        # print ('unknown education characters in community_b of book', self.book_id, self.education_distribution_community_b['unknown'])
+        print ('higher educated characters in community_b of book', self.book_id, self.education_distribution_community_b['high education'])
+        print ('lower educated characters in community_b of book', self.book_id, self.education_distribution_community_b['low education'])
+        print ('unknown education characters in community_b of book', self.book_id, self.education_distribution_community_b['unknown'])
 
-        # print ('age <25 characters in community_b of book', self.book_id, self.age_distribution_community_b['<25'])
-        # print ('age 26-35 characters in community_b of book', self.book_id, self.age_distribution_community_b['26-35'])
-        # print ('age 36-45 characters in community_b of book', self.book_id, self.age_distribution_community_b['36-45'])
-        # print ('age 46-55 characters in community_b of book', self.book_id, self.age_distribution_community_b['46-55'])
-        # print ('age 56-64 characters in community_b of book', self.book_id, self.age_distribution_community_b['56-64'])
-        # print ('age unknown characters in community_b of book', self.book_id, self.age_distribution_community_b['unknown'])
+        print ('age <25 characters in community_b of book', self.book_id, self.age_distribution_community_b['<25'])
+        print ('age 26-35 characters in community_b of book', self.book_id, self.age_distribution_community_b['26-35'])
+        print ('age 36-45 characters in community_b of book', self.book_id, self.age_distribution_community_b['36-45'])
+        print ('age 46-55 characters in community_b of book', self.book_id, self.age_distribution_community_b['46-55'])
+        print ('age 56-64 characters in community_b of book', self.book_id, self.age_distribution_community_b['56-64'])
+        print ('age unknown characters in community_b of book', self.book_id, self.age_distribution_community_b['unknown'])
 
 
         with open (filename, 'a', newline='') as f:
