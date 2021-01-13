@@ -502,10 +502,8 @@ class Book:
                             #self.network.normalize_weights(characternr2str, characternr1str, weight, self.word_count)
                         
             self.network.normalize_weights(self.word_count) # Normalize weights by dividing through word_count 
-
-            self.network.compute_socialbalance(self.allcharacters)
-
             self.network.networkx_ranking(self.allcharacters) # Rank all characters in Book objects with networkx
+            self.network.compute_socialbalance(self.allcharacters)
 
 
         elif self.perspective == '3': 
@@ -538,10 +536,8 @@ class Book:
 
 
             self.network.normalize_weights(self.word_count) # Normalize weights for 'mother' Book-object
-
-            self.network.compute_socialbalance(self.allcharacters) 
-
             self.network.networkx_ranking(self.allcharacters) # Rank all characters in 'mother' Book-object with networkx
+            self.network.compute_socialbalance(self.allcharacters) 
 
 
 
@@ -722,73 +718,7 @@ class Network():
         #     print ('self.normalized_weights = empty for book_id:', self.book_id)
         #     exit(0)
 
-    def compute_socialbalance(self, allcharacters):
-        """
-        Compute social balance for each triad of Character objects in each Book object
-
-        balanced1: +++
-        balanced2: 00+
-        forbidden1: 000
-        forbidden2: ++0
-
-        self.weights variable is dict with character_ids as keys and a nested dict as values, where nested dict key-value pair is target character_id and weight of relation source-target
-        allcharacters variable is dict with character_ids as keys and characterobjects as value
-
-        For each possible combination of three Character object in allcharacters, check whether or not these three Character objects have or do not share edges.
-
-        Count the amount of occurrences of a Character object for each of these categories, where + represents an edge and 0 represents NO edge.
-
-        balanced1: +++
-        balanced2: 00+
-        forbidden1: 000
-        forbidden2: ++0
-
-        self.balancedtriads1 = 0
-        self.balancedtriads2 = 0
-        self.forbiddentriads1 = 0
-        self.forbiddentriads2 = 0
-
-
-        """
-
-        co_occurrences = {} # dict to track whether or not two character in allcharacters share an edge
- 
-
-        for character_id in allcharacters: # Loop over each Character object in dict, key = character_id and value = character object
-            if not character_id in co_occurrences:
-                co_occurrences[character_id] = [] 
-
-        for character_id in self.weights:
-            co_occurring_chars = self.weights[character_id].keys() # Maybe do list(self.weights[character_id].keys()) if the output object of key() causes harm
-            #print ('cooccurring characters of character_id', character_id, co_occurring_chars)
-            co_occurrences[character_id].append(co_occurring_chars)
-
-
-        for allcharacters[character_id].character_id in co_occurrences:
-            for co_occuring_char in co_occurrences[allcharacters[character_id].character_id]
-
-
-
-
-
-
-        triad_combinations = list(itertools.combinations(allcharacters, 3))
-
-
- 
-
-        #print (co_occurrences)
-       
-
-
-
-
-        # for source in self.weights:
-        #     for target in self.weights[source]:
-        #         if 
-
-
-
+   
 
     
     def networkx_ranking (self, allcharacters):
@@ -973,6 +903,78 @@ class Network():
         #for katz in sorted_katz:
         #    print(katz)
         #print ('===============')
+
+
+
+
+
+
+    def compute_socialbalance(self, allcharacters):
+        """
+        Compute social balance for each triad of Character objects in each Book object
+
+        balanced1: +++
+        balanced2: 00+
+        forbidden1: 000
+        forbidden2: ++0
+
+        self.weights variable is dict with character_ids as keys and a nested dict as values, where nested dict key-value pair is target character_id and weight of relation source-target
+        allcharacters variable is dict with character_ids as keys and characterobjects as value
+
+        For each possible combination of three Character object in allcharacters, check whether or not these three Character objects have or do not share edges.
+
+        Count the amount of occurrences of a Character object for each of these categories, where + represents an edge and 0 represents NO edge.
+
+        balanced1: +++
+        balanced2: 00+
+        forbidden1: 000
+        forbidden2: ++0
+
+        self.balancedtriads1 = 0
+        self.balancedtriads2 = 0
+        self.forbiddentriads1 = 0
+        self.forbiddentriads2 = 0
+
+
+        """
+
+        # co_occurrences = {} # dict to track whether or not two character in allcharacters share an edge
+    
+
+        # for character_id in allcharacters: # Loop over each Character object in dict, key = character_id and value = character object
+        #     if not character_id in co_occurrences:
+        #         co_occurrences[character_id] = [] 
+
+        # for character_id in self.weights:
+        #     co_occurring_chars = self.weights[character_id].keys() # Maybe do list(self.weights[character_id].keys()) if the output object of key() causes harm
+        #     #print ('cooccurring characters of character_id', character_id, co_occurring_chars)
+        #     co_occurrences[character_id].append(co_occurring_chars)
+
+
+        # for allcharacters[character_id].character_id in co_occurrences:
+        #     for co_occuring_char in co_occurrences[allcharacters[character_id].character_id]
+
+
+        # triad_combinations = list(itertools.combinations(allcharacters, 3))
+
+        #print (co_occurrences)
+
+
+
+        #print(len(list(itertools.combinations(self.Graph.nodes, 3))))
+
+        
+        triad_class = {}
+        for nodes in itertools.combinations(self.Graph.nodes, 3):
+            n_edges = self.Graph.subgraph(nodes).number_of_edges()
+            triad_class.setdefault(n_edges, []).append(nodes)
+
+        # To do: for every Character object, check in which of the classes it exists (keys 0, 1, 2 or 3 corresponding to one of the 4 (im)balance categories) and increment the corresponding balance attribute with one
+
+        print (triad_class)
+       
+
+
 
 
 
