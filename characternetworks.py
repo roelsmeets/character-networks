@@ -974,17 +974,26 @@ class Network():
         # for key in triad_class:
         #     print ('key:', key, type(key), 'items in list:', len(triad_class[key]))
 
-        self.balancedtriads1 += len(triad_class[3])
-        self.balancedtriads2 += len(triad_class[1])
-        self.forbiddentriads1 += len(triad_class[0])
-        self.forbiddentriads2 += len(triad_class[2])
+        # To do: add if-loop that only works if key in dict has values!
+
+        if 3 in triad_class:
+            print ('key 3 exists for', self.book_id)
+            self.balancedtriads1 += len(triad_class[3])
+
+        if 1 in triad_class:
+            print ('key 1 exists for', self.book_id)
+            self.balancedtriads2 += len(triad_class[1])
+
+        if 0 in triad_class:
+            print ('key 0 exists for', self.book_id)
+            self.forbiddentriads1 += len(triad_class[0])
+
+        if 2 in triad_class:
+            print ('key 2 exists for', self.book_id)
+            self.forbiddentriads2 += len(triad_class[2])
 
  
        
-
-
-
-
 
     def write_to_csv(self, filename='character-rankings.csv'):
         """
