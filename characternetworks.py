@@ -66,11 +66,6 @@ class Character:
         self.profession = profession
         self.isfirstperson = False
 
-        self.balancedtriads1 = 0
-        self.balancedtriads2 = 0
-        self.forbiddentriads1 = 0
-        self.forbiddentriads2 = 0
-
         self.marked_name = list(self.name) 
         self.marked_name = '|'.join(self.marked_name)
         self.namecode = self.book_id+'_'+self.character_id+'_'+self.marked_name.replace(' ','+++') # DOES THIS MATCH THE NAMECODE IN def replace_namvariants?
@@ -615,6 +610,11 @@ class Network():
         self.education_distribution_community_b = {'high education': 0, 'low education': 0, 'unknown': 0}
         self.age_distribution_community_b = {'<25': 0, '26-35': 0, '36-45': 0, '46-55': 0, '56-64': 0, '65+': 0, 'unknown': 0}
 
+        self.balancedtriads1 = 0
+        self.balancedtriads2 = 0
+        self.forbiddentriads1 = 0
+        self.forbiddentriads2 = 0
+
 
 
         
@@ -925,10 +925,10 @@ class Network():
 
         Count the amount of occurrences of a Character object for each of these categories, where + represents an edge and 0 represents NO edge.
 
-        balanced1: +++
-        balanced2: 00+
-        forbidden1: 000
-        forbidden2: ++0
+        balanced1: +++  ---> triad class key '3'
+        balanced2: 00+  ---> triad class key '1'
+        forbidden1: 000 ---> triad class key '0'
+        forbidden2: ++0 ---> triad class key '2'
 
         self.balancedtriads1 = 0
         self.balancedtriads2 = 0
@@ -969,9 +969,17 @@ class Network():
             n_edges = self.Graph.subgraph(nodes).number_of_edges()
             triad_class.setdefault(n_edges, []).append(nodes)
 
-        # To do: for every Character object, check in which of the classes it exists (keys 0, 1, 2 or 3 corresponding to one of the 4 (im)balance categories) and increment the corresponding balance attribute with one
+        # For every Character object, check in which of the classes it exists (keys 0, 1, 2 or 3 corresponding to one of the 4 (im)balance categories) and increment the corresponding balance attribute with one
 
-        print (triad_class)
+        # for key in triad_class:
+        #     print ('key:', key, type(key), 'items in list:', len(triad_class[key]))
+
+        self.balancedtriads1 += len(triad_class[3])
+        self.balancedtriads2 += len(triad_class[1])
+        self.forbiddentriads1 += len(triad_class[0])
+        self.forbiddentriads2 += len(triad_class[2])
+
+ 
        
 
 
@@ -1022,6 +1030,28 @@ class Network():
                             nx.get_node_attributes(self.Graph, 'eigenvector')[character_id], \
                             nx.get_node_attributes(self.Graph, 'katz')[character_id]])
 
+
+
+
+    def write_to_csv_social_balance(self, filename='social_balance.csv'):
+        """
+        Writes to columns in new file, for each Networkobject, amount of triads in the following categories:
+
+        balanced1: +++
+        balanced2: 00+
+        forbidden1: 000
+        forbidden2: ++0
+
+
+
+
+        """
+        blabla = False
+
+        with open (filename, 'a', newline='') as f:
+            csvwriter = csv.writer(f)
+
+            csvwriter.writerow([self.book_id, self.balancedtriads1, self.balancedtriads2, self.forbiddentriads1, self.forbiddentriads2])
 
 
 

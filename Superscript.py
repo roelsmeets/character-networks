@@ -150,6 +150,10 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
     if total > 1:
         csvfile3 = 'communities_frequency_distributions_task_'+str(task)+'.csv'
 
+    csvfile4 = 'social_balance.csv'
+    if total > 1:
+        csvfile4 = 'social_balance_task_'+str(task)+'.csv'
+
     gephi_file = 'networkx_graph.gexf'
     if total > 1:
         gephi_file = 'networkx_graph_task_'+str(task)+'.gexf'
@@ -171,12 +175,13 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
         
         #allbooks[book_id].write_to_csv(csvfile) # Writes to a csv file all character info + their scores for the 5 centrality measures
 
+        allbooks[book_id].network.write_to_csv_social_balance(csvfile4)
 
         #allbooks[book_id].network.compute_networkstats(csvfile2)
 
-        allbooks[book_id].network.detect_communities(csvfile3)
+        #allbooks[book_id].network.detect_communities(csvfile3)
 
-        allbooks[book_id].network.draw_network(gephi_file)
+        #allbooks[book_id].network.draw_network(gephi_file)
 
 
 
