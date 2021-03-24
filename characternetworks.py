@@ -70,6 +70,11 @@ class Character:
         self.marked_name = '|'.join(self.marked_name)
         self.namecode = self.book_id+'_'+self.character_id+'_'+self.marked_name.replace(' ','+++') # DOES THIS MATCH THE NAMECODE IN def replace_namvariants?
 
+        self.degree = 0
+        self.betweenness = 0
+        self.closeness = 0
+        self.eigenvector = 0
+        self.katz = 0
         
 
 
@@ -771,10 +776,15 @@ class Network():
         katz_dict = {}
         descent_recode_dict = {}
 
+        print ('allcharacters:', allcharacters)
+
         for character_id in allcharacters:
             """Define node attributes by accessing Character attributes in allcharacters
 
             """
+
+
+
             name_dict[character_id] = allcharacters[character_id].name
             gender_dict[character_id] = allcharacters[character_id].gender
             descent_country_dict[character_id] = allcharacters[character_id].descent_country
@@ -905,6 +915,25 @@ class Network():
         #print ('===============')
 
 
+        # 6. ADD CENTRALITY VALUES TO CHARACTER OBJECTS
+
+        for character_id in allcharacters:
+            allcharacters[character_id].degree += degree_dict[character_id]
+            print (allcharacters[character_id].degree)
+            allcharacters[character_id].betweenness += betweenness_dict[character_id]
+            print (allcharacters[character_id].betweenness)
+            allcharacters[character_id].closeness += closeness_dict[character_id]
+            print (allcharacters[character_id].closeness)
+            allcharacters[character_id].eigenvector += eigenvector_dict[character_id]
+            print (allcharacters[character_id].eigenvector)
+            allcharacters[character_id].katz += katz_dict[character_id]
+            print (allcharacters[character_id].katz)
+
+
+
+
+
+
 
 
 
@@ -977,19 +1006,19 @@ class Network():
         # To do: add if-loop that only works if key in dict has values!
 
         if 3 in triad_class:
-            print ('key 3 exists for', self.book_id)
+            #print ('key 3 exists for', self.book_id)
             self.balancedtriads1 += len(triad_class[3])
 
         if 1 in triad_class:
-            print ('key 1 exists for', self.book_id)
+            #print ('key 1 exists for', self.book_id)
             self.balancedtriads2 += len(triad_class[1])
 
         if 0 in triad_class:
-            print ('key 0 exists for', self.book_id)
+            #print ('key 0 exists for', self.book_id)
             self.forbiddentriads1 += len(triad_class[0])
 
         if 2 in triad_class:
-            print ('key 2 exists for', self.book_id)
+            #print ('key 2 exists for', self.book_id)
             self.forbiddentriads2 += len(triad_class[2])
 
  
