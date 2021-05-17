@@ -66,6 +66,8 @@ class Character:
         self.profession = profession
         self.isfirstperson = False
 
+        self.descent_recode = ''
+
         self.marked_name = list(self.name) 
         self.marked_name = '|'.join(self.marked_name)
         self.namecode = self.book_id+'_'+self.character_id+'_'+self.marked_name.replace(' ','+++') # DOES THIS MATCH THE NAMECODE IN def replace_namvariants?
@@ -450,7 +452,7 @@ class Book:
 
 
 
-    def compute_network(self):
+    def compute_network(self, filename='social_balance_characters.csv'):
         """    Function for computing the weight of character relations
 
         Book objects are sorted on the basis of perspective (1, 2, 3). 
@@ -503,7 +505,7 @@ class Book:
                         
             self.network.normalize_weights(self.word_count) # Normalize weights by dividing through word_count 
             self.network.networkx_ranking(self.allcharacters) # Rank all characters in Book objects with networkx
-            self.network.compute_socialbalance(self.allcharacters)
+            self.network.compute_socialbalance(self.allcharacters, filename='social_balance_characters.csv')
 
 
         elif self.perspective == '3': 
@@ -537,7 +539,7 @@ class Book:
 
             self.network.normalize_weights(self.word_count) # Normalize weights for 'mother' Book-object
             self.network.networkx_ranking(self.allcharacters) # Rank all characters in 'mother' Book-object with networkx
-            self.network.compute_socialbalance(self.allcharacters) 
+            self.network.compute_socialbalance(self.allcharacters, filename='social_balance_characters.csv') 
 
 
 
@@ -619,6 +621,8 @@ class Network():
         self.balancedtriads2 = 0
         self.forbiddentriads1 = 0
         self.forbiddentriads2 = 0
+
+        self.triad_class = {}
 
 
 
@@ -776,7 +780,7 @@ class Network():
         katz_dict = {}
         descent_recode_dict = {}
 
-        print ('allcharacters:', allcharacters)
+        #print ('allcharacters:', allcharacters)
 
         for character_id in allcharacters:
             """Define node attributes by accessing Character attributes in allcharacters
@@ -806,6 +810,10 @@ class Network():
                 descent_recode_dict[character_id] = '1' # Recode 3 (European), 4 (Western), 5 (Middle Eastern), 6 (Other) into 1 ('migrant')
             if allcharacters[character_id].descent_country == '99':
                 descent_recode_dict[character_id] = '99' # 99 (unknown) remains the same
+
+
+            allcharacters[character_id].descent_recode = descent_recode_dict[character_id] # Add attribute to Character object
+            #print ('book_id:', allcharacters[character_id].book_id, 'char_id:', allcharacters[character_id].character_id, 'descent_recode:', allcharacters[character_id].descent_recode)
 
             # Check if recoding descent_country into descent_recode worked properly
             # print ('character =', allcharacters[character_id].name, 'descent_country =', allcharacters[character_id].descent_country)
@@ -919,15 +927,15 @@ class Network():
 
         for character_id in allcharacters:
             allcharacters[character_id].degree += degree_dict[character_id]
-            print (allcharacters[character_id].degree)
+            #print (allcharacters[character_id].degree)
             allcharacters[character_id].betweenness += betweenness_dict[character_id]
-            print (allcharacters[character_id].betweenness)
+            #print (allcharacters[character_id].betweenness)
             allcharacters[character_id].closeness += closeness_dict[character_id]
-            print (allcharacters[character_id].closeness)
+            #print (allcharacters[character_id].closeness)
             allcharacters[character_id].eigenvector += eigenvector_dict[character_id]
-            print (allcharacters[character_id].eigenvector)
+            #print (allcharacters[character_id].eigenvector)
             allcharacters[character_id].katz += katz_dict[character_id]
-            print (allcharacters[character_id].katz)
+            #print (allcharacters[character_id].katz)
 
 
 
@@ -938,7 +946,7 @@ class Network():
 
 
 
-    def compute_socialbalance(self, allcharacters):
+    def compute_socialbalance(self, allcharacters, filename='social_balance_characters.csv'):
         """
         Compute social balance for each triad of Character objects in each Book object
 
@@ -992,11 +1000,10 @@ class Network():
 
         #print(len(list(itertools.combinations(self.Graph.nodes, 3))))
 
-        
-        triad_class = {}
+       
         for nodes in itertools.combinations(self.Graph.nodes, 3):
             n_edges = self.Graph.subgraph(nodes).number_of_edges()
-            triad_class.setdefault(n_edges, []).append(nodes)
+            self.triad_class.setdefault(n_edges, []).append(nodes)
 
         # For every Character object, check in which of the classes it exists (keys 0, 1, 2 or 3 corresponding to one of the 4 (im)balance categories) and increment the corresponding balance attribute with one
 
@@ -1005,21 +1012,24 @@ class Network():
 
         # To do: add if-loop that only works if key in dict has values!
 
-        if 3 in triad_class:
+        if 3 in self.triad_class:
             #print ('key 3 exists for', self.book_id)
-            self.balancedtriads1 += len(triad_class[3])
+            self.balancedtriads1 += len(self.triad_class[3])
 
-        if 1 in triad_class:
+        if 1 in self.triad_class:
             #print ('key 1 exists for', self.book_id)
-            self.balancedtriads2 += len(triad_class[1])
+            self.balancedtriads2 += len(self.triad_class[1])
 
-        if 0 in triad_class:
+        if 0 in self.triad_class:
             #print ('key 0 exists for', self.book_id)
-            self.forbiddentriads1 += len(triad_class[0])
+            self.forbiddentriads1 += len(self.triad_class[0])
 
-        if 2 in triad_class:
+        if 2 in self.triad_class:
             #print ('key 2 exists for', self.book_id)
-            self.forbiddentriads2 += len(triad_class[2])
+            self.forbiddentriads2 += len(self.triad_class[2])
+
+        
+        self.write_to_csv_social_balance_characters(allcharacters, filename='social_balance_characters.csv')
 
  
        
@@ -1090,6 +1100,460 @@ class Network():
             csvwriter = csv.writer(f)
 
             csvwriter.writerow([self.book_id, self.balancedtriads1, self.balancedtriads2, self.forbiddentriads1, self.forbiddentriads2])
+
+
+    def write_to_csv_social_balance_characters(self, allcharacters, filename='social_balance_characters.csv'):
+        """
+        Writes to rows in csv-file, for each Character object, the following info:
+
+        - book_id
+        - character_id
+        - demographic data--> gender, descent, education, age
+
+        - in which of the following triad categories it occurs
+
+        balanced1: +++
+        balanced2: 00+
+        forbidden1: 000
+        forbidden2: ++0
+
+        - and if it occurs in one of these triad categories, then for each of these catogories:
+            - alter1_character_id
+            - alter1_gender
+            - alter1_descent
+            - alter1_education
+            - alter1_age
+            - alter1_relation [family, lover, colleague, enemy, friend]
+            - alter2_character_id
+            - alter2_gender
+            - alter2_descent
+            - alter2_education
+            - alter2_age
+            - alter2_relation [family, lover, colleague, enemy, friend]
+
+        """
+
+
+        # Create list of tuples containing the triad combinations
+
+
+        try:
+            balanced1_triads_list = self.triad_class[3] # balanced1 = category 3
+            balanced2_triads_list = self.triad_class[1] # balanced2 = category 1
+            forbidden1_triads_list = self.triad_class[0] # forbidden1 = category 0
+            forbidden2_triads_list = self.triad_class[2] # forbidden2 = category 2
+
+            # print ('bal1:', balanced1_triads_list)
+            # print ('*****************************')
+            # print ('bal2:', balanced2_triads_list)
+            # print ('*****************************')
+            # print ('for1:', forbidden1_triads_list)
+            # print ('*****************************')
+            # print ('for2:', forbidden2_triads_list)
+            # print ('*****************************')
+
+
+        except KeyError:
+            print ('book_id', self.book_id, 'misses one of the triad categories')
+
+        
+
+
+        with open (filename, 'a', newline='') as f:
+            #csvwriter = csv.writer(f)
+
+
+            fieldnames = ['book_id', 'character_id', 'name', 'gender', 'education', 'age', 'descent_recode', 'triad_cat', \
+            'alter1_char_id', 'alter1_name', 'alter1_gender', 'alter1_education', 'alter1_age', 'alter1_descent',  \
+            'alter2_char_id', 'alter2_name', 'alter2_gender', 'alter2_education', 'alter2_age', 'alter2_descent']
+            csvwriter = csv.DictWriter(f, fieldnames=fieldnames)
+
+
+            first_dict = {}
+            second_dict = {}
+            third_dict = {}
+            fourth_dict = {}
+
+            for character_id in allcharacters: # Loop over Character objects
+
+            # LOOP OVER BALANCED 1 TRIADS
+
+                try:
+                    for triad in balanced1_triads_list:  # Loop over triads (for each of the four lists with triad categories
+                        if character_id in triad:
+                            #print ('character_id:', character_id, 'in triad:', triad )
+                            # print ('character_id:', character_id, 'equals', allcharacters[character_id].character_id)
+
+
+
+                            if allcharacters[character_id].character_id == triad[0]: # Access the first node in the triad to store info in a dict
+                                #print ('the first item in this triad is character_id:', allcharacters[character_id].character_id)
+
+                                alter1 = triad[1]
+                                alter2 = triad[2]
+
+
+                                first_dict['book_id'] = allcharacters[character_id].book_id
+                                first_dict['character_id'] = allcharacters[character_id].character_id
+                                first_dict['name'] = allcharacters[character_id].name
+                                first_dict['gender'] = allcharacters[character_id].gender
+                                first_dict['education'] = allcharacters[character_id].education
+                                first_dict['age'] = allcharacters[character_id].age
+                                first_dict['descent_recode'] = allcharacters[character_id].descent_recode
+                                first_dict['triad_cat'] = 'balanced1'
+
+                                first_dict['alter1_char_id'] = allcharacters[alter1].character_id
+                                first_dict['alter1_name'] = allcharacters[alter1].name
+                                first_dict['alter1_gender'] = allcharacters[alter1].gender
+                                first_dict['alter1_education'] = allcharacters[alter1].education
+                                first_dict['alter1_age'] = allcharacters[alter1].age
+                                first_dict['alter1_descent'] = allcharacters[alter1].descent_recode
+
+                                first_dict['alter2_char_id'] = allcharacters[alter2].character_id
+                                first_dict['alter2_name'] = allcharacters[alter2].name
+                                first_dict['alter2_gender'] = allcharacters[alter2].gender
+                                first_dict['alter2_education'] = allcharacters[alter2].education
+                                first_dict['alter2_age'] = allcharacters[alter2].age
+                                first_dict['alter2_descent'] = allcharacters[alter2].descent_recode
+
+                                csvwriter.writerow(first_dict)
+
+                except UnboundLocalError:
+                    print ('UnboundLocalError')
+
+
+
+            # LOOP OVER BALANCED 2 TRIADS
+
+
+                try:
+                    for triad in balanced2_triads_list:  # Loop over triads (for each of the four lists with triad categories)
+                        if character_id in triad:
+                            #print ('character_id:', character_id, 'in triad:', triad )
+                            # print ('character_id:', character_id, 'equals', allcharacters[character_id].character_id)
+
+
+
+                            if allcharacters[character_id].character_id == triad[0]: # Access the first node in the triad to store info in a dict
+                                #print ('the first item in this triad is character_id:', allcharacters[character_id].character_id)
+
+                                alter1 = triad[1]
+                                alter2 = triad[2]
+
+
+                                second_dict['book_id'] = allcharacters[character_id].book_id
+                                second_dict['character_id'] = allcharacters[character_id].character_id
+                                second_dict['name'] = allcharacters[character_id].name
+                                second_dict['gender'] = allcharacters[character_id].gender
+                                second_dict['education'] = allcharacters[character_id].education
+                                second_dict['age'] = allcharacters[character_id].age
+                                second_dict['descent_recode'] = allcharacters[character_id].descent_recode
+                                second_dict['triad_cat'] = 'balanced2'
+
+                                second_dict['alter1_char_id'] = allcharacters[alter1].character_id
+                                second_dict['alter1_name'] = allcharacters[alter1].name
+                                second_dict['alter1_gender'] = allcharacters[alter1].gender
+                                second_dict['alter1_education'] = allcharacters[alter1].education
+                                second_dict['alter1_age'] = allcharacters[alter1].age
+                                second_dict['alter1_descent'] = allcharacters[alter1].descent_recode
+
+                                second_dict['alter2_char_id'] = allcharacters[alter2].character_id
+                                second_dict['alter2_name'] = allcharacters[alter2].name
+                                second_dict['alter2_gender'] = allcharacters[alter2].gender
+                                second_dict['alter2_education'] = allcharacters[alter2].education
+                                second_dict['alter2_age'] = allcharacters[alter2].age
+                                second_dict['alter2_descent'] = allcharacters[alter2].descent_recode
+
+                                csvwriter.writerow(second_dict)
+
+                except UnboundLocalError:
+                    print ('UnboundLocalError')
+
+
+                # LOOP OVER FORBIDDEN 1 TRIADS
+
+
+                try:
+                    for triad in forbidden1_triads_list:  # Loop over triads (for each of the four lists with triad categories)
+                        if character_id in triad:
+                            #print ('character_id:', character_id, 'in triad:', triad )
+                            # print ('character_id:', character_id, 'equals', allcharacters[character_id].character_id)
+
+
+
+                            if allcharacters[character_id].character_id == triad[0]: # Access the first node in the triad to store info in a dict
+                                #print ('the first item in this triad is character_id:', allcharacters[character_id].character_id)
+
+                                alter1 = triad[1] 
+                                alter2 = triad[2]
+
+
+                                third_dict['book_id'] = allcharacters[character_id].book_id
+                                third_dict['character_id'] = allcharacters[character_id].character_id
+                                third_dict['name'] = allcharacters[character_id].name
+                                third_dict['gender'] = allcharacters[character_id].gender
+                                third_dict['education'] = allcharacters[character_id].education
+                                third_dict['age'] = allcharacters[character_id].age
+                                third_dict['descent_recode'] = allcharacters[character_id].descent_recode
+                                third_dict['triad_cat'] = 'forbidden1'
+
+                                third_dict['alter1_char_id'] = allcharacters[alter1].character_id
+                                third_dict['alter1_name'] = allcharacters[alter1].name
+                                third_dict['alter1_gender'] = allcharacters[alter1].gender
+                                third_dict['alter1_education'] = allcharacters[alter1].education
+                                third_dict['alter1_age'] = allcharacters[alter1].age
+                                third_dict['alter1_descent'] = allcharacters[alter1].descent_recode
+
+                                third_dict['alter2_char_id'] = allcharacters[alter2].character_id
+                                third_dict['alter2_name'] = allcharacters[alter2].name
+                                third_dict['alter2_gender'] = allcharacters[alter2].gender
+                                third_dict['alter2_education'] = allcharacters[alter2].education
+                                third_dict['alter2_age'] = allcharacters[alter2].age
+                                third_dict['alter2_descent'] = allcharacters[alter2].descent_recode
+
+                                csvwriter.writerow(third_dict)
+
+                except UnboundLocalError:
+                    print ('UnboundLocalError')
+
+
+
+                # LOOP OVER FORBIDDEN 2 TRIADS
+
+                try:
+                    for triad in forbidden2_triads_list:  # Loop over triads (for each of the four lists with triad categories)
+                        if character_id in triad:
+                            #print ('character_id:', character_id, 'in triad:', triad )
+                            # print ('character_id:', character_id, 'equals', allcharacters[character_id].character_id)
+
+
+
+                            if allcharacters[character_id].character_id == triad[0]: # Access the first node in the triad to store info in a dict
+                                #print ('the first item in this triad is character_id:', allcharacters[character_id].character_id)
+
+                                alter1 = triad[1]# TO WORK ON: DEFINE TRIADS (+ INFO IN RELATED DICTS) IMMEDIATELY AND WRITE INFO ON SOURCE, ALTER1, ALTER2 TO CSV ROW AT ONCE
+                                alter2 = triad[2]
+
+
+                                fourth_dict['book_id'] = allcharacters[character_id].book_id
+                                fourth_dict['character_id'] = allcharacters[character_id].character_id
+                                fourth_dict['name'] = allcharacters[character_id].name
+                                fourth_dict['gender'] = allcharacters[character_id].gender
+                                fourth_dict['education'] = allcharacters[character_id].education
+                                fourth_dict['age'] = allcharacters[character_id].age
+                                fourth_dict['descent_recode'] = allcharacters[character_id].descent_recode
+                                fourth_dict['triad_cat'] = 'forbidden2'
+
+                                fourth_dict['alter1_char_id'] = allcharacters[alter1].character_id
+                                fourth_dict['alter1_name'] = allcharacters[alter1].name
+                                fourth_dict['alter1_gender'] = allcharacters[alter1].gender
+                                fourth_dict['alter1_education'] = allcharacters[alter1].education
+                                fourth_dict['alter1_age'] = allcharacters[alter1].age
+                                fourth_dict['alter1_descent'] = allcharacters[alter1].descent_recode
+
+                                fourth_dict['alter2_char_id'] = allcharacters[alter2].character_id
+                                fourth_dict['alter2_name'] = allcharacters[alter2].name
+                                fourth_dict['alter2_gender'] = allcharacters[alter2].gender
+                                fourth_dict['alter2_education'] = allcharacters[alter2].education
+                                fourth_dict['alter2_age'] = allcharacters[alter2].age
+                                fourth_dict['alter2_descent'] = allcharacters[alter2].descent_recode
+
+                                csvwriter.writerow(fourth_dict)
+
+                except UnboundLocalError:
+                    print ('UnboundLocalError')
+
+
+
+
+
+
+                
+
+
+
+
+
+
+       
+
+
+
+                        # elif allcharacters[character_id].character_id == triad[1]: # Access the second node in the triad to store info on this node in a dict
+
+                        #     #print ('the second item in this triad is character_id:', allcharacters[character_id].character_id)
+                        #     alter1 = triad[1]# TO WORK ON: DEFINE TRIADS (+ INFO IN RELATED DICTS) IMMEDIATELY AND WRITE INFO ON SOURCE, ALTER1, ALTER2 TO CSV ROW AT ONCE
+                        #     alter2 = triad[2]
+
+                        #     second_dict['book_id'] = allcharacters[character_id].book_id
+                        #     second_dict['character_id'] = allcharacters[character_id].character_id
+                        #     second_dict['name'] = allcharacters[character_id].name
+                        #     second_dict['gender'] = allcharacters[character_id].gender
+                        #     second_dict['education'] = allcharacters[character_id].education
+                        #     second_dict['age'] = allcharacters[character_id].age
+                        #     second_dict['descent_recode'] = allcharacters[character_id].descent_recode
+                        #     second_dict['triad_cat'] = 'balanced1'
+
+                        #     second_dict['alter1_char_id'] = allcharacters[alter1].character_id
+                        #     second_dict['alter1_name'] = allcharacters[alter1].name
+                        #     second_dict['alter1_gender'] = allcharacters[alter1].gender
+                        #     second_dict['alter1_education'] = allcharacters[alter1].education
+                        #     second_dict['alter1_age'] = allcharacters[alter1].age
+                        #     second_dict['alter1_descent'] = allcharacters[alter1].descent_recode
+
+                        #     second_dict['alter2_char_id'] = allcharacters[alter2].character_id
+                        #     second_dict['alter2_name'] = allcharacters[alter2].name
+                        #     second_dict['alter2_gender'] = allcharacters[alter2].gender
+                        #     second_dict['alter2_education'] = allcharacters[alter2].education
+                        #     second_dict['alter2_age'] = allcharacters[alter2].age
+                        #     second_dict['alter2_descent'] = allcharacters[alter2].descent_recode
+
+                        #     csvwriter.writerow(second_dict)
+
+
+
+
+                        # elif allcharacters[character_id].character_id == triad[2]: # Access the third node in the triad to store info on alter2 in a dict
+
+                        #     #print ('the third item in this triad is character_id:', allcharacters[character_id].character_id)
+
+                        #     alter1 = triad[1]# TO WORK ON: DEFINE TRIADS (+ INFO IN RELATED DICTS) IMMEDIATELY AND WRITE INFO ON SOURCE, ALTER1, ALTER2 TO CSV ROW AT ONCE
+                        #     alter2 = triad[2]
+
+                        #     third_dict['book_id'] = allcharacters[character_id].book_id
+                        #     third_dict['character_id'] = allcharacters[character_id].character_id
+                        #     third_dict['name'] = allcharacters[character_id].name
+                        #     third_dict['gender'] = allcharacters[character_id].gender
+                        #     third_dict['education'] = allcharacters[character_id].education
+                        #     third_dict['age'] = allcharacters[character_id].age
+                        #     third_dict['descent_recode'] = allcharacters[character_id].descent_recode
+                        #     third_dict['triad_cat'] = 'balanced1'
+
+                        #     third_dict['alter1_char_id'] = allcharacters[alter1].character_id
+                        #     third_dict['alter1_name'] = allcharacters[alter1].name
+                        #     third_dict['alter1_gender'] = allcharacters[alter1].gender
+                        #     third_dict['alter1_education'] = allcharacters[alter1].education
+                        #     third_dict['alter1_age'] = allcharacters[alter1].age
+                        #     third_dict['alter1_descent'] = allcharacters[alter1].descent_recode
+
+                        #     third_dict['alter2_char_id'] = allcharacters[alter2].character_id
+                        #     third_dict['alter2_name'] = allcharacters[alter2].name
+                        #     third_dict['alter2_gender'] = allcharacters[alter2].gender
+                        #     third_dict['alter2_education'] = allcharacters[alter2].education
+                        #     third_dict['alter2_age'] = allcharacters[alter2].age
+                        #     third_dict['alter2_descent'] = allcharacters[alter2].descent_recode
+
+
+
+    
+
+
+
+   
+
+
+
+
+
+
+
+
+
+                    # csvwriter.writerow([first_dict['book_id'], \
+                    #             first_dict['character_id'], \
+                    #             first_dict['name'], \
+                    #             first_dict['gender'], \
+                    #             first_dict['education'], \
+                    #             first_dict['age'], \
+                    #             first_dict['descent_recode'], \
+                                            
+                    #             'balanced1', \
+
+                    #             second_dict['character_id'], \
+                    #             second_dict['name'], \
+                    #             second_dict['gender'], \
+                    #             second_dict['education'], \
+                    #             second_dict['age'], \
+                    #             second_dict['descent_recode'], \
+
+
+                    #             third_dict['character_id'], \
+                    #             third_dict['name'], \
+                    #             third_dict['gender'], \
+                    #             third_dict['education'], \
+                    #             third_dict['age'], \
+                    #             third_dict['descent_recode']])
+
+
+
+
+
+
+
+
+                        # elif allcharacters[character_id].character_id == triad[1]: # Write demographic info on alter1
+
+                        #     csvwriter.writerow([allcharacters[character_id].character_id, \
+                        #         allcharacters[character_id].gender, \
+                        #         allcharacters[character_id].education, \
+                        #         allcharacters[character_id].age, \
+                        #         allcharacters[character_id].descent_recode])   # Write columns: source node demographic info, triad category number, alter1 demographic info, alter2 demopgrahic info
+
+                        # elif allcharacters[character_id].character_id == triad[2]: # Write demographic info on alter2
+
+                        #     csvwriter.writerow([allcharacters[character_id].character_id, \
+                        #         allcharacters[character_id].gender, \
+                        #         allcharacters[character_id].education, \
+                        #         allcharacters[character_id].age, \
+                        #         allcharacters[character_id].descent_recode])   # Write columns: source node demographic info, triad category number, alter1 demographic info, alter2 demopgrahic info
+
+
+                        
+
+ 
+
+        # Add node attributes to Network object by accessing the four lists of triad combinations above
+
+        # for character_id in allcharacters: # allcharacters is a dict with character_id's as keys and Character objects as values
+
+        #   balanced1_dict[character_id] = 
+        #   balanced2_dict[character_id] = 
+        #   forbidden1_dict[character_id] = 
+        #   forbidden2_dict[character_id] = 
+
+        
+            
+
+
+
+
+
+
+        # balbla = False
+
+        # with open (filename, 'a', newline='') as f:
+        #     csvwriter = csv.writer(f)
+
+        #     for character_id in sorted(list(self.Graph.nodes)):
+        #         csvwriter.writerow([self.book_id, \
+        #                     character_id, \
+        #                     nx.get_node_attributes(self.Graph, 'name')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'gender')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'descent_country')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'descent_city')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'living_country')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'living_city')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'age')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'education')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'profession')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'degree')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'betweenness')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'closeness')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'eigenvector')[character_id], \
+        #                     nx.get_node_attributes(self.Graph, 'katz')[character_id]])
+           
+
+
 
 
 
@@ -1488,15 +1952,15 @@ class Network():
 
             
     def draw_network(self, filename='networkx_graph.gexf'):
-    	"""
-    	Draws network and show the visualization in a WebAgg server
+        """
+        Draws network and show the visualization in a WebAgg server
 
-    	"""
-    	nx.draw_networkx(self.Graph, pos=nx.random_layout(self.Graph))
-    	plt.draw()
-    	plt.show()
+        """
+        nx.draw_networkx(self.Graph, pos=nx.random_layout(self.Graph))
+        plt.draw()
+        plt.show()
 
-    	nx.write_gexf(self.Graph, filename) # Export the data as a GEXF file to upload in Gephi for visualization
+        nx.write_gexf(self.Graph, filename) # Export the data as a GEXF file to upload in Gephi for visualization
 
 
 
