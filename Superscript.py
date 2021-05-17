@@ -154,6 +154,11 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
     if total > 1:
         csvfile4 = 'social_balance_task_'+str(task)+'.csv'
 
+    csvfile5 = 'social_balance_characters.csv'
+    if total > 1:
+        csvfile5 = 'social_balance_characters_task_'+str(task)+'.csv'
+
+
     gephi_file = 'networkx_graph.gexf'
     if total > 1:
         gephi_file = 'networkx_graph_task_'+str(task)+'.gexf'
@@ -171,11 +176,13 @@ with open(csvfiles['books'], 'rt') as csvfile1, \
 
         allbooks[book_id].novel_word_count() # Call method novel_word_count on each Book object
 
-        allbooks[book_id].compute_network() # Computes weight of relations between Characters objects in Book objects
+        allbooks[book_id].compute_network(csvfile5) # Computes weight of relations between Characters objects in Book objects
         
         #allbooks[book_id].write_to_csv(csvfile) # Writes to a csv file all character info + their scores for the 5 centrality measures
 
-        allbooks[book_id].network.write_to_csv_social_balance(csvfile4)
+        #allbooks[book_id].network.write_to_csv_social_balance(csvfile4)
+
+        #allbooks[book_id].network.write_to_csv_social_balance_characters(csvfile5)
 
         #allbooks[book_id].network.compute_networkstats(csvfile2)
 
