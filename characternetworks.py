@@ -837,6 +837,9 @@ class Network():
         nx.set_node_attributes(self.Graph, eigenvector_dict, 'eigenvector')
         nx.set_node_attributes(self.Graph, katz_dict, 'katz')
         nx.set_node_attributes(self.Graph, descent_recode_dict, 'descent_recode')
+        nx.set_node_attributes(self.Graph, self.gender_author, 'gender_author')
+
+
 
 
         # print(nx.info(self.Graph)) # Print information about the Graph   
@@ -1076,8 +1079,12 @@ class Network():
                             nx.get_node_attributes(self.Graph, 'betweenness')[character_id], \
                             nx.get_node_attributes(self.Graph, 'closeness')[character_id], \
                             nx.get_node_attributes(self.Graph, 'eigenvector')[character_id], \
-                            nx.get_node_attributes(self.Graph, 'katz')[character_id]])
+                            nx.get_node_attributes(self.Graph, 'katz')[character_id], \
+                            nx.get_node_attributes(self.Graph, 'gender_author')[character_id], \
+                            'corpus_Libris2013']
+                            )
 
+   
 
 
 
